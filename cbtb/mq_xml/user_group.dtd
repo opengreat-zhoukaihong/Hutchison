@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 NT (http://www.xmlspy.com) by Jenny (LINE.net) -->
+<!ELEMENT user_group_relation (domain_id, user_id, group_id, user_or_group, action)>
+<!ELEMENT domain_id (#PCDATA)>
+<!ELEMENT user_id (#PCDATA)>
+<!ELEMENT group_id (#PCDATA)>
+<!ELEMENT user_or_group (#PCDATA)>
+<!ELEMENT action (#PCDATA)>
+<!ATTLIST action
+	value (create | delete) #REQUIRED
+>

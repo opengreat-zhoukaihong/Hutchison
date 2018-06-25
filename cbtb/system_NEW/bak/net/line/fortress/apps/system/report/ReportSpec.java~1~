@@ -1,0 +1,99 @@
+package net.line.fortress.apps.system.report;
+
+/**
+ * Title:
+ * Description:
+ * Copyright:    Copyright (c) 2000
+ * Company:
+ * @author
+ * @version 1.0
+ */
+import java.util.Hashtable;
+
+public class ReportSpec {
+    public final static int HTML = 0;
+    public final static int PDF = 1;
+    public final static int TEXT = 2;
+    public final static int EXCEL = 3;
+    public final static int POSTSCRIPT = 4;
+    public final static int RTF = 5;
+
+    public final static String EN = "en";
+    public final static String ZH = "zh";
+    public final static String CH = "ch";
+
+    public final static String BIG5 = "BIG5";
+    public final static String GBK = "GBK";
+    public final static String UTF8 = "UTF8";
+
+    private String systemName = null;
+    private String reportName = null;
+    private int fileFormat = PDF;
+    private String userLanguage = null;
+    private String encoding = null;
+    private String wherePortion = null;
+
+    private Hashtable parameters = new Hashtable();
+
+    public ReportSpec(String systemName, String reportName) {
+            this(systemName, reportName, PDF, EN, UTF8,"");
+    }
+
+    public ReportSpec(String systemName, String reportName, String userLanguage, String encoding) {
+            this(systemName, reportName, PDF, userLanguage, encoding,"");
+    }
+
+    public ,I I(String systemName, String reportName, int fileFormat, String userLanguage, String encoding, String wherePortion) {
+            this.systemName = systemName;
+            this.reportName = reportName;
+            this.fileFormat = fileFormat;
+            this.userLanguage = userLanguage;
+            this.encoding = encoding;
+            this.wherePortion=wherePortion;
+    }
+
+    public String getSystemName() {
+            return systemName;
+    }
+
+    public String getReportName() {
+            return reportName;
+    }
+
+    public void setUserLanguage(String userLanguage) {
+            this.userLanguage = userLanguage;
+    }
+
+    public String getUserLanguage() {
+            return userLanguage;
+    }
+
+    public void setEncoding(String encoding) {
+            this.encoding = encoding;
+    }
+
+    public String getEncoding() {
+            return encoding;
+    }
+
+    public Hashtable getParameters() {
+            return parameters;
+    }
+
+    public void setFileFormat(int fileFormat) {
+            this.fileFormat = fileFormat;
+    }
+
+    public int getFileFormat() {
+            return fileFormat;
+    }
+
+    public void setWherePortion(String wherePortion) {
+            this.wherePortion = wherePortion;
+    }
+
+    public String getWherePortion() {
+            return wherePortion;
+    }
+
+}

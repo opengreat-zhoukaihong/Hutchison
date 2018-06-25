@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!DOCTYPE user_group_relation SYSTEM "http://187.11.1.125:7001/user_group.dtd">
+<user_group_relation>
+	  <domain_id>TL000064</domain_id>
+	  <user_id>tl000064</user_id>
+	  <group_id>OrgAdminGp</group_id>
+	  <user_or_group>U</user_or_group>
+	  <action value="create" />
+</user_group_relation>

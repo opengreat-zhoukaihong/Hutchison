@@ -1,0 +1,23 @@
+package test;
+
+import javax.servlet.http.*;
+import java.util.*;
+
+public class debug {
+  public static void printRequestParameters(HttpServletRequest request) {
+    System.out.println("start printRequestParameters");
+    for (Enumeration e = request.getParameterNames(); e.hasMoreElements();) {
+      String key = (String)e.nextElement();
+      System.out.println("HttpServletRequest: " + key + "=" + request.getParameter(key));
+    }
+    System.out.println("end printRequestParameters");
+  }
+  public static void printHashtableKeys(Hashtable h) {
+    System.out.println("start printHashtableKeys");
+    for (Enumeration e = h.keys(); e.hasMoreElements();) {
+      Object o = e.nextElement();
+      System.out.println(o + "=" + h.get(o).getClass().getName());
+    }
+    System.out.println("end printHashtableKeys");
+  }
+}

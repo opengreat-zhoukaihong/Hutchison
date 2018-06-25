@@ -1,0 +1,62 @@
+From:TL
+To:CBTB
+Content-Type:/text/XML-TRUCKER
+Date:2001.06.05 17:36:07
+<?xml version="1.0"?>
+<!DOCTYPE Trucker SYSTEM "http://187.11.1.2:7001/trucker.dtd">
+
+
+<Trucker>
+	
+  <Organization_ID>TL000064</Organization_ID>
+	
+  <Trucker_ID>TR000053</Trucker_ID>
+	
+  <Trucker_Name>Trucker Name</Trucker_Name>
+	
+  <HK_ID>ID number</HK_ID>
+	
+  <Trucker_Addr>
+		
+    <address1>Trucker Address1</address1>
+		
+    <address2>Trucker Address2</address2>
+		
+    <address3>addr3</address3>
+		
+    <address4>addr4</address4>
+	
+  </Trucker_Addr>
+	
+  <HK_Telephone_No>Tel-123</HK_Telephone_No>
+	
+  <HK_Mobile_No>Mob-123</HK_Mobile_No>
+	
+  <HK_Pager_No>Pager-123</HK_Pager_No>
+	
+  <Inland_Telephone_No>in-tel-123</Inland_Telephone_No>
+	
+  <Inland_Mobile_No>in-mobile-123</Inland_Mobile_No>
+	
+  <Inland_Pager_No>in-pager-123</Inland_Pager_No>
+	
+  <HK_License_No>hk-license</HK_License_No>
+	
+  <Inland_License_No>in-license</Inland_License_No>
+	
+  <HK_Plate_No>hk-0001</HK_Plate_No>
+	
+  <Inland_Plate_No>in-plate</Inland_Plate_No>
+	
+  <Truck_Model_No>truck-mod</Truck_Model_No>
+	
+  <Truck_Color>truck-col</Truck_Color>
+	
+  <Carry_Weight>carry-weight</Carry_Weight>
+	
+	
+  <Truck_Status>create</Truck_Status>
+	
+  <Reason_ID>001</Reason_ID>
+
+</Trucker>

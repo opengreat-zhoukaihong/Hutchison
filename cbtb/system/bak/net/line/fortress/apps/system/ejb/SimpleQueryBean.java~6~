@@ -1,0 +1,169 @@
+package net.line.fortress.apps.system.ejb;
+
+import java.rmi.*;
+import javax.ejb.*;
+import java.util.*;
+import java.sql.*;
+import net.line.fortress.apps.system.utils.*;
+import net.line.fortress.apps.system.utils.simpleQuery.*;
+
+public class SimpleQueryBean implements SessionBean {
+  private SessionContext sessionContext;
+  private static final int size = 10;
+  private ArrayList resultList = null;
+  private DBQuery dbQuery = null;
+//  private ResultSet rSet = null;
+//  private ResultSetMetaData rSetMetaData = null;
+//  private Connection connection = null;
+//  private PreparedStatement pStmt = null;
+//  private javax.transaction.UserTransaction ut = null;
+  private int count = 1;
+
+  public void ejbCreate(String sql) throws Exception {
+//    ut = sessionContext.getUserTransaction();
+//    ut.begin();
+    try {
+//      connection = DefaultConnectionPool.getInstance().getConnection();
+//      pStmt = connection.prepareStatement(sql);
+//      rSet = pStmt.executeQuery();
+//      rSetMetaData = rSet.getMetaData();
+      dbQuery = DBQueryManager.getInstance().query(sql);
+      nextList();
+    } finally {
+//      try {
+//        if (connection != null) connection.close();
+//      } catch (SQLException ex) {}
+//      connection = null;
+    }
+  }
+  public void ejbRemove() {
+    closeList();
+  }
+  public void ejbActivate() {
+  }
+  public void ejbPassivate() {
+  }
+  public void setSessionContext(SessionContext context) {
+    sessionContext = context;
+  }
+  public void afterBegin() {
+  }
+  public void beforeCompletion() {
+  }
+  public void afterCompletion(boolean committed) {
+  }
+  public List nextList() throws SQLException {
+    if (!hasNextList() && dbQuery == null) {
+      throw new NoSuchElementException();
+    }
+    ArrayList temp = resultList;
+    resultList = null;
+    ResultSet rSet = dbQuery.getResultSet();
+    if (rSet != null) {
+      ResultSetMetaData rSetMetaData = rSet.getMetaData();
+      resultList = new ArrayList(size);
+      try {
+        for (int i = 0; i < size; i++) {
+          if (rSet.next()) {
+            SimpleRecord row = new SimpleRecord(rSetMetaData.getColumnCount());
+            for (int col = 1; col <= rSetMetaData.getColumnCount(); col++) {
+              row.add(rSetMetaData.getColumnName(col), getField(rSet, rSetMetaData, col));
+            }
+            resultList.add(row);
+          } else {
+            closeList();
+            if (i == 0) resultList = null;
+            return temp;
+          }
+        }
+      } catch (SQLException e) {
+        closeList();
+        resultList = null;
+        throw e;
+      }
+    }
+    return temp;
+  }
+  public boolean hasNextList() {
+    return (resultList != null);
+  }
+  public void closeList() {
+    dbQuery.close();
+    dbQuery = null;
+/*
+    try {
+      if (rSet != null) rSet.close();
+    } catch (SQLException e) {}
+    try {
+      if (pStmt != null) pStmt.close();
+    } catch (SQLException ex) {}
+    try {
+      if (connection != null) connection.close();
+    } catch (SQLException ex) {}
+    rSet = null;
+    rSetMetaData = null;
+    connection = null;
+*/
+//    try {
+//      ut.commit();
+//    } catch (Exception ex) {
+//      ex.printStackTrace();
+//    }
+  }
+  private Object getField(ResultSet rSet, ResultSetMetaData rSetMetaData, int col) throws SQLException {
+    switch (rSetMetaData.getColumnType(col)) {
+      case  Types.BIGINT : {
+//        return rSet.getBigDecimal(col);
+        return new Double(rSet.getDouble(col));
+      }
+      case  Types.CHAR : {
+        return rSet.getString(col);
+      }
+      case  Types.DATE : {
+	return rSet.getDate(col);
+      }
+      case  Types.DECIMAL : {
+//        return rSet.getBigDecimal(col);
+        return new Double(rSet.getDouble(col));
+      }
+      case  Types.DOUBLE : {
+        return new Double(rSet.getDouble(col));
+      }
+      case  Types.FLOAT : {
+        return new Float(rSet.getFloat(col));
+      }
+      case  Types.INTEGER : {
+	return new Integer(rSet.getInt(col));
+      }
+      case  Types.NUMERIC : {
+//        return rSet.getBigDecimal(col);
+        return new Double(rSet.getDouble(col));
+      }
+      case  Types.REAL : {
+//        return rSet.getBigDecimal(col);
+        return new Double(rSet.getDouble(col));
+      }
+      case  Types.SMALLINT : {
+	return new Integer(rSet.getInt(col));
+      }
+      case  Types.TIME : {
+	return rSet.getTime(col);
+      }
+      case  Types.TIMESTAMP : {
+	return rSet.getTimestamp(col);
+      }
+      case  Types.TINYINT : {
+	return new Integer(rSet.getInt(col));
+      }
+      case  Types.VARCHAR : {
+        return rSet.getString(col);
+      }
+      case  Types.NULL : {
+        return null;
+      }
+      default : {
+        return null;
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+package net.line.fortress.apps.system.security;
+
+public interface BinaryOperator {
+}

@@ -1,0 +1,48 @@
+package net.line.fortress.apps.system.utils.simpleQuery;
+
+import java.util.*;
+import java.sql.*;
+import net.line.fortress.apps.system.*;
+import net.line.fortress.apps.system.utils.*;
+
+public class DBQueryManager {
+  private static DBQueryManager instance = null;
+  private ArrayList connections = null;
+  private int max = 0;
+  private int index = 0;
+
+  public static DBQueryManager getInstance() {
+    if (instance == null) {
+      instance = initInstance();
+    }
+    return instance;
+  }
+
+  private static synchronized DBQueryManager initInstance() {
+    if (instance != null) {
+      return instance;
+    }
+    return new DBQueryManager();
+  }
+  private DBQueryManager() {
+    ConfigManager configMgr = ConfigManager.getInstance();
+    max = Integer.parseInt(configMgr.getProperty("net.line.system.simpleQuery.maxConnections", "1"));
+    connections = new ArrayList(max);
+    for (int i = 0; i < max; i++) {
+      try {
+        connections.add(DefaultConnectionPool.getInstance().getConnection());
+      } catch (SQLException e) {
+        LogManager.instance.logError("Cannot add connection", e);
+      }
+    }
+  }
+  private synchronized int getNextIndex() {
+    index = (index + 1) % connections.size();
+  }
+  public DBQuery query(String sql) throws SQLException {
+    Connection connection = (Connection)connections.get(getNextIndex());
+    PreparedStatement pStmt = connection.prepareStatement(sql);
+    ResultSet rSet = pStmt.executeQuery();
+    return new DBQuery(pStmt, rSet);
+  }
+}

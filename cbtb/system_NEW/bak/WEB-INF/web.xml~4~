@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="Cp1252"?>
+
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 1.2//EN" "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd">
+
+<web-app>
+  <display-name>Web App</display-name>
+  <description>no description</description>
+  <servlet>
+    <servlet-name>srvAuthentication</servlet-name>
+    <display-name>srvAuthentication</display-name>
+    <description>no description</description>
+    <servlet-class>net.line.fortress.apps.system.web.srvAuthentication</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>srvSimpleQuery</servlet-name>
+    <display-name>srvSimpleQuery</display-name>
+    <description>no description</description>
+    <servlet-class>test.srvSimpleQuery</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>srvClassLoaderTrace</servlet-name>
+    <display-name>srvClassLoaderTrace</display-name>
+    <description>no description</description>
+    <servlet-class>test.srvClassLoaderTrace</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>srvTest1</servlet-name>
+    <display-name>srvTest1</display-name>
+    <description>no description</description>
+    <servlet-class>test.srvTest1</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>srvAuthentication</servlet-name>
+    <url-pattern>srvAuthentication</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>srvSimpleQuery</servlet-name>
+    <url-pattern>srvSimpleQuery</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>srvClassLoaderTrace</servlet-name>
+    <url-pattern>srvClassLoaderTrace</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>srvTest1</servlet-name>
+    <url-pattern>srvTest1</url-pattern>
+  </servlet-mapping>
+  <session-config>
+    <session-timeout>300</session-timeout>
+  </session-config>
+</web-app>
+

@@ -1,0 +1,45 @@
+package net.line.fortress.apps.system.web;
+
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+import java.util.*;
+import net.line.fortress.apps.system.*;
+
+public class srvLogon extends HttpServlet {
+  private static final String CONTENT_TYPE = "text/html";
+  private static final String DOC_TYPE = "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\"\n" +
+      "  \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">";
+  /**Initialize global variables*/
+  public void init(ServletConfig config) throws ServletException {
+    super.init(config);
+  }
+  /**Process the HTTP Get request*/
+  public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String gotoPage = (String)request.getParameter("gotoPage");
+    gotoPage = (gotoPage == null)? ConfigManager.getInstance().getProperty("net.line.system.errorPage"): gotoPage;
+    String errorPage = ConfigManager.getInstance().getProperty("net.line.system.errorPage");
+    String changePasswordPage = ConfigManager.getInstance().getProperty("net.line.system.changePasswordPage");
+    response.setContentType(CONTENT_TYPE);
+    PrintWriter out = response.getWriter();
+    out.println("<?xml version=\"1.0\"?>");
+    out.println(DOC_TYPE);
+    out.println("<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"en\" lang=\"en\">");
+    out.println("<head><title>Logon Page</title></head>");
+    out.println("<body>");
+    out.println("<form name=\"index\" method=\"POST\" ACTION=\"srvAuthentication\">");
+    out.println("<table><tr><td>User ID:</td><td><INPUT TYPE=\"TEXT\" NAME=\"userID\" SIZE=\"15\"></td></tr>");
+    out.println("<tr><td>Password:</td><td><INPUT TYPE=\"PASSWORD\" NAME=\"password\" SIZE=\"15\"></td></tr>");
+    out.println("<tr><td>Organization ID:</td><td><INPUT TYPE=\"TEXT\" NAME=\"domainID\" SIZE=\"15\"></td></tr>");
+    out.println("<tr><td><INPUT TYPE=\"HIDDEN\" NAME=\"gotoPage\" VALUE=\"" + gotoPage + "\">");
+    out.println("<INPUT TYPE=\"HIDDEN\" NAME=\"errorPage\" VALUE=\"" + errorPage + "\">");
+    out.println("<INPUT TYPE=\"HIDDEN\" NAME=\"changePasswordPage\" VALUE=\"" + changePasswordPage + "\"></td>");
+    out.println("<td><INPUT TYPE=\"SUBMIT\" NAME=\"btnLogin\" VALUE=\"Login\">");
+    out.println("<INPUT TYPE=\"RESET\" NAME=\"btnReset\" VALUE=\"Reset\"></td></tr>");
+    out.println("</table></form>");
+    out.println("</body></html>");
+  }
+  /**Clean up resources*/
+  public void destroy() {
+  }
+}

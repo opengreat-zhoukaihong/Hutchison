@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--JBuilder XML Project-->
+<project>
+  <property category="enterprise" name="appserver.fullname" value="WebLogic Application Server 5.1" />
+  <property category="idl" name="ProcessIDL" value="false" />
+  <property category="jsp" name="userColors" value="255,200,0:255,255,192:192,192,192:192,192,192:192,192,192:192,192,192:192,192,192:192,192,192:" />
+  <property category="runtime.0" name="RunnableType" value="com.borland.jbuilder.runtime.JspRunner" />
+  <property category="runtime.0" name="application.class" value="test.ShipperTestClient1" />
+  <property category="runtime.0" name="appserver.ejbJarsSaved" value="1" />
+  <property category="runtime.0" name="appserver.parameters" value="" />
+  <property category="runtime.0" name="appserver.servername" value="" />
+  <property category="runtime.0" name="appserver.vmparameters" value="-ms64m -mx64m -Dweblogic.system.home=/weblogic/ -Dweblogic.class.path=/weblogic/lib/weblogic510sp4.jar;/weblogic/classes;/weblogic/license;/weblogic/lib/weblogicaux.jar;/weblogic/myserver/serverclasses; -Djava.security.manager -Djava.security.policy==/weblogic/weblogic.policy" />
+  <property category="runtime.0" name="jsprunner.docbase" value="." />
+  <property category="runtime.0" name="jsprunner.jspfile" value="D:/CBTB_SYSTEM/system_NEW/src/test/Jsp1.jsp" />
+  <property category="runtime.0" name="jsprunner.searchport" value="false" />
+  <property category="sys" name="AuthorLabel" value="@author" />
+  <property category="sys" name="BackupPath" value="bak" />
+  <property category="sys" name="CheckStable" value="1" />
+  <property category="sys" name="Company" value="" />
+  <property category="sys" name="CompanyLabel" value="Company:" />
+  <property category="sys" name="CompileOnDebug" value="0" />
+  <property category="sys" name="CompileOnRun" value="0" />
+  <property category="sys" name="Copyright" value="Copyright (c) 2001" />
+  <property category="sys" name="CopyrightLabel" value="Copyright:" />
+  <property category="sys" name="DefaultPackage" value="test" />
+  <property category="sys" name="Description" value="" />
+  <property category="sys" name="DescriptionLabel" value="Description:" />
+  <property category="sys" name="DocPath" value="doc" />
+  <property category="sys" name="Encoding" value="UTF8" />
+  <property category="sys" name="ExcludeClassEnabled" value="0" />
+  <property category="sys" name="JDK" value="java 1.3.0-C" />
+  <property category="sys" name="LastTag" value="0" />
+  <property category="sys" name="Libraries" value="WebLogic 5.1;Servlet;OracleDriver;mq;lang" />
+  <property category="sys" name="MakeStable" value="0" />
+  <property category="sys" name="OutPath" value="classes" />
+  <property category="sys" name="ServletContentType" value="XHTML" />
+  <property category="sys" name="SourcePath" value="src" />
+  <property category="sys" name="Title" value="" />
+  <property category="sys" name="TitleLabel" value="Title:" />
+  <property category="sys" name="Version" value="1.0" />
+  <property category="sys" name="VersionLabel" value="@version" />
+  <property category="sys" name="WorkingDirectory" value="." />
+  <property category="team" name="ignorePath.0" value="WebLogic_Application_Server" />
+  <property category="team" name="ignorePath.1" value="WebLogic_Application_Server" />
+  <property category="team" name="ignorePath.2" value="WebLogic_Application_Server" />
+  <property category="team" name="ignorePath.3" value="WebLogic_Application_Server" />
+  <property category="team" name="ignorePath.4" value="WebLogic_Application_Server" />
+  <property category="team" name="ignorePath.5" value="WebLogic_Application_Server" />
+  <node type="Archive" name="nls">
+    <property category="archiving" name="extraDeployRoots.1" value="F:Translation_HIT_de_FR.properties" />
+    <property category="archiving" name="extraDeployRoots.2" value="F:Translation_HIT_en_CA.properties" />
+    <property category="archiving" name="extraDeployRoots.3" value="F:Translation_HIT_zh_TW.properties" />
+    <property category="archiving" name="extraDeployRoots.4" value="F:Translation_zh_TW.properties" />
+    <property category="archiving" name="outPathState" value="1" />
+    <property category="archiving" name="targetPath" value="src/WEB-INF/lib/nls.jar" />
+  </node>
+  <node type="Archive" name="Shared">
+    <property category="archiving" name="extraDeployRoots.1" value="F:system.props" />
+    <property category="archiving" name="extraDeployRoots.2" value="C:net.line.fortress.apps.system.init.ServerInitialization" />
+    <property category="archiving" name="extraDeployRoots.3" value="C:net.line.fortress.apps.system.LogManager" />
+    <property category="archiving" name="extraDeployRoots.4" value="C:net.line.fortress.apps.system.ConfigManager" />
+    <property category="archiving" name="extraDeployRoots.5" value="C:net.line.fortress.apps.system.security.User" />
+    <property category="archiving" name="extraDeployRoots.6" value="C:net.line.fortress.apps.system.init.HttpSessionManagerInit" />
+    <property category="archiving" name="extraDeployRoots.7" value="C:net.line.fortress.apps.system.http.HttpSessionListener" />
+    <property category="archiving" name="extraDeployRoots.8" value="C:net.line.fortress.apps.system.http.HttpSessionManager" />
+    <property category="archiving" name="outPathState" value="1" />
+    <property category="archiving" name="targetCompressed" value="1" />
+    <property category="archiving" name="targetPath" value="shared.jar" />
+  </node>
+  <node type="Archive" name="SystemAll">
+    <property category="archiving" name="targetCompressed" value="1" />
+    <property category="archiving" name="targetPath" value="src/WEB-INF/lib/systemall.jar" />
+  </node>
+  <node type="Archive" name="systemHelp">
+    <property category="archiving" name="extraDeployRoots.1" value="C:com.arena.universe.utility.FormUtil" />
+    <property category="archiving" name="extraDeployRoots.10" value="C:com.arena.universe.crypto.client.ClientCipherSystem" />
+    <property category="archiving" name="extraDeployRoots.11" value="C:com.arena.universe.crypto.client.impl.ABAClientCipherManagerImpl" />
+    <property category="archiving" name="extraDeployRoots.2" value="C:com.arena.universe.utility.PageUtil" />
+    <property category="archiving" name="extraDeployRoots.3" value="C:com.arena.universe.utility.SQLUtil" />
+    <property category="archiving" name="extraDeployRoots.4" value="C:com.arena.universe.utility.StringUtil" />
+    <property category="archiving" name="extraDeployRoots.5" value="C:com.arena.universe.singleLogon.impl.ABACipherManagerImpl" />
+    <property category="archiving" name="extraDeployRoots.6" value="C:com.arena.universe.singleLogon.CipherManager" />
+    <property category="archiving" name="extraDeployRoots.7" value="C:com.arena.universe.singleLogon.CipherSystem" />
+    <property category="archiving" name="extraDeployRoots.8" value="C:com.arena.universe.singleLogon.CipherSystem" />
+    <property category="archiving" name="extraDeployRoots.9" value="C:com.arena.universe.crypto.client.ClientCipherManager" />
+    <property category="archiving" name="targetPath" value="systemHelp.jar" />
+  </node>
+  <node type="Archive" name="SystemWeb">
+    <property category="archiving" name="buildWithProject" value="0" />
+    <property category="archiving" name="extraDeployRoots.1" value="F:WEB-INF/web.xml" />
+    <property category="archiving" name="extraDeployRoots.2" value="F:common/js/validator.js" />
+    <property category="archiving" name="extraDeployRoots.3" value="F:common/jsp/changePassword.jsp" />
+    <property category="archiving" name="extraDeployRoots.4" value="F:common/jsp/logon.jsp" />
+    <property category="archiving" name="extraDeployRoots.5" value="F:WEB-INF/lib/systemall.jar" />
+    <property category="archiving" name="extraDeployRoots.6" value="F:common/jsp/functionList.jsp" />
+    <property category="archiving" name="outPathState" value="1" />
+    <property category="archiving" name="targetCompressed" value="1" />
+    <property category="archiving" name="targetPath" value="system.war" />
+  </node>
+  <file path="src/net/line/fortress/apps/system/ejb/BasicSecurityManagerImpl.java" />
+  <file path="src/net/line/fortress/apps/system/ejb/BasicSecurityManagerImplBean.java" />
+  <file path="src/net/line/fortress/apps/system/ejb/BasicSecurityManagerImplHome.java" />
+  <file path="src/net/line/fortress/apps/system/security/DocumentPermissionContext.java" />
+  <file path="src/net/line/fortress/apps/system/security/Domain.java" />
+  <file path="src/net/line/fortress/apps/system/security/Expression.java" />
+  <file path="src/common/jsp/functionList.jsp" />
+  <file path="ibm-jms.jar" />
+  <file path="ibm-mq.jar" />
+  <file path="ibm-mqjms.jar" />
+  <file path="src/test/Jsp1.jsp" />
+  <file path="src/test/Jsp1Bean.java" />
+  <file path="src/test/Lang.java" />
+  <file path="../../weblogic/myserver/public_html/log.jsp" />
+  <file path="../../weblogic/myserver/public_html/operator.jsp" />
+  <file path="src/net/line/fortress/apps/system/security/OrganizationPermissionContext.java" />
+  <file path="src/net/line/fortress/apps/system/security/Permission.java" />
+  <file path="src/net/line/fortress/apps/system/security/PermissionContext.java" />
+  <file path="src/net/line/fortress/apps/system/security/SecurityDBAccessException.java" />
+  <file path="src/net/line/fortress/apps/system/security/SecurityDomainNotFoundException.java" />
+  <file path="src/net/line/fortress/apps/system/security/SecurityException.java" />
+  <file path="src/net/line/fortress/apps/system/security/SecurityInvalidPasswordException.java" />
+  <file path="src/net/line/fortress/apps/system/security/SecurityManager.java" />
+  <file path="src/net/line/fortress/apps/system/security/SecurityManagerNotFoundException.java" />
+  <file path="src/net/line/fortress/apps/system/security/SecurityPermissionContext.java" />
+  <file path="src/net/line/fortress/apps/system/security/SecuritySystem.java" />
+  <file path="src/net/line/fortress/apps/system/security/SecurityUserNotFoundException.java" />
+  <file path="src/net/line/fortress/apps/system/security/SecurityUserSuspendedException.java" />
+  <file path="src/net/line/fortress/apps/system/security/SecurityUtil.java" />
+  <file path="src/net/line/fortress/apps/system/ejb/SimpleQuery.java" />
+  <file path="src/net/line/fortress/apps/system/ejb/SimpleQueryBean.java" />
+  <file path="src/net/line/fortress/apps/system/ejb/SimpleQueryHome.java" />
+  <file path="System.ejbgrp">
+    <property category="EJBGroup" name="jarpath" value="system.jar" />
+    <property category="archiving" name="outPathState" value="1" />
+    <file path="system.jar" />
+  </file>
+  <file path="src/system.props" />
+  <file path="src/net/line/fortress/apps/system/security/SystemPermissionContext.java" />
+  <file path="src/test/test.java" />
+  <file path="src/test/test2.java" />
+  <file path="src/test/testnls.java" />
+  <file path="src/Translation_HIT_de_FR.properties" />
+  <file path="src/Translation_HIT_en_CA.properties" />
+  <file path="src/Translation_HIT_zh_TW.properties" />
+  <file path="src/Translation_zh_TW.properties" />
+  <file path="src/net/line/fortress/apps/system/security/User.java" />
+  <file path="src/net/line/fortress/apps/system/security/ViewPermissionContext.java" />
+  <file path="src/WEB-INF/web.xml" />
+</project>
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by peter (peter) -->
+<!ELEMENT Trucker (Organization_ID, Trucker_ID, Trucker_Name, HK_ID, Trucker_Addr, HK_Telephone_No, HK_Mobile_No, HK_Pager_No, Inland_Telephone_No, Inland_Mobile_No, Inland_Pager_No, HK_License_No, Inland_License_No, HK_Plate_No, Inland_Plate_No, Truck_Model_No, Truck_Color, Carry_Weight, Remark, Truck_Status, Reason_ID)>
+<!ELEMENT Organization_ID (#PCDATA)>
+<!ELEMENT Trucker_ID (#PCDATA)>
+<!ELEMENT Trucker_Name (#PCDATA)>
+<!ELEMENT HK_ID (#PCDATA)>
+<!ELEMENT Trucker_Addr (address1, address2?, address3?, address4?)>
+<!ELEMENT HK_Telephone_No (#PCDATA)>
+<!ELEMENT HK_Mobile_No (#PCDATA)>
+<!ELEMENT HK_Pager_No (#PCDATA)>
+<!ELEMENT Inland_Telephone_No (#PCDATA)>
+<!ELEMENT Inland_Mobile_No (#PCDATA)>
+<!ELEMENT Inland_Pager_No (#PCDATA)>
+<!ELEMENT HK_License_No (#PCDATA)>
+<!ELEMENT Inland_License_No (#PCDATA)>
+<!ELEMENT HK_Plate_No (#PCDATA)>
+<!ELEMENT Inland_Plate_No (#PCDATA)>
+<!ELEMENT Truck_Model_No (#PCDATA)>
+<!ELEMENT Truck_Color (#PCDATA)>
+<!ELEMENT Carry_Weight (#PCDATA)>
+<!ELEMENT Remark (#PCDATA)>
+<!ELEMENT Truck_Status (#PCDATA)>
+<!ELEMENT address1 (#PCDATA)>
+<!ELEMENT address2 (#PCDATA)>
+<!ELEMENT address3 (#PCDATA)>
+<!ELEMENT address4 (#PCDATA)>
+<!ELEMENT Reason_ID (#PCDATA)>

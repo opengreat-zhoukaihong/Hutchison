@@ -1,0 +1,503 @@
+package test;
+
+import net.line.fortress.apps.cbt.ejb.ShipperHome;
+import net.line.fortress.apps.cbt.ejb.Shipper;
+import javax.naming.*;
+import java.util.Properties;
+import javax.rmi.PortableRemoteObject;
+import java.util.Collection;
+import java.math.BigDecimal;
+import java.util.Iterator;
+
+public class ShipperTestClient1 {
+  private static final String ERROR_NULL_REMOTE = "Remote interface reference is null.  It must be created by calling one of the Home interface methods first.";
+  private static final int MAX_OUTPUT_LINE_LENGTH = 50;
+  private boolean logging = true;
+  private ShipperHome shipperHome = null;
+  private Shipper shipper = null;
+  private String url = "t3://localhost:7001";
+  private String user = null;
+  private String password = null;
+
+  /**Construct the EJB test client*/
+  public ShipperTestClient1() {
+    long startTime = 0;
+    if (logging) {
+      log("Initializing bean access.");
+      startTime = System.currentTimeMillis();
+    }
+
+    try {
+      //get naming context
+      Context ctx = getInitialContext();
+
+      //look up jndi name
+      Object ref = ctx.lookup("ejb.Shipper");
+
+      //cast to Home interface
+      shipperHome = (ShipperHome) PortableRemoteObject.narrow(ref, ShipperHome.class);
+      if (logging) {
+        long endTime = System.currentTimeMillis();
+        log("Succeeded initializing bean access.");
+        log("Execution time: " + (endTime - startTime) + " ms.");
+      }
+    }
+    catch(Exception e) {
+      if (logging) {
+        log("Failed initializing bean access.");
+      }
+      e.printStackTrace();
+    }
+  }
+
+  private Context getInitialContext() throws Exception {
+    Properties properties = null;
+    try {
+      properties = new Properties();
+      properties.put(Context.INITIAL_CONTEXT_FACTORY, "weblogic.jndi.WLInitialContextFactory");
+      properties.put(Context.PROVIDER_URL, url);
+      if (user != null) {
+        properties.put(Context.SECURITY_PRINCIPAL, user);
+        properties.put(Context.SECURITY_CREDENTIALS, password == null ? "" : password);
+      }
+    }
+    catch(Exception e) {
+      log("Unable to connect to WebLogic server at " + url);
+      log("Please make sure that the server is running.");
+      throw e;
+    }
+
+    return new InitialContext(properties);
+  }
+
+  //----------------------------------------------------------------------------
+  // Methods that use Home interface methods to generate a Remote interface reference
+  //----------------------------------------------------------------------------
+
+  public Shipper create(ShipperBean shipperBean) {
+    long startTime = 0;
+    if (logging) {
+      log("Calling create(" + shipperBean + ")");
+      startTime = System.currentTimeMillis();
+    }
+    try {
+      shipper = shipperHome.create(shipperBean);
+      if (logging) {
+        long endTime = System.currentTimeMillis();
+        log("Succeeded: create(" + shipperBean + ")");
+        log("Execution time: " + (endTime - startTime) + " ms.");
+      }
+    }
+    catch(Exception e) {
+      if (logging) {
+        log("Failed: create(" + shipperBean + ")");
+      }
+      e.printStackTrace();
+    }
+
+    if (logging) {
+      log("Return value from create(" + shipperBean + "): " + shipper + ".");
+    }
+    return shipper;
+  }
+
+  public Shipper create(String organizationId) {
+    long startTime = 0;
+    if (logging) {
+      log("Calling create(" + organizationId + ")");
+      startTime = System.currentTimeMillis();
+    }
+    try {
+      shipper = shipperHome.create(organizationId);
+      if (logging) {
+        long endTime = System.currentTimeMillis();
+        log("Succeeded: create(" + organizationId + ")");
+        log("Execution time: " + (endTime - startTime) + " ms.");
+      }
+    }
+    catch(Exception e) {
+      if (logging) {
+        log("Failed: create(" + organizationId + ")");
+      }
+      e.printStackTrace();
+    }
+
+    if (logging) {
+      log("Return value from create(" + organizationId + "): " + shipper + ".");
+    }
+    return shipper;
+  }
+
+  public Shipper findByPrimaryKey(String primaryKey) {
+    long startTime = 0;
+    if (logging) {
+      log("Calling findByPrimaryKey(" + primaryKey + ")");
+      startTime = System.currentTimeMillis();
+    }
+    try {
+      shipper = shipperHome.findByPrimaryKey(primaryKey);
+      if (logging) {
+        long endTime = System.currentTimeMillis();
+        log("Succeeded: findByPrimaryKey(" + primaryKey + ")");
+        log("Execution time: " + (endTime - startTime) + " ms.");
+      }
+    }
+    catch(Exception e) {
+      if (logging) {
+        log("Failed: findByPrimaryKey(" + primaryKey + ")");
+      }
+      e.printStackTrace();
+    }
+
+    if (logging) {
+      log("Return value from findByPrimaryKey(" + primaryKey + "): " + shipper + ".");
+    }
+    return shipper;
+  }
+
+  public Collection findAll() {
+    Collection returnValue = null;
+    long startTime = 0;
+    if (logging) {
+      log("Calling findAll()");
+      startTime = System.currentTimeMillis();
+    }
+
+    try {
+      returnValue = shipperHome.findAll();
+      if (logging) {
+        long endTime = System.currentTimeMillis();
+        log("Succeeded: findAll()");
+        log("Execution time: " + (endTime - startTime) + " ms.");
+      }
+    }
+    catch(Exception e) {
+      if (logging) {
+        log("Failed: findAll()");
+      }
+      e.printStackTrace();
+    }
+
+    if (logging) {
+      log("Return value from findAll(): " + returnValue + ".");
+    }
+    return returnValue;
+  }
+
+  //----------------------------------------------------------------------------
+  // Methods that use Remote interface methods to access data through the bean
+  //----------------------------------------------------------------------------
+
+  public String getOrganizationId() {
+    String returnValue = "";
+    if (shipper == null) {
+      System.out.println("Error in getOrganizationId(): " + ERROR_NULL_REMOTE);
+      return returnValue;
+    }
+    long startTime = 0;
+    if (logging) {
+      log("Calling getOrganizationId()");
+      startTime = System.currentTimeMillis();
+    }
+
+    try {
+      returnValue = shipper.getOrganizationId();
+      if (logging) {
+        long endTime = System.currentTimeMillis();
+        log("Succeeded: getOrganizationId()");
+        log("Execution time: " + (endTime - startTime) + " ms.");
+      }
+    }
+    catch(Exception e) {
+      if (logging) {
+        log("Failed: getOrganizationId()");
+      }
+      e.printStackTrace();
+    }
+
+    if (logging) {
+      log("Return value from getOrganizationId(): " + returnValue + ".");
+    }
+    return returnValue;
+  }
+
+  public String getWebSite() {
+    String returnValue = "";
+    if (shipper == null) {
+      System.out.println("Error in getWebSite(): " + ERROR_NULL_REMOTE);
+      return returnValue;
+    }
+    long startTime = 0;
+    if (logging) {
+      log("Calling getWebSite()");
+      startTime = System.currentTimeMillis();
+    }
+
+    try {
+      returnValue = shipper.getWebSite();
+      if (logging) {
+        long endTime = System.currentTimeMillis();
+        log("Succeeded: getWebSite()");
+        log("Execution time: " + (endTime - startTime) + " ms.");
+      }
+    }
+    catch(Exception e) {
+      if (logging) {
+        log("Failed: getWebSite()");
+      }
+      e.printStackTrace();
+    }
+
+    if (logging) {
+      log("Return value from getWebSite(): " + returnValue + ".");
+    }
+    return returnValue;
+  }
+
+  public void setWebSite(String webSite) {
+    if (shipper == null) {
+      System.out.println("Error in setWebSite(): " + ERROR_NULL_REMOTE);
+      return ;
+    }
+    long startTime = 0;
+    if (logging) {
+      log("Calling setWebSite(" + webSite + ")");
+      startTime = System.currentTimeMillis();
+    }
+
+    try {
+      shipper.setWebSite(webSite);
+      if (logging) {
+        long endTime = System.currentTimeMillis();
+        log("Succeeded: setWebSite(" + webSite + ")");
+        log("Execution time: " + (endTime - startTime) + " ms.");
+      }
+    }
+    catch(Exception e) {
+      if (logging) {
+        log("Failed: setWebSite(" + webSite + ")");
+      }
+      e.printStackTrace();
+    }
+  }
+
+  public String getPaymentTerms() {
+    String returnValue = "";
+    if (shipper == null) {
+      System.out.println("Error in getPaymentTerms(): " + ERROR_NULL_REMOTE);
+      return returnValue;
+    }
+    long startTime = 0;
+    if (logging) {
+      log("Calling getPaymentTerms()");
+      startTime = System.currentTimeMillis();
+    }
+
+    try {
+      returnValue = shipper.getPaymentTerms();
+      if (logging) {
+        long endTime = System.currentTimeMillis();
+        log("Succeeded: getPaymentTerms()");
+        log("Execution time: " + (endTime - startTime) + " ms.");
+      }
+    }
+    catch(Exception e) {
+      if (logging) {
+        log("Failed: getPaymentTerms()");
+      }
+      e.printStackTrace();
+    }
+
+    if (logging) {
+      log("Return value from getPaymentTerms(): " + returnValue + ".");
+    }
+    return returnValue;
+  }
+
+  public void setPaymentTerms(String paymentTerms) {
+    if (shipper == null) {
+      System.out.println("Error in setPaymentTerms(): " + ERROR_NULL_REMOTE);
+      return ;
+    }
+    long startTime = 0;
+    if (logging) {
+      log("Calling setPaymentTerms(" + paymentTerms + ")");
+      startTime = System.currentTimeMillis();
+    }
+
+    try {
+      shipper.setPaymentTerms(paymentTerms);
+      if (logging) {
+        long endTime = System.currentTimeMillis();
+        log("Succeeded: setPaymentTerms(" + paymentTerms + ")");
+        log("Execution time: " + (endTime - startTime) + " ms.");
+      }
+    }
+    catch(Exception e) {
+      if (logging) {
+        log("Failed: setPaymentTerms(" + paymentTerms + ")");
+      }
+      e.printStackTrace();
+    }
+  }
+
+  public BigDecimal getCreditLineAmount() {
+    BigDecimal returnValue = null;
+    if (shipper == null) {
+      System.out.println("Error in getCreditLineAmount(): " + ERROR_NULL_REMOTE);
+      return returnValue;
+    }
+    long startTime = 0;
+    if (logging) {
+      log("Calling getCreditLineAmount()");
+      startTime = System.currentTimeMillis();
+    }
+
+    try {
+      returnValue = shipper.getCreditLineAmount();
+      if (logging) {
+        long endTime = System.currentTimeMillis();
+        log("Succeeded: getCreditLineAmount()");
+        log("Execution time: " + (endTime - startTime) + " ms.");
+      }
+    }
+    catch(Exception e) {
+      if (logging) {
+        log("Failed: getCreditLineAmount()");
+      }
+      e.printStackTrace();
+    }
+
+    if (logging) {
+      log("Return value from getCreditLineAmount(): " + returnValue + ".");
+    }
+    return returnValue;
+  }
+
+  public void setCreditLineAmount(BigDecimal creditLineAmount) {
+    if (shipper == null) {
+      System.out.println("Error in setCreditLineAmount(): " + ERROR_NULL_REMOTE);
+      return ;
+    }
+    long startTime = 0;
+    if (logging) {
+      log("Calling setCreditLineAmount(" + creditLineAmount + ")");
+      startTime = System.currentTimeMillis();
+    }
+
+    try {
+      shipper.setCreditLineAmount(creditLineAmount);
+      if (logging) {
+        long endTime = System.currentTimeMillis();
+        log("Succeeded: setCreditLineAmount(" + creditLineAmount + ")");
+        log("Execution time: " + (endTime - startTime) + " ms.");
+      }
+    }
+    catch(Exception e) {
+      if (logging) {
+        log("Failed: setCreditLineAmount(" + creditLineAmount + ")");
+      }
+      e.printStackTrace();
+    }
+  }
+
+  public ShipperBean getDetails() {
+    ShipperBean returnValue = null;
+    if (shipper == null) {
+      System.out.println("Error in getDetails(): " + ERROR_NULL_REMOTE);
+      return returnValue;
+    }
+    long startTime = 0;
+    if (logging) {
+      log("Calling getDetails()");
+      startTime = System.currentTimeMillis();
+    }
+
+    try {
+      returnValue = shipper.getDetails();
+      if (logging) {
+        long endTime = System.currentTimeMillis();
+        log("Succeeded: getDetails()");
+        log("Execution time: " + (endTime - startTime) + " ms.");
+      }
+    }
+    catch(Exception e) {
+      if (logging) {
+        log("Failed: getDetails()");
+      }
+      e.printStackTrace();
+    }
+
+    if (logging) {
+      log("Return value from getDetails(): " + returnValue + ".");
+    }
+    return returnValue;
+  }
+
+  public void setDetails(ShipperBean details) {
+    if (shipper == null) {
+      System.out.println("Error in setDetails(): " + ERROR_NULL_REMOTE);
+      return ;
+    }
+    long startTime = 0;
+    if (logging) {
+      log("Calling setDetails(" + details + ")");
+      startTime = System.currentTimeMillis();
+    }
+
+    try {
+      shipper.setDetails(details);
+      if (logging) {
+        long endTime = System.currentTimeMillis();
+        log("Succeeded: setDetails(" + details + ")");
+        log("Execution time: " + (endTime - startTime) + " ms.");
+      }
+    }
+    catch(Exception e) {
+      if (logging) {
+        log("Failed: setDetails(" + details + ")");
+      }
+      e.printStackTrace();
+    }
+  }
+
+  //----------------------------------------------------------------------------
+  // Utility Methods
+  //----------------------------------------------------------------------------
+
+  private void log(String message) {
+    if (message.length() > MAX_OUTPUT_LINE_LENGTH) {
+      System.out.println("-- " + message.substring(0, MAX_OUTPUT_LINE_LENGTH) + " ...");
+    }
+    else {
+      System.out.println("-- " + message);
+    }
+  }
+
+  public void executeFindAll() {
+    try {
+      Collection collection = findAll();
+      Iterator iterator = collection.iterator();
+      while (iterator.hasNext()) {
+        Object object = iterator.next();
+        Shipper shipper = (Shipper) PortableRemoteObject.narrow(object, Shipper.class);
+        log(shipper.toString());
+      }
+    }
+    catch(Exception e) {
+      e.printStackTrace();
+    }
+  }
+  /**Main method*/
+
+  public static void main(String[] args) {
+    ShipperTestClient1 client = new ShipperTestClient1();
+    // Use the client object to call one of the Home interface wrappers
+    // above, to create a Remote interface reference to the bean. 
+    // If the return value is of the Remote interface type, you can use it
+    // to access the remote interface methods.  You can also just use the 
+    // client object to call the Remote interface wrappers.
+    // For quick access to all available records, you can use the
+    // executeFindAll() method in this class.
+  }
+}

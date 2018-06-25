@@ -1,0 +1,81 @@
+package net.line.fortress.apps.system.utils;
+
+import java.util.*;
+
+
+public class PageBrowser {
+
+  private List list = null;
+  private int pageSize = 10;
+  private int currentPageNum = 1;
+  private List currentPageList = null;
+
+  public PageBrowser() {
+  }
+  public PageBrowser(List l) {
+    setList(l);
+  }
+  public void setList(List l) {
+    list = l;
+    firstPage();
+  }
+  public List getList() {
+    return list;
+  }
+  public void setPageSize(int size) {
+    pageSize = size;
+    firstPage();
+  }
+  public int getPageSize() {
+    return pageSize;
+  }
+  public List getPage() {
+    return currentPageList;
+  }
+  public boolean firstPage() {
+    currentPageNum = 1;
+    currentPageList = new ArrayList(pageSize);
+    try {
+      for (int i = (currentPageNum - 1) * pageSize; i < currentPageNum * pageSize; i++) {
+        currentPageList.add(list.get(i));
+      }
+    } catch (IndexOutOfBoundsException e) {}
+    return true;
+  }
+  public boolean lastPage() {
+    while (nextPage());
+    return true;
+  }
+  public boolean nextPage() {
+    if (currentPageList == null) {
+      firstPage();
+      return true;
+    } else if (currentPageList.size() == pageSize) {
+      List tempList = new ArrayList(pageSize);
+      try {
+        for (int i = currentPageNum * pageSize; i < (currentPageNum + 1) * pageSize; i++) {
+          tempList.add(list.get(i));
+        }
+      } catch (IndexOutOfBoundsException e) {}
+      if (tempList.size() > 0) {
+        currentPageNum++;
+        currentPageList = tempList;
+        return true;
+      }
+    }
+    return false;
+  }
+  public boolean prevPage() {
+    if (currentPageNum > 1) {
+      currentPageNum--;
+      currentPageList = new ArrayList(pageSize);
+      try {
+        for (int i = (currentPageNum - 1) * pageSize; i < currentPageNum * pageSize; i++) {
+          currentPageList.add(list.get(i));
+        }
+      } catch (IndexOutOfBoundsException e) {}
+      return true;
+    }
+    return false;
+  }
+}

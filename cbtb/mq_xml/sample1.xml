@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by peter (peter) -->
+<!DOCTYPE organisation SYSTEM "http://187.11.1.125:7001/organisation.dtd">
+<organisation>
+	<organisation_id>TL000094</organisation_id>
+	<organisation_type>Trucking Company</organisation_type>
+	<organisation_name>Trucking Company ABC</organisation_name>
+	<organisation_address>
+		<address1>Rm1206, 12-F</address1>
+		<address2>Fortress Tower</address2>
+		<address3>North Point</address3>
+		<address4>H.K.</address4>
+	</organisation_address>
+	<telephone>(852)12345678</telephone>
+	<mobile_no>61001234</mobile_no>
+	<fax_no>(852)12344556</fax_no>
+	<email>abc@hotmail.com</email>
+	<web_site>www.shipper.com</web_site>
+	<business_registration_no>HK000017</business_registration_no>
+	<contact_person>Chan Tai Man</contact_person>
+	<billing_address>
+		<address1>Rm1206, 12-F</address1>
+		<address2>Fortress Tower</address2>
+		<address3>North Point</address3>
+	</billing_address>
+	<perfer_channel>Phone</perfer_channel>
+	<perfer_language>EN</perfer_language>
+	<payment_terms>COD</payment_terms>
+	<status>Registration in Progress</status>
+	<registration_date>2001-05-16</registration_date>
+	<registration_channel>internet</registration_channel>
+	<UOM>KG, M</UOM>
+	<document>
+		<document_id>DOC01</document_id>
+		<document_status>valid</document_status>
+	</document>
+</organisation>

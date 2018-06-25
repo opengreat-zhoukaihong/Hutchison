@@ -1,0 +1,771 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Scarlett Hao">
+   <meta name="GENERATOR" content="Mozilla/4.5 [zh] (X11; I; SunOS 5.7 sun4u) [Netscape]">
+   <title> I18n Verifier</title>
+</head>
+<body bgcolor="#FFFFFF">
+
+<center><pre CLASS="ChapTitle"><img SRC="image/titleduket.gif" height=116 width=661><img SRC="image/coffee.gif" height=88 width=57></pre></center>
+
+<center><b><font size=+2>Internationalization Verifier</font></b>
+<p><img SRC="image/rainbow.gif" height=1 width=100%></center>
+
+<p><b><font size=-1><a href="userguide.html">[contents]</a></font></b>
+<p><b><a href="#Introducing the I18n Verifier">Introducing the I18n Verifier</a></b>
+<br><b><a href="#Using the I18n Verifier">Using the I18n Verifier</a></b>
+<ul><b><i><a href="#Getting started with I18n Verifier">Getting Started
+with I18n Verifier</a></i></b>
+<br><b><i><a href="#Menus and buttons">Menus and Buttons</a></i></b>
+<br><b><i><a href="#Finding and dealing with the internationalization problems in J">Finding
+and dealing with the internationalization problems in Java Source Files</a></i></b>
+<br><b><i><a href="#Outputting Verifier Report">Outputting Verifier Report</a></i></b>
+<br><b><i><a href="#Defining Verifier Policy">Defining Verifier Policy</a></i></b></ul>
+<b><a href="#Verifier command line">Verifier Command-line</a></b>
+<br><b><a href="#Setting Verifier Properties">Setting Verifier Properties</a></b>
+<p>This chapter will introduce how to use <b>I18n Verifier </b>to verify
+the internationalization of Java application development.
+<p><a NAME="Introducing the I18n Verifier"></a><b>Introducing the I18n
+Verifier</b>
+<p>I18n Verifier helps you to determine whether your program is globally
+designed.
+<p>The I18n Verifier highlights parts of the original source code that
+are locale specific or possibly locale-specific and suggestions solutions.
+The tool checks:
+<ul>
+<li>
+strings</li>
+
+<li>
+methods</li>
+
+<li>
+classes</li>
+
+<li>
+class constants</li>
+</ul>
+You can correct your programs while using the tool or wait until a later
+time.
+<p>I18n Verifier includes a default system policy to use with the source
+code; you can customize your own policy by using the "edit policy" menu
+function provided.
+<p><a NAME="Using the I18n Verifier"></a><b>Using the I18n Verifier</b>
+<p><a NAME="Getting started with I18n Verifier"></a><b><i>Getting Started
+with I18n Verifier</i></b>
+<p>You can start <b>I18n Verifier</b> by two means:
+<ul>
+<li>
+In command line, type: "verifier &lt;parameters>". Then the <b>I18n Verifier</b>
+is started in the command line mode. If you only type "verifier" without
+any parameters, the I18n Verifier is started in GUI mode.</li>
+</ul>
+
+<ul>
+<li>
+Under the GUI mode, in the Toolkit window of I18n/L10n Toolkit 2.0(figure1),
+you can start <b>I18n Verifier</b> by selecting the menu item of it, the
+function button or the corresponding popup menu item. Then you can get<b>
+I18n Verifier</b> window pop-up (figure2).</li>
+</ul>
+
+<ul><img SRC="image/ver_i18menusele.gif" height=357 width=492>
+<h6>
+Figure1: Select verifier tool</h6>
+<img SRC="image/ver_main.gif" height=685 width=638>
+<h6>
+Figure2: I18n Verifier</h6>
+</ul>
+The file in the above window of figure2 is an editor. The Java source file
+is displayed in it. The lower one is Verifier output window.
+<p>The text in the source code marked with underline means it might not
+be internationalized. It is called <b><i>"verifier item"</i></b>.&nbsp;<a NAME="The information table about all verifier items"></a>The
+information table about all verifier items is listed in the Verifier output
+window. Double click the verifier item in the editor window, its related
+information line will be highlighted in the table of the output window.
+Select a row in the table of output window, the corresponding verifier
+item will be highlighted in the editor window.
+<p>There are some columns in the table of the output window. They are:
+<ul>
+<li>
+<b>Line No</b>: indicates the position of the verifier item.</li>
+
+<li>
+<b>TYPE:</b> describes the type of the verifier item, There are several
+types:</li>
+
+<ul>
+<li>
+String</li>
+
+<li>
+Bundle name</li>
+
+<li>
+Resource bundle</li>
+
+<li>
+Retrieved method</li>
+
+<li>
+Locale sensitive method</li>
+</ul>
+
+<li>
+<b>STATUS:</b> describes the status of the verifier item. There are several
+different status:</li>
+
+<ul>
+<li>
+Error: The item which should be internationalized. If the type of the item
+is "String", it can be converted by the auto convert tool (Message Tool).
+If the type of the item is "Locale sensitive method", user had better convert
+it by himself according to the advice given by the Verifier.</li>
+
+<li>
+Not sure: Can not decide whether to convert it or not.</li>
+
+<li>
+Warning: This is Verifier warning to the user.</li>
+
+<li>
+Note: This is Verifier note to the user.</li>
+
+<li>
+Frozen: The item should not be converted. For example, the item is a layout
+string.</li>
+
+<li>
+Finished: The item has been internationalized.</li>
+</ul>
+
+<li>
+<b>SOURCE:</b> indicates the source code which is found might not to be
+internationalized.</li>
+
+<li>
+<b>ADVICE</b>: indicates the internationalization suggestion provided by
+<b>I18n
+Verifier</b> for the verifier item.</li>
+</ul>
+Click the title of any column shown in the table, the verifier items will
+be sorted by the title clicked. You can also drag and drop the table column
+to move it.
+<p><a NAME="Menus and buttons"></a><b><i>Menus and Buttons</i></b>
+<p>The I18n Verifier UI includes several buttons and menus. They are described
+as the following.
+<ul>
+<li>
+<b>File</b></li>
+
+<ul>
+<li>
+<b>File->Open</b>: open a java source file.</li>
+
+<li>
+<b>File->Save</b>: save the current java source file.</li>
+
+<li>
+<b>File->Save As</b>: save the current java source file as another file.</li>
+
+<li>
+<b>File->Exit</b>: quit the I18n Verifier.</li>
+</ul>
+
+<li>
+<b>View</b></li>
+
+<ul>
+<li>
+<b>View->Refresh</b>:&nbsp; validate the changes in the editor window.</li>
+
+<li>
+<b>View->First item</b>: find the first verifier item.</li>
+
+<li>
+<b>View->Next item</b>: find the verifier item next to the current highlighted
+item.</li>
+
+<li>
+<b>View->Prev Item</b>: find the verifier item previous to the current
+highlighted item.</li>
+
+<li>
+<b>View->Last Item</b>: find the last verifier item.</li>
+</ul>
+
+<li>
+<b>Edit</b></li>
+
+<ul>
+<li>
+<b>Edit->Undo</b>: undo the last operation happening in the editor window.</li>
+
+<li>
+<b>Edit->Redo</b>: redo the last operation happening in the editor window.</li>
+
+<li>
+<b>Edit->Cut</b>: cut the selected text in the editor window.</li>
+
+<li>
+<b>Edit->Copy</b>: copy the selected text in the editor window.</li>
+
+<li>
+<b>Edit->Paste</b>: paste the selected text in the editor window.</li>
+
+<li>
+<b>Edit->Find</b>: find the specific text in the editor window.</li>
+
+<li>
+<b>Edit->Find Next</b>: find the specific text again</li>
+
+<li>
+<b>Edit->Replace</b>: replace the specific text with another text.</li>
+
+<li>
+<b>Edit->Goto</b>: move the caret to the start position of the specific
+line.</li>
+
+<li>
+<b>Edit->Options</b>:</li>
+
+<br>There are some options for verifier. Select <b>Edit->Option</b> to
+get the Verifier Options window pop-up(figure3).</ul>
+</ul>
+
+<ul>
+<ul><img SRC="image/ver_edi_opt.gif" height=337 width=343>
+<h6>
+Figure3: Verifier Options</h6>
+In the <b>Verifier Options</b> window, there are two option items.
+<ul>
+<li>
+<b>Verifier Result</b>: in the "<b><i>Output fields</i></b> " list, the
+fields shown here are the column names of the table in the output window.</li>
+
+<br>You can add or remove a field by using <b>Add</b> or <b>Remove </b>button(figure4).</ul>
+</ul>
+
+<ul>
+<ul><img SRC="image/ver_edioptoutadd.gif" height=140 width=274>
+<h6>
+Figure4: Add a field</h6>
+
+<li>
+<a NAME="Editor"></a><b>Editor</b>: the font of the words in the verifier
+editor window can be changed. Select the Font, Style and Size as you like
+on the window. Then the font in the edit window will be changed(figure5).</li>
+
+<h6>
+<img SRC="image/ver_opt_edit.gif" height=337 width=343></h6>
+
+<h6>
+Figure5: Verifier Option Editor</h6>
+</ul>
+</ul>
+</ul>
+<a NAME="Finding and dealing with the internationalization problems in J"></a><b><i>Finding
+and dealing with the internationalization problems in Java Source Files</i></b>
+<ol>
+<li>
+Select <b>File->Open</b>, a file open dialog is displayed.</li>
+
+<li>
+Select a java source file to verifier, and click <b>OK</b>. The java source
+file is displayed in the editor window.</li>
+
+<li>
+Look at the areas where there are some internationalization problems by
+navigating with the</li>
+
+<ul>
+<li>
+<b>View</b> menu item</li>
+
+<li>
+The mouse</li>
+
+<li>
+The corresponding pop up menu</li>
+</ul>
+You can also look for specific words for locations in the resource file.
+If you want to find a specific word or row, open <b>Edit->Find</b>. You
+can use:
+<ul>
+<li>
+<b>Find</b></li>
+
+<li>
+<b>Find Next</b></li>
+
+<li>
+<b>Goto</b></li>
+</ul>
+After you type in the information needed, I18n Verifier will find the word
+or row you want.
+<li>
+Modify the source code according to advice given by the Verifier.</li>
+
+<br>You can modify the file in the editor window according to the advice
+shown in output window. Not every advice needs to be acted upon now. Some
+refer to tools used later in the internationalization process.
+<li>
+After you have changed something in your file, remember to select <b>Refresh</b>
+or<b> File->Save</b> to include your changes in the view window.</li>
+
+<br>If you select Refresh, you can still use <b>Edit->Undo</b> on your
+last change. Refresh is available from both the View menu or corresponding
+popup menu(right mouse).
+<li>
+When you have finished changing your file, save the modified source file
+by using <b>File->Save</b> or <b>File->Save as</b>.</li>
+
+<li>
+Open another resource file or quit.</li>
+</ol>
+<a NAME="Outputting Verifier Report"></a><b><i>Outputting Verifier Report</i></b>
+<p>To get the detail information of verifier items output in a report,
+<ol>
+<li>
+Select <b>Output->Report</b>, get <b>Verifier Report Viewer</b> window
+pop-up(figure6).</li>
+
+<br>&nbsp;
+<p>&nbsp;
+<p><img SRC="image/ver_out_rep.gif" height=768 width=856>
+<h6>
+Figure6: Verifier Report Viewer</h6>
+
+<li>
+If you want to view the source file, just follow the link of any filename
+under the <b>FILE</b> column of the table and get the source file displayed(figure7).
+To go back to the report window, press <b>Go->Back</b>.</li>
+
+<br>&nbsp;
+<p>&nbsp;
+<p><img SRC="image/ver_outrepreturn.gif" height=600 width=640>
+<h6>
+Figure7: Resource file in verifier report viewer</h6>
+
+<li>
+You can press <b>File-> open</b>, <b>File->save as</b>, or <b>File-> close</b>
+to realize the corresponding functions.</li>
+</ol>
+<a NAME="Defining Verifier Policy"></a><b><i>Defining Verifier Policy</i></b>
+<p>There are two kinds of verifier policies: <b>Verifier System Policy</b>
+and <b>Verifier User Policy</b>. The default policy is <b>Verifier System
+Policy</b>. The <b>Verifier User Policy</b> has higher priority than that
+of <b>Verifier System Policy</b>. It is recommended that user should modify
+the Verifier User Policy file if they want to use their own policy.
+<p><b><font size=-1>Editing Policies</font></b>
+<p>You can edit a policy file, add constructors and methods and remove
+constructors and methods in Verifier Policy Files Editor.
+<ol>
+<li>
+Select <b>Policies->Edit</b>, get <b>Verifier Policy Files Editor</b> window
+pop-up(figure8).</li>
+
+<br>&nbsp;
+<p>&nbsp;
+<p><img SRC="image/ver_poleditor.gif" height=454 width=755>
+<h6>
+Figure8: Verifier Policy Files Editor</h6>
+
+<li>
+Select a policy from <b>Verifier System Policy</b> or <b>Verifier User
+Policy</b>.</li>
+
+<li>
+Select a subject from <b>Constructors</b> or <b>Methods</b>. The operations
+of editing a constructor and a method are the same, so let's assume that
+you select Constructors, then the following steps will be:</li>
+
+<li>
+Select an item in the<b><i> Constructor list</i></b> field, then in the
+right area of the window, the attributes of the constructor item will be
+displayed. You can edit/select the contents of <i><b>The number of parameters,
+Advice , Type , Status </b>and <b>Parameters</b></i> .</li>
+
+<li>
+Press <b>Save</b> to save the changes on the edited constructor or press
+<b>Reset</b>
+to clear any changes on the original constructor.</li>
+
+<li>
+You can also add a new constructor to the edited policy file.</li>
+
+<ul>
+<li>
+press <b>Add Constructor</b>, then you will get Add Constructor window
+pop-up(figure9).</li>
+
+<li>
+input the needed data and information in the corresponding blank text field.</li>
+
+<br>&nbsp;
+<p>&nbsp;
+<p><img SRC="image/ver_polediaddconstr.gif" height=320 width=480>
+<h6>
+Figure9: Add Constructor</h6>
+
+<li>
+Press <b>Add </b>to add the new constructor to the policy file or press
+<b>Cancel
+</b>to
+invalidate the input.</li>
+</ul>
+
+<li>
+To remove a constructor item in the <b><i>Constructor list</i></b>:</li>
+
+<ul>
+<li>
+Select the constructor item to be removed.</li>
+
+<li>
+Press <b>Remove Constructor</b> and press <b>Yes</b> on the <b>Confirmation</b>
+dialog box, you will see in the Constructor list:, this constructor is
+removed.</li>
+</ul>
+</ol>
+<b><font size=-1>Exporting Policies</font></b>
+<p>To export the verifier policy to a file, do as the following steps:
+<ol>
+<li>
+Select <b>Policies->Export</b>, select the policy type: <b>System Policy</b>
+or <b>User Policy</b> to export. Then get the dialog box pop-up(figure10).</li>
+
+<li>
+Select a proper directory and in the blank text field, input the name of
+the file to which you want to save the policy.</li>
+
+<li>
+Press<b> Save</b> to save the policy file.</li>
+
+<br>&nbsp;
+<p>&nbsp;
+<p><img SRC="image/ver_polexport.gif" height=336 width=512>
+<h6>
+Figure10: Export policy file</h6>
+</ol>
+Under the menus, there are some image buttons which are for the quick access
+to the applications. The functions of these buttons are the same as some
+functions described above.
+<p>To get the online help, select the <b>Help</b> menu item.
+<p><a NAME="Verifier command line"></a><b>Verifier Command-line</b>
+<p>To run Verifier in command line, type: "verifier &lt;parameters>". The
+following will describe the Verifier command in detail.
+<p>USAGE:
+<br>&nbsp;&nbsp;&nbsp; java com.sun.tdc.toolkit.verifier.Verifier [-h|-help]
+[[-o outputfile] [-s] [-v] files|directories]
+<p>&nbsp;&nbsp;&nbsp; -h|-help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+display this information
+<br>&nbsp;&nbsp;&nbsp; -o outputfile&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+save the verify report into the outputfile when -s is not set,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+default is verifyReport.html or verifyReport.txt
+<br>&nbsp;&nbsp;&nbsp; -s&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+save reports separately according to different source files
+<br>&nbsp;&nbsp;&nbsp; -v&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+display verbose information
+<br>&nbsp;&nbsp;&nbsp; files|directories&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+the java source files or directories (in) which to be verified
+<br>&nbsp;
+<p><a NAME="Setting Verifier Properties"></a><b>Setting Verifier Properties</b><b></b>
+<p>In GUI mode, the properties of editor and verifier result fields can
+be set by selecting from the menu <b>Edit -> Options</b>.
+<p>All the properties of Verifier can be set by editing the properties
+file Verifier.INI. The properties are descripted in the following table:
+<br>&nbsp;
+<br>&nbsp;
+<center><table BORDER WIDTH="100%" NOSAVE >
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>Subject</td>
+
+<td NOSAVE>Property</td>
+
+<td NOSAVE>Value</td>
+
+<td NOSAVE>Meaning</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td ROWSPAN="2" NOSAVE>system</td>
+
+<td NOSAVE>messageformat</td>
+
+<td ALIGN=LEFT NOSAVE>true or false,&nbsp;
+<br>default true</td>
+
+<td NOSAVE>if string concateantion will be checked.</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>reservedsuffix</td>
+
+<td ALIGN=LEFT NOSAVE>default .gif;.jpg;.au;.wav;.java;.htm;.html</td>
+
+<td NOSAVE>the strings suffixed with any of the reserved suffixes will
+not be regarded as message items.</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td ROWSPAN="3" NOSAVE>output</td>
+
+<td NOSAVE>format</td>
+
+<td ALIGN=LEFT NOSAVE>html or text, default html</td>
+
+<td NOSAVE>the format of verification report file generated in command
+line mode</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>fields</td>
+
+<td ALIGN=LEFT NOSAVE>FILE;POSITION;STATUS;TYPE;SOURCE;ADVICE</td>
+
+<td NOSAVE>the fields will be listed in the report</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>stored_separately</td>
+
+<td ALIGN=LEFT NOSAVE>true or false,&nbsp;
+<br>default false</td>
+
+<td NOSAVE>if the reports will be generated separately when lots of source
+files are verified in one time.</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>sorting</td>
+
+<td NOSAVE>fields</td>
+
+<td ALIGN=LEFT NOSAVE>default FILE;STATUS;POSITION;TYPE</td>
+
+<td NOSAVE>the fields and the order for sorting</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td ROWSPAN="15" NOSAVE>display</td>
+
+<td NOSAVE>TYPE_COMMON_STR</td>
+
+<td ALIGN=LEFT NOSAVE>on or off, default on</td>
+
+<td NOSAVE>if the string message items will be displayed in the report</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>TYPE_SETLABEL_STR</td>
+
+<td ALIGN=LEFT NOSAVE>on or off, default on</td>
+
+<td NOSAVE>if the string used for setting label will be displayed in the
+report</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>TYPE_SETTEXT_STR</td>
+
+<td ALIGN=LEFT NOSAVE>on or off, default on</td>
+
+<td NOSAVE>if the string used for setting text will be displayed in the
+report</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>TYPE_SUPER_STR</td>
+
+<td ALIGN=LEFT NOSAVE>on or off, default on</td>
+
+<td NOSAVE>if the string used as a parameter in super constructor will
+be displayed in the report</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>TYPE_CONSTRUCTOR_STR</td>
+
+<td ALIGN=LEFT NOSAVE>on or off, default on</td>
+
+<td NOSAVE>if the string used by a constructor will be displayed in the
+report</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>TYPE_LAYOUT_STR</td>
+
+<td ALIGN=LEFT NOSAVE>on or off, default on</td>
+
+<td NOSAVE>if the string used for setting layout will be displayed in the
+report</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>TYPE_FONT_NAME_STR</td>
+
+<td ALIGN=LEFT NOSAVE>on or off, default on</td>
+
+<td NOSAVE>if the string which is a font name will be displayed in the
+report</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>TYPE_LOCALE_SENS_METHOD</td>
+
+<td ALIGN=LEFT NOSAVE>on or off, default on</td>
+
+<td NOSAVE>if the locale sensitive methods will be displayed in the report</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>TYPE_CONSTRUCTOR</td>
+
+<td ALIGN=LEFT NOSAVE>on or off, default on</td>
+
+<td NOSAVE>if the constructors will be displayed in the report</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>STATUS_ERROR</td>
+
+<td ALIGN=LEFT NOSAVE>on or off, default on</td>
+
+<td NOSAVE>if the items which have errors for i18n and l10n will be listed
+in the report</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>STATUS_NOTSURE</td>
+
+<td ALIGN=LEFT NOSAVE>on or off, default on</td>
+
+<td NOSAVE>if the items which have not sure status will be listed in the
+report</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>STATUS_WARNING</td>
+
+<td ALIGN=LEFT NOSAVE>on or off, default on</td>
+
+<td NOSAVE>if the items which status are warning will be listed in the
+report</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>STATUS_NOTE</td>
+
+<td ALIGN=LEFT NOSAVE>on or off, default on</td>
+
+<td NOSAVE>if the items which status are noting you will be listed in the
+report</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>STATUS_FROZEN</td>
+
+<td ALIGN=LEFT NOSAVE>on or off, default on</td>
+
+<td NOSAVE>if the items which status are frozen will be listed in the report</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>STATUS_FINISHED</td>
+
+<td ALIGN=LEFT NOSAVE>on or off, default off</td>
+
+<td NOSAVE>if the items which status are finished for i18n and l10n will
+be listed in the report</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td ROWSPAN="4" NOSAVE>policy</td>
+
+<td NOSAVE>type</td>
+
+<td ALIGN=LEFT NOSAVE>String;Bundle name;Resource bundle;
+<br>Retrieved method;Locale sensitive method</td>
+
+<td NOSAVE>the list of verify item types used for defining policies</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>status</td>
+
+<td ALIGN=LEFT NOSAVE>Error;Notsure;Warning;Note;Frozen;Finished</td>
+
+<td NOSAVE>the list of verify item status used for defining policies</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>system</td>
+
+<td ALIGN=LEFT NOSAVE>default verifier_policy</td>
+
+<td NOSAVE>the name of system policies used by Verifier</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>user</td>
+
+<td ALIGN=LEFT NOSAVE>default verifier_user_policy</td>
+
+<td NOSAVE>the name of user-defined policies</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>gui</td>
+
+<td NOSAVE>output</td>
+
+<td ALIGN=LEFT NOSAVE>default SOURCE;STATUS;TYPE;ADVICE</td>
+
+<td NOSAVE>the fields of verify result table in GUI</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td ROWSPAN="3" NOSAVE>Editor</td>
+
+<td NOSAVE>Font Name</td>
+
+<td ALIGN=LEFT NOSAVE>Dialog, DialogInput, Serif,SansSerif, or Monospaced,
+<br>default DialogInput</td>
+
+<td NOSAVE>the font name used by the editor</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>Font Style</td>
+
+<td ALIGN=LEFT NOSAVE>Plain, Bold, Italic, or BoldItalic,
+<br>default Plain</td>
+
+<td NOSAVE>the font style</td>
+</tr>
+
+<tr ALIGN=CENTER NOSAVE>
+<td NOSAVE>Font Size</td>
+
+<td ALIGN=LEFT NOSAVE>8, 10, 12, 14, 16, ... ,&nbsp;
+<br>default 16</td>
+
+<td NOSAVE>the font size</td>
+</tr>
+</table></center>
+
+<p><img SRC="image/rainbow.gif" height=6 width=100%>
+<center>
+<p><b><font size=-1>&nbsp;<a href="#top">Top of file</a> | <a href="mailto:i18n-toolkit-comments@Sun.COM">Comments</a>
+| <a href="mailto:i18n-toolkit-comments@Sun.COM">Submit Bug</a></font></b>
+<br><a href="http://www.sun.com"><img SRC="image/sun-logo.gif" ALT="Sun Home" BORDER=0 height=60 width=84></a>
+<br><font size=-2>Copyright &copy;&nbsp; 1995-1999 Sun Microsystems, Inc.</font>
+<br><font size=-2>China Technical Development Center</font>
+<br><font size=-2>All Rights Reserved.</font></center>
+
+</body>
+</html>

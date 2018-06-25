@@ -1,0 +1,89 @@
+From:TL
+To:CBTB
+Content-Type:/text/XML-ORG
+Date:2001.06.05 17:36:05
+<?xml version="1.0"?>
+<!DOCTYPE organisation SYSTEM "http://187.11.1.2:7001/organisation.dtd">
+
+
+<organisation>
+	
+  <organisation_id>TL000064</organisation_id>
+	
+  <organisation_type>Shipper</organisation_type>
+	
+  <organisation_name>carmen 0509-test6</organisation_name>
+	
+	
+  <organisation_address>
+		
+    <address1>organization.address1</address1>
+		
+    <address2>organization.address2</address2>
+		
+    <address3>organization.address3</address3>
+		
+	
+  </organisation_address>
+	
+  <telephone>org-tel123</telephone>
+	
+  <mobile_no>cell-123</mobile_no>
+	
+  <fax_no>org-fax123</fax_no>
+	
+  <email>carmen.chan@line.net</email>
+	
+  <web_site>www.carmen.test.net</web_site>
+	
+	
+  <contact_person>organization.contact</contact_person>
+	
+  <contact_person_chinese>contact-chinese</contact_person_chinese>
+	
+  <billing_sent_person>billing-contact</billing_sent_person>
+	
+  <billing_email>billing@contact.email</billing_email>
+	
+  <billing_address>
+		
+    <address1>billing-contact address1</address1>
+		
+    <address2>billing-contact address2</address2>
+		
+    <address3>billing-contact address3</address3>
+		
+    <address4>billing-contact address4</address4>
+	
+  </billing_address>
+	
+  <billing_fax_no>billing-contact-fax</billing_fax_no>
+	
+  <billing_telephone>billing-contact-phone</billing_telephone>
+	
+  <perfer_channel>EMAIL</perfer_channel>
+	
+  <perfer_language>en_US</perfer_language>
+	
+  <credit_amount>100</credit_amount>
+	
+  <payment_terms>COD</payment_terms>
+	
+  <reason_id>123</reason_id>
+	
+  <status>PENDING</status>
+<registration_date>2001-05-16</registration_date>
+	
+  <remark>Remark of org_info_trucking</remark>
+	
+  <registration_reference_no>TL000064</registration_reference_no>
+	
+	
+  <registration_channel>INTERNET</registration_channel>
+	
+  <document>
+		
+		
+	</document>
+
+</organisation>

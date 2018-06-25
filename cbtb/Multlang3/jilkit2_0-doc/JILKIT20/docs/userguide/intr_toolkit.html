@@ -1,0 +1,502 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Scarlett Hao">
+   <meta name="GENERATOR" content="Mozilla/4.5 [zh] (X11; I; SunOS 5.7 sun4u) [Netscape]">
+   <title>introducing toolkit</title>
+</head>
+<body bgcolor="#FFFFFF">
+
+<center><pre CLASS="ChapTitle"><img SRC="image/titleduket.gif" height=116 width=661><img SRC="image/coffee.gif" height=88 width=57></pre></center>
+
+<center><b><font size=+2>Introducing the Java I18n/L10n ToolKit II</font></b>
+<p><img SRC="image/rainbow.gif" height=1 width=100%></center>
+
+<p><b><font size=-1><a href="userguide.html">[contents]</a></font></b>
+<p><b><a href="#Java Internationalization and Localization Issues">Java
+Internationalization and Localization Issues</a></b>
+<br><b><a href="#The Toolkit Project Management Window">The Toolkit Project
+Management Window</a></b>
+<ul><b><i><a href="#Getting started with the Toolkit">Getting Started with
+the Toolkit</a></i></b>
+<br><b><i><a href="#Creating a new project">Creating a new project</a></i></b>
+<br><b><i><a href="#Opening a project file">Opening a project file</a></i></b>
+<br><b><i><a href="#Changing selected item">Changing selected item</a></i></b>
+<br><b><i><a href="#Editing project file">Configurating project file</a></i></b>
+<br><b><i><a href="#Adding items to the project file">Adding items to the
+project file</a></i></b>
+<br><b><i><a href="#Dealing with the project item by different tools">Dealing
+with the project item by different tools</a></i></b>
+<br><b><i><a href="#Some Buttons on the main window">Some Buttons on the
+main window</a></i></b>
+<br><b><i><a href="#Project history">Project history</a></i></b>
+<br><b><i><a href="#Exitting Toolkit">Exitting Toolkit</a></i></b></ul>
+This document describes some issues in localizing and internationalizing
+Java applications. It also introduces the features of Java I18n/L10n Toolkit
+II and its interface, the project management window and how to use it.
+<p><a NAME="Java Internationalization and Localization Issues"></a><b>Java
+Internationalization and Localization Issues</b>
+<p>The Java Internationalization/Localization ToolKit II (Java I18n/L10n
+ToolKit 2.0) is a toolkit for rapid internationalizing and localizing Java
+applications development.
+<p>Java's multi-platform compatibility makes it a natural choice for worldwide
+software development. However, as with other software development, culture-specific
+development issues still need to be addressed.
+<p>Although JDK 1.1 and Java 2 Platform include internationalization APIs
+for developing global applications, there are still many time consuming
+tasks in developing a Java application for global markets. The Java I18n/L10n
+Toolkit makes internationalization and localization easier by helping with
+some key processes:
+<ul>
+<li>
+Checking Java files for methods, classes, class constants, and strings
+that are locale-specific</li>
+
+<li>
+Checking for hard-coded or inconsistent message strings</li>
+
+<li>
+Translating message strings and protecting strings that should not be translated</li>
+
+<li>
+Generating new resource bundles</li>
+</ul>
+Running the Toolkit needs JDK 1.1.7 with Swing1.1 as its basic requirement.
+Java 2 platform are highly recommended. It is available on Solaris, Windows
+NT, and Windows 95 platforms. The Toolkit can be used in any locale, but
+Translator contains only an English to Chinese dictionary by now. Of course
+users can add their own dictionary to it.
+<p>The Toolkit has four independent tools which can be used separately.
+They are:
+<div CLASS="Paragraph">
+<div CLASS="Paragraph">
+<ul>
+<li>
+<b><a href="verifier.html">I18n Verifier</a></b> to test whether a program
+is international or not and suggest corrections.</li>
+
+<li>
+<b><a href="msgtool.html">Message Tool</a> </b>to find and optionally correct
+hard-coded or inconsistent messages.</li>
+
+<li>
+<b><a href="translator.html">Translator</a></b> to translate messages in
+a resource bundle file into the target locale language and protect strings
+that should not be translated.</li>
+
+<li>
+<b><a href="resourcetool.html">Resource Tool</a></b> to merge more than
+2 resource files to a new resource bundle or find the differences in the
+resource files.</li>
+</ul>
+<a NAME="The Toolkit Project Management Window"></a><b>The Toolkit Project
+Management Window</b>
+<p>Due to the Java I18n/L10n Toolkit's unique functionality, there are
+some special access and navigation methods used and described in the document.
+However, unless otherwise noted, each toolkit user interface follows the
+conventions of the software environment (Solaris or Windows) that it is
+running on.
+<p>Release information and document for each tool can be accessed through
+its help menu.
+<p><a NAME="Getting started with the Toolkit"></a><b><i>Getting Started
+with the Toolkit</i></b>
+<p>In the command line, change to the proper directory where the toolkit
+is installed. Then type "jilkit" to get started with the Toolkit project
+management window as shown in figure1.
+<p><img SRC="image/int_main.gif" height=312 width=349>
+<h6>
+Figure1: Toolkit starts with the project management Window</h6>
+<a NAME="Creating a new project"></a><b><i>Creating a new project</i></b>
+<p>To create a new project file, you should assign the <b>Project file
+name</b>, <b>Project working directory</b> and <b>Project output directory</b>
+for it. If these directories are not assigned by you, the system default
+directory is user current directory where you start the toolkit running.
+<br>&nbsp;</div>
+</div>
+
+<div CLASS="Paragraph"><img SRC="image/int_pro_new.gif" height=445 width=515>
+<h6>
+Figure2: Create new project</h6>
+</div>
+
+<ul>
+<li CLASS="FigureCaption">
+Press <b>Project->New</b>(figure2), a window is pop-up(figure3).</li>
+</ul>
+
+<ul><img SRC="image/int_pro_new_inp.gif" height=286 width=311>
+<h6>
+Figure3: Input new project file parameters</h6>
+
+<li CLASS="FigureCaption">
+Type the project name in the <b>Project file name</b> text field. The suffix
+of the project file should be "prj". If you input a file name which doesn't
+have such suffix, the suffix will be automatically added to the end of
+the file name.</li>
+
+<li CLASS="FigureCaption">
+Type the project working directory in the <b>Project working directory</b>
+text field.</li>
+
+<li CLASS="FigureCaption">
+Type the project output directory in the<b> Project output directory</b>
+text field. The project output dir is used as the default dir for exporting
+resource bundles or saving file as another name.</li>
+
+<li CLASS="FigureCaption">
+Press <b>OK</b> to validate the set parameters or <b>Cancel</b> to invalidate
+the set parameters.</li>
+</ul>
+<a NAME="Opening a project file"></a><b><i>Opening a project file</i></b>
+<p>The following steps will introduce how to load project files. After
+a project file is opened, you can use verifier, message tool and translator
+to deal with it.
+<ul>
+<li CLASS="Paragraph">
+Select <b>Project-> Open</b> item (figure4).</li>
+</ul>
+
+<ul><img SRC="image/int_pro_ope.gif" height=445 width=515>
+<h6>
+Figure4: Open a project file</h6>
+
+<li>
+Get the <b>Open from a directory</b> dialog window(figure5).</li>
+</ul>
+
+<ul><img SRC="image/int_pro_opefro.gif" height=317 width=433>
+<h6>
+Figure5: Open from a directory</h6>
+
+<li>
+Select a project file from proper directory(figure4), then you will get
+the window in which the project file(e.g.example.prj) is loaded. The project
+file will be displayed in the window(figure6).</li>
+</ul>
+
+<ul>Every time, only one project can be loaded. There are files of different
+levels in a project.
+<br>&nbsp;
+<ol>
+<li>
+project file (root item)</li>
+
+<li>
+source file (the level under project file)</li>
+
+<li>
+resource bundle file (the level under source file)</li>
+
+<li>
+locale resource bundle file (the level under resource bundle file)</li>
+</ol>
+Toolkit uses abstarct path names which are relative to the current working
+directory to list the files in the
+<br>project management window.
+<p>The following will use the term "<b><i>project item</i> </b>" to call
+the source file and the resource bundle file.</ul>
+
+<div CLASS="Paragraph">
+<ul><img SRC="image/int_pro_profilopened.gif" height=312 width=349>
+<h6>
+Figure6: A project file is opened</h6>
+</ul>
+</div>
+<a NAME="Changing selected item"></a><b><i>Changing selected item</i></b>
+<ul>
+<li>
+Change source file item</li>
+
+<ol>
+<li>
+Select the source file item you want to change.</li>
+
+<li>
+Choose <b>Project->Change Selected</b> or the corresponding popup menu
+item, you will see a customized dialog pop-up(figure 7).</li>
+
+<li>
+Edit the source file name in the text field or Browse to select one name.</li>
+
+<li>
+Press <b>OK</b> to validate the input value.</li>
+</ol>
+</ul>
+
+<div CLASS="Paragraph">
+<ul>
+<ul><img SRC="image/int_pro_edisouitm.gif" height=351 width=391></ul>
+
+<h6>
+Figure7: Change source file item</h6>
+
+<li>
+Change resource bundle item</li>
+
+<ol>
+<li>
+Select the resource bundle item you want to change.</li>
+
+<li>
+Choose <b>Project->Change Selected</b> or the corresponding popup menu
+item, you will see a customized dialog pop-up(figure 8).</li>
+
+<li>
+Edit the resource bundle name in the text field or Browse to select one
+name.</li>
+
+<li>
+Press<b> OK</b> to validate the input value.</li>
+
+<p><br><img SRC="image/int_pro_ediresbund.gif" height=351 width=391>
+<h6>
+Figure8: Change resource bundle item</h6>
+</ol>
+
+<li>
+Change a locale resource bundle item</li>
+
+<ol>
+<li>
+Select the locale resource bundle item you want to change.</li>
+
+<li>
+Choose <b>Project->Change Selected </b>or the corresponding popup menuitem,
+you will see a customized dialog pop-up(figure 9).</li>
+
+<li>
+Select a locale name from the locale names list.</li>
+
+<li>
+Press <b>OK</b> to validate the input value.</li>
+
+<p><br><img SRC="image/int_pro_edilocbund.gif" height=459 width=459>
+<h6>
+Figure9: Change locale resource bundle item</h6>
+</ol>
+</ul>
+<a NAME="Editing project file"></a><b><i>Configurating project file</i></b>
+<p>To change the properties of the being opened project file,
+<ul>
+<li>
+Choose <b>Project->Configure</b>, a dialog box pop-up as shown in figure8.</li>
+
+<li>
+Edit the project working directory and project output directory in the
+text fields.</li>
+
+<li>
+Press <b>OK</b> on the dialog box.</li>
+</ul>
+</div>
+
+<ul><img SRC="image/int_pro_edit.gif" height=207 width=337>
+<h6>
+Figure10: Configure project file</h6>
+</ul>
+<a NAME="Adding items to the project file"></a><b><i>Adding items to the
+project file</i></b>
+<ul>
+<li CLASS="Head2">
+Add a source file</li>
+
+<ul>
+<li CLASS="Head2">
+Press <b>Project->Add Items->Add Source</b>(figure9), then get the dialog
+box pop-up(figure10).</li>
+</ul>
+
+<ul>
+<div CLASS="Head2"><img SRC="image/int_pro_addsou.gif" height=448 width=474></div>
+
+<h6 CLASS="Head2">
+Figure11: Press add source</h6>
+
+<h6 CLASS="Head2">
+<img SRC="image/int_pro_addsoudial.gif" height=253 width=420></h6>
+
+<h6 CLASS="Head2">
+Figure12: Add source dialog</h6>
+</ul>
+</ul>
+
+<ul>
+<ul>
+<li>
+Press <b>Add</b> button to browse and select a java source file.</li>
+
+<li>
+Continue to use <b>Add</b> button to add the java source files included
+in the current project. All selected files will be shown in the list of
+the dialog. Use <b>Remove</b> button to remove a file from the list.</li>
+
+<li>
+Press <b>OK</b> to validate the input value.</li>
+</ul>
+
+<li>
+Import resource bundle</li>
+</ul>
+
+<ul>
+<ul>
+<li>
+Press <b>Project->Add Items->Import Resource Bundle</b>, get a dialog box
+pop-up(figure13).</li>
+
+<h6>
+<img SRC="image/int_pro_imprebund.gif" height=257 width=438></h6>
+
+<h6>
+Figure13: Import resource bundle</h6>
+
+<li>
+Input resource bundle name in the text field or <b>Browse</b> to select
+one name to the text field.</li>
+
+<li>
+If there are locale resource bundles, they can be imported together. Press
+<b>Specify
+locales</b> to select the locale names.</li>
+
+<li>
+Press<b> OK</b> to import selected resource bundles.</li>
+</ul>
+<b>Note:</b> In general cases, the source files are not internationalized,
+they have no resource bundles of course. Then user will not need to do
+this step. After processed by the Message Tool, the resource bundles will
+be generated automatically.
+<br>&nbsp;
+<li>
+Import locale resource bundles</li>
+
+<ul>
+<li>
+Press <b>Project->Add Items->Import Locale Resource</b>, get a dialog box
+pop-up(figure14).</li>
+
+<h6>
+<img SRC="image/int_pro_implocresbund..gif" height=289 width=447></h6>
+
+<h6>
+Figure14: Import locale resource</h6>
+
+<li>
+Select the locale names to be imported from the left list, then press ">"
+to move the selections to the right list or press "&lt;" to cancel the
+selection. Press ">>" to select all and press "&lt;&lt;" to cancel all.</li>
+
+<li>
+Press <b>OK</b> to import selected locale resource bundles.</li>
+</ul>
+<b>Note:</b> If the source file has not been internationalized, user will
+not need to do this step.</ul>
+<a NAME="Dealing with the project item by different tools"></a><b><i>Dealing
+with the project item by different tools</i></b>
+<p>If you want to deal with a project item (a source file or a resource
+bundle file), you can select a tool from the image buttons in the Toolkit
+main window or from the menu item: <b>Tools</b> (shown in figure15). You
+can also select a tool from the popup menu list by pressing the right mouse
+within the window(figure16).
+<p><img SRC="image/int_toolmenu.gif" height=356 width=434>
+<h6>
+Figure15: Select a tool to deal with the project item</h6>
+<img SRC="image/int_rigmouseletool.gif" height=367 width=405>
+<h6>
+Figure16: Select a tool from the popup list</h6>
+
+<ul>
+<li>
+When you select a java source file, you can only deal with it by <b>I18n/Verifier</b>
+and <b>Message Tool</b>. The other two tool menus and image buttons are
+disabled in grey color as shown in figure15 and figure16.</li>
+</ul>
+
+<ul>
+<li>
+When you select a resource bundle file, you can only deal with it by <b>Translator</b>
+and <b>Resource Tool</b> as shown in figure17.</li>
+</ul>
+
+<ul><img SRC="image/int_dealresbun.gif" height=331 width=423>
+<h6>
+Figure17: Deal with resourcebundle</h6>
+</ul>
+
+<div CLASS="Paragraph"><a NAME="Some Buttons on the main window"></a><b><i>Some
+Buttons on the main window</i></b>
+<p>Under the menu items, there are some image buttons for quick access
+some functions, you can press it to get the functions more quick and conveniently.
+They are buttons for:
+<ul>
+<li>
+Create new project</li>
+
+<li>
+Open project file</li>
+
+<li>
+Edit project file</li>
+
+<li>
+I18n Verifier</li>
+
+<li>
+Message Tool</li>
+
+<li>
+Translator</li>
+
+<li>
+Resource Tool</li>
+
+<li>
+Toolkit Help</li>
+
+<li>
+About Toolkit</li>
+</ul>
+<a NAME="Project history"></a><b><i>Project history</i></b>
+<p>Under the popup menu of menu item <b>Project </b>as shown in figure18,
+there is a list of latest opened project files. You can open the file you
+have just used very conveniently there.
+<p><img SRC="image/int_pro_hist.gif" height=448 width=474>
+<h6>
+Figure18: opened project history</h6>
+To manully add or remove project files in the history, just edit the ".toolkit/toolkit.INI"
+at user home directory.&nbsp; In general, the history stores at most 10
+project files that have been opened recently.
+<p><a NAME="Exitting Toolkit"></a><b><i>Exitting Toolkit</i></b>
+<p>Press <b>Project->Exit</b>, if there is no other tool running, then
+exit the <b>Toolkit</b>.&nbsp; Otherwize, it will get a dialog pop-up (figure
+19).
+<p><img SRC="image/int_pro_exittoolkit.gif" height=120 width=515>
+<h6>
+Figure19: Exitting Toolkit</h6>
+
+<ul>
+<li>
+Choose <b>Exit all</b> will exit the Project Management Window and other
+running tools.</li>
+
+<li>
+Choose <b>Only close Toolkit</b> will only close the Project Management
+Window. Other running tools will still run. But once the Project Management
+Window is closed, it can not be launched from other tools.</li>
+
+<li>
+Choose <b>Cancel</b> will cancel this operation.</li>
+</ul>
+</div>
+<img SRC="image/rainbow.gif" height=6 width=100%>
+<center>
+<p><b><font size=-1>&nbsp;<a href="#top">Top of file</a> | <a href="mailto:i18n-toolkit-comments@Sun.COM">Comments</a>
+| <a href="mailto:i18n-toolkit-comments@Sun.COM">Submit Bug</a></font></b>
+<br><a href="http://www.sun.com"><img SRC="image/sun-logo.gif" ALT="Sun Home" BORDER=0 height=60 width=84></a>
+<br><font size=-2>Copyright &copy;&nbsp; 1995-1999 Sun Microsystems, Inc.</font>
+<br><font size=-2>China Technical Development Center</font>
+<br><font size=-2>All Rights Reserved.</font></center>
+
+</body>
+</html>

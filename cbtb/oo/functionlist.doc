@@ -1,0 +1,19 @@
+3.Registration
+3.1 Object searchOrganization(String oraganizationType, String loginId, String refNumber, String name, String hkLicenseNo, String hkPlateNo, String sort)
+3.2 Object findOrganization(String organizationId, String organizationType)
+3.3 boolean resetPassword(String companyId)
+3.4 boolean updateDocStatus(String companyId, String documentId)
+
+4.Truck Capacity Maintance
+4.1 Object searchOrganization(String companyId, String companyName, String contractPerson, String telephoneNo, String faxNo, String mobileNo, String truckerName, String hkPlateNo)
+4.2 Object findCompany(String companyId)
+4.3 Object searchTruckCapacity(String companyId)
+4.4 Object findTruckCapacity(String truckCapacityNum)
+4.5 boolean updateTruckCapStatus(String truckCapacityId)
+4.6 Object searchTruckCapacity(String companyId, String shipRequestNo, String deliveryDate, String truckCapNo, String matchNo, String deliveryTime, String deliveryTimeSlot, String originZone, String destinationZone, String originCity, String destinationCity, String status, String sodo, String trailerType, String sort)
+
+5.Delivery Request Maintenance
+5.1 Object findDeliveryRequest(String companyId)
+5.2 boolean updateDeliveryReqStatus(String deliverRequestNum)
+5.3 Object searchDeliveryRequset(String companyId, String shipRequestNo, String deliveryDate, String truckCapNo, String matchNo, String deliveryTime, String deliveryTimeSlot, String originZone, String destinationZone, String originCity, String destinationCity, String status, String sodo, String trailerType, String sort)
+5.3 Object searchTruckCapacity(String truckCapacityNum, String companyName, String originCity, String destinationCity, String deliveryDate, String deliveryTime, String trailType, String sort)

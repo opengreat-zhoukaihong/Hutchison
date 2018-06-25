@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 1.2//EN" "http://java.sun.com/j2ee/dtds/web-app_2_2.dtd">
+
+<web-app>
+  <display-name>Web App</display-name>
+  <description>no description</description>
+  <servlet>
+    <servlet-name>srvAuthentication</servlet-name>
+    <display-name>srvAuthentication</display-name>
+    <description>no description</description>
+    <servlet-class>net.line.fortress.apps.system.web.srvAuthentication</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>srvChangePassword</servlet-name>
+    <display-name>srvChangePassword</display-name>
+    <description>no description</description>
+    <servlet-class>net.line.fortress.apps.system.web.srvChangePassword</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>srvAuthentication</servlet-name>
+    <url-pattern>/common/servlet/authentication</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>srvChangePassword</servlet-name>
+    <url-pattern>/common/servlet/changePassword</url-pattern>
+  </servlet-mapping>
+  <session-config>
+    <session-timeout>5</session-timeout>
+  </session-config>
+</web-app>
+

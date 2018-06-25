@@ -1,0 +1,521 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Scarlett Hao">
+   <meta name="GENERATOR" content="Mozilla/4.5 [zh] (X11; I; SunOS 5.7 sun4u) [Netscape]">
+   <title> Message Tool</title>
+</head>
+<body bgcolor="#FFFFFF">
+
+<center><pre CLASS="ChapTitle"><img SRC="image/titleduket.gif" height=116 width=661><img SRC="image/coffee.gif" height=88 width=57></pre></center>
+
+<center><b><font size=+2>Message Tool</font></b>
+<p><img SRC="image/rainbow.gif" height=1 width=100%></center>
+
+<p><b><font size=-1><a href="userguide.html">[contents]</a></font></b>
+<p><b><a href="#Introducing Message Tool">Introducing Message Tool</a></b>
+<br><b><a href="#Using the Message Tool">Using the Message Tool</a></b>
+<ul><b><i><a href="#Getting started with the Message Tool">Getting Started
+with the Message Tool</a></i></b>
+<br><b><i><a href="#Components of Message Tool">Components of Message Tool</a></i></b>
+<br><b><i><a href="#Selecting An Active Item">Selecting An Active Item</a></i></b>
+<br><b><i><a href="#Looking Up Item information">Looking Up Item information</a></i></b>
+<br><b><i><a href="#Defining Bundle variables">Defining Bundle variables</a></i></b>
+<br><b><i><a href="#Defining User-defined resource bundle">Defining User-defined
+resource bundle</a></i></b>
+<br><b><i><a href="#Operating on Messages">Operating on Messages</a></i></b>
+<br><b><i><a href="#Exporting Resources">Exporting Resources</a></i></b>
+<br><b><i><a href="#Translating Resources">Translating Resources</a></i></b>
+<br><b><i><a href="#Viewing verify report">Viewing Verify Report</a></i></b>
+<br><b><i><a href="#Setting Verify policy">Setting Verify Policies</a></i></b>
+<br><b><i><a href="#Changing  Options">Changing&nbsp; Options</a></i></b>
+<br><b><i><a href="#Internationalize a Java source file">Internationalize
+a Java source file</a></i></b></ul>
+<b><a href="#Message Tool command line">Message Tool Command-line</a></b>
+<p><a NAME="Introducing Message Tool"></a><b>Introducing Message Tool</b>
+<p>Message Tool can be used to automatically or interactively find and
+convert non-internationalized strings in java source files, its main functions
+are as follows:
+<ul>
+<li>
+Find out all messages(strings) used in java source files.</li>
+
+<li>
+Classify the checked out messages as:</li>
+
+<ul>
+<li>
+Converted(Finished)</li>
+
+<li>
+Need to be converted(Error)</li>
+
+<li>
+Need not to be converted(Frozen)</li>
+</ul>
+
+<li>
+Define resource objects which can be instances of user-defined resource
+bundle or ListResourceBundle, PropertyResourceBundle, ArrayResourceBundle.</li>
+
+<li>
+Convert the messages.</li>
+
+<br>For example, if Message Tool finds the Java source code:
+<br>Menu fileMenu=new Menu("File"), where "File" is non-internationalized
+message,
+<br>it can convert the message to the form:
+<br>Menu fileMenu=new Menu(aBundle.getString("File"));
+<br>where aBundle is an object of MyResource class, and MyResource is a
+class extends ListResourceBundle class. The object is defined in the java
+source file like:
+<br>ResourceBundle aBundle= ResourceBundle.getBundle("MyResource", Locale.getDefault());
+<li>
+Export all generated resource files.</li>
+
+<li>
+Includes all functions <b>I18n Verifier</b> can offer.</li>
+</ul>
+<a NAME="Using the Message Tool"></a><b>Using the Message Tool</b>
+<p><a NAME="Getting started with the Message Tool"></a><b><i>Getting Started
+with the Message Tool</i></b>
+<p>You can run<b> Message tool</b> by typing "msgtool" in command line,
+Or select to run <b>Message Tool</b>(figure1) from I18n/L10n Toolkit 2.0.
+Then the <b>Message Tool</b> window will pop-up(figure2).
+<p><img SRC="image/msg_selmsgt.gif" height=404 width=418>
+<h6>
+Figure1: Select Message Tool</h6>
+
+<h6>
+<img SRC="image/messagetool.gif" height=617 width=744></h6>
+
+<h6>
+Figure2: Message Tool main window</h6>
+<a NAME="Components of Message Tool"></a><b><i>Components of Message Tool</i></b>
+<ul>
+<li>
+The <b>Current bundle object <i>comboBox</i></b> contains all the names
+of the defined bundle variable, among which the selected one will be used
+to convert current selected message item.</li>
+
+<li>
+The <b>Messages list</b> displays all the messages checked out of the file.
+Double click on any item of the list, the corresponding message in the
+right <b>Source Editor</b> window will be selected. Click the right mouse
+button, a pop up menu will show for choosing the operation on the selected
+messages.</li>
+
+<li>
+The <b>Verify table</b> displays all verified items. The detail introduction
+of the displayed method of suggestion window is described in Chapter<b><a href="/home/shao/export/TOOLKIT/htmlsrc/verifier.html">
+I18n Verifier</a></b>.</li>
+
+<li>
+The <b>Source Editor</b> window displays the contents of the opened file,
+you can edit it by hand or use convert functions to convert its strings
+to internationalized strings. Resource bundle variables must be firstly
+defined before you can convert a message.</li>
+
+<ul>
+<li>
+<b>Unrefreshed status</b>: after the editor is modified by hand, the tool
+will come into <b>unrefreshed status</b> when no messages can be selected
+for automatically processing by message tool.</li>
+
+<li>
+<b>Refreshed status</b>: originally open a file or run <b>refresh</b> from
+<b>unrefreshed
+status</b>, the tool will come into <b>refreshed status</b>.</li>
+</ul>
+
+<li>
+The<b> Define</b> button is used to define bundle variables. Press <b>Define</b>,
+the <b>bundle variables definition</b> dialog will pop up(figure3).</li>
+</ul>
+<a NAME="Selecting An Active Item"></a><b><i>Selecting An Active Item</i></b>
+<p>To specify the item for operating on:
+<ol>
+<li>
+Double clicked the item to be operated from the editor.</li>
+
+<li>
+Double clicked the string item in the string list.</li>
+
+<li>
+Select the item from the verifier table.</li>
+</ol>
+After select an active item, the item info will be specified in the <a href="verifier.html#The information table about all verifier items">verify
+table</a>.
+<p><a NAME="Looking Up Item information"></a><b><i>Looking Up Item information</i></b>
+<p>You can get all information of the items you concern from the <a href="verifier.html#The information table about all verifier items">verify
+table</a>. You can also set which kinds of item information will be shown
+by Changing the parameters in <b>Edit->options</b>.
+<p><a NAME="Defining Bundle variables"></a><b><i>Defining Bundle variables</i></b>
+<p>You should define the resource bundle variables before converting messages.
+Do as follows:
+<ul>
+<li>
+Click the <b>Define</b> button on the toolbar.</li>
+
+<li>
+Click <b>Resources -> Resource Define</b>.</li>
+</ul>
+&nbsp;&nbsp;&nbsp; Then the <b>Define Bundle variables</b> dialog will
+pop-up(figure3).
+<ul>&nbsp;
+<br><img SRC="image/bundle_var_def.gif" height=426 width=337>
+<h6>
+Figure3: Bundle variables definition dialog</h6>
+
+<li>
+The tabbedpane titles(VerifierSample1 and VerifierSample) show all names
+of the classes defined in the java source file, every tab shows all bundle
+variables defined in the specified class.</li>
+
+<li>
+The list under the <b>Defined Bundle Variables</b> label holds all bundle
+variable names in the class, you can select a bundle variable item to show
+its detail informations.</li>
+
+<li>
+The <b>Bundle name </b>field is used to input the name of the resource
+to store messages.</li>
+
+<li>
+Check the <b>Instance of User-Defined Resource Bundle</b> checkbox to indicate
+that the variable's class is a user-defined bundle.</li>
+
+<li>
+Press <b>Add</b> button, a new bundle variable will be constructed according
+to the information you input.</li>
+
+<li>
+Press <b>Update</b> button, the information shown in GUI will be set to
+the selected bundle variable.</li>
+
+<li>
+Press <b>Remove</b> button, the selected bundle variable will be removed.</li>
+
+<li>
+Press <b>OK</b> to confirm the input or press <b>Cancel</b> to give up
+the input.</li>
+</ul>
+<a NAME="Defining User-defined resource bundle"></a><b><i>Defining User-defined
+resource bundle</i></b>
+<p>Message Tool supports user-defined resource bundle. It means that messages
+in the source file can be extracted from a user-defined resource bundle
+and converted automatically. But in this version of Message Tool, there
+is a constraint that the user-defined resource bundle, which is able to
+be recognized and processed in Message Tool, should implement the interface
+<a href=../api/com/sun/tdc/util/UserDefinedResourceBundle.html>
+<tt>com.sun.tdc.util.UserDefinedResourceBundle
+</tt></a>and provide a method
+<tt>public static UserDefinedResourceBundle getBundle() </tt>in the implementation class.
+<br>In the interface 
+<a href=../api/com/sun/tdc/util/UserDefinedResourceBundle.html>
+<tt>com.sun.tdc.util.UserDefinedResourceBundle</tt></a>, There
+are four type of extracting message methods. The following is the&nbsp;
+summary of the methods:
+<table BORDER CELLSPACING=0 CELLPADDING=3 WIDTH="100%" >
+<tr BGCOLOR="#CCCCFF" ID="TableHeadingColor">
+<td COLSPAN="2"><b><font size=+2>Method Summary</font></b></td>
+</tr>
+
+<tr BGCOLOR="#FFFFFF" ID="TableRowColor">
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="1%"><tt><font size=-1>&nbsp;java.lang.String</font></tt></td>
+
+<td><tt><b>getString</b>(java.lang.String key)</tt>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Get message
+string from resource bundle by a specified key.</td>
+</tr>
+
+<tr BGCOLOR="#FFFFFF" ID="TableRowColor">
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="1%"><tt><font size=-1>&nbsp;java.lang.String</font></tt></td>
+
+<td><tt><b>getString</b>(java.lang.String key, java.util.Locale locale)</tt>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Get message
+string from resource bundle by a specified key and specified locale.</td>
+</tr>
+
+<tr BGCOLOR="#FFFFFF" ID="TableRowColor">
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="1%"><tt><font size=-1>&nbsp;java.lang.String</font></tt></td>
+
+<td><tt><b>getString</b>(java.lang.String key, java.lang.String defaultValue)</tt>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Get message
+string from resource bundle by a specified key.</td>
+</tr>
+
+<tr BGCOLOR="#FFFFFF" ID="TableRowColor">
+<td ALIGN=RIGHT VALIGN=TOP WIDTH="1%"><tt><font size=-1>&nbsp;java.lang.String</font></tt></td>
+
+<td><tt><b>getString</b>(java.lang.String key, java.lang.String defaultValue,
+java.util.Locale locale)</tt>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Get message
+string from resource bundle by a specified key.</td>
+</tr>
+</table>
+The way of defining a user-defined resource bundle is same as <b><i><a href="#Defining Bundle variables">Defining
+Bundle variables </a></i></b>mostly. But <b>Instance of User-Defined Resource
+Bundle</b> checkbox should be checked. And all information in the box(see
+figure 3) should be specified. The <b>Class name </b>is the full-quality
+class name of the user-defined resource bundle. The <b>Method type</b>
+is the type of extracting message method. There are four type of the methods
+which are described in the above table. If the extracting message method
+has a parameter which is a <tt>Locale</tt> object, the <b>Locale variable</b>
+should be specified.
+<p><a NAME="Operating on Messages"></a><b><i>Operating on Messages</i></b>
+<p><b><font size=-1>Converting Messages</font></b>
+<p>To translate message items into internationalized form, if there is
+a specified resource bundle variable, do as follows:
+<ul>
+<li>
+Select <b>message -> convert</b></li>
+
+<li>
+From the popup menu select <b>convert.</b></li>
+</ul>
+to convert the active message item. Through the popup menu in the messages
+list, you can select multiple message items for converting, but the items
+must come from the same package class.
+<p><b><font size=-1>Reverting Messages</font></b>
+<p>To restore the converted messages, do as follows:
+<ul>
+<li>
+Select <b>message -> revert</b></li>
+
+<li>
+From the popup menu select <b>revert</b></li>
+</ul>
+to revert the active message item. Through the popup menu in the messages
+list, you can select multiple message items for reverting.
+<p><b><font size=-1>Freezing Messages</font></b>
+<p>To keep message items from being converted, do as follows:
+<ul>
+<li>
+Select <b>message -> freeze</b></li>
+
+<li>
+From the popup menu select <b>freeze</b></li>
+</ul>
+to freeze the active message item. Through the popup menu in the messages
+list, you can select multiple message items for freezing.
+<p><b><font size=-1>Unfreezing Messages</font></b>
+<p>To allow the message items to be converted, do as follows:
+<ul>
+<li>
+Select <b>message -> unfreeze</b></li>
+
+<li>
+From the popup menu select <b>unfreeze</b></li>
+</ul>
+to unfreeze the active message item. Through the popup menu in the messages
+list, you can select multiple message items for unfreezing.
+<p><b><font size=-1>Converting All</font></b>
+<p>To convert all unfreezed message items, select <b>message -> convert
+all</b>.
+<p>Note: in the case multiple package classes in a same source file, if
+there is not the active resource bundle variable defined in a package class,
+the first bundle var will be selected for converting or new bundle var
+will be defined in the action.
+<p><b><font size=-1>Reverting All</font></b>
+<p>To revert all converted message items, you can select <b>message ->
+revert all</b>.
+<p>Note: after the operation, all resource bundle variables used by the
+converted message items will be undefined.
+<p><b><font size=-1>Changing converting Properties</font></b>
+<p>To change convert properties (key, bundle, default value), you can select
+<b>Change
+properties</b> from the popup menu in the editor.
+<p><img SRC="image/mt_dlg_properties.gif" height=228 width=325>
+<h6>
+Figure4: Changing properties</h6>
+<b><font size=-1>Unifying converted messages</font></b>
+<p>To change the keys of several converted message items in the same package
+class&nbsp; to a same key.
+<blockquote>
+<li>
+Multi-select the messages in the messages list. Press right mouse button
+and get the popup menu(figure5).</li>
+</blockquote>
+
+<ul>
+<li>
+Press <b>Unify</b> and get the dialog box popup(figure12).</li>
+
+<br>&nbsp;
+<p>&nbsp;
+<br>&nbsp;
+<br>&nbsp;
+<p><img SRC="image/msg_inputmsgstring.gif" height=131 width=274>
+<h6>
+Figure12: Input the unified key dialog box</h6>
+
+<li>
+Type the value in the text field.</li>
+
+<li>
+Press <b>OK</b>.</li>
+</ul>
+All instances of this key are given this message.
+<br><a NAME="Exporting Resources"></a><b><i>Exporting Resources</i></b>
+<p>To exporting all resource bundle files, you can:
+<ul>
+<li>
+Select <b>File->Export Resource</b>, get the <b>Export Resource </b>dialog
+box popup(figure7).</li>
+</ul>
+
+<ul><img SRC="image/msg_exportresource.gif" height=167 width=426>
+<h6>
+Figure7: Export Resource Dialog Box</h6>
+
+<ul>
+<li>
+In the above text field, input or browse the path to which you want to
+export the resource files.</li>
+
+<li>
+Specify the locales for which the resources will be created. Press <b>Specify</b>
+button and get the window popup(figure8).</li>
+</ul>
+</ul>
+
+<ul>
+<ul><img SRC="image/msg_definelocale.gif" height=289 width=447>
+<h6>
+Figure8: Define locales to be used</h6>
+</ul>
+
+<li>
+Press <b>Export</b>, the resource files are exported to the directory.</li>
+</ul>
+<a NAME="Translating Resources"></a><b><i>Translating Resources</i></b>
+<p>To run the <b>translator</b> tool to translate some resource bundle
+file. Choose <b>Resource-> Translate</b>, you will get the dialog box shown
+in figure6. Input the name of the file to be translated in the blank text
+field or select one file by using <b>Browse</b>. Then press <b>Translate</b>,
+you can access <b>Translator</b> function and get the Translator's main
+window.
+<ul><img SRC="image/msg_translatedialog.gif" height=123 width=411>
+<h6>
+Figure6: Translate file dialog</h6>
+</ul>
+<a NAME="Viewing verify report"></a><b><i>Viewing Verify Report</i></b>
+<p>To view the verifier report, select <b>verifier -> report</b>.
+<p><a NAME="Setting Verify policy"></a><b><i>Setting Verify Policies</i></b>
+<p>To set the verifier policies, select <b>verifier -> policies</b>.
+<p><a NAME="Changing  Options"></a><b><i>Changing&nbsp; Options</i></b>
+<p>Select<b> Edit->Options</b>, you will get the <b>Messagetool: Options</b>
+window popup(figure9). There are two items of options: <b>I18n Verifier
+</b>and
+<b>Editor</b>.
+<ul>
+<li>
+Select <b>I18n Verifier</b>, you will get the window shown in figure9.
+If&nbsp; "<b><i>Show dialog for parameters when convert a message item</i></b>"
+is checked, a dialog will always pop up when you do converting.</li>
+
+<li>
+Select <b>Editor</b>, see the detail introduction in Chapter2 <a href="verifier.html#Editor">I18n
+Verifier <b>"Editor"</b></a>.</li>
+
+<ul>&nbsp;</ul>
+<img SRC="image/msg_opt_i18.gif" height=340 width=465>
+<h6>
+Figure9: MessageTool Options_Verifier_I18N</h6>
+</ul>
+<a NAME="Internationalize a Java source file"></a><b><i>Internationalize
+a Java source file</i></b>
+<p>A sample process of internationalizing a Java source file by Message
+Tool is:
+<ol>
+<li>
+Open a Java file by selecting <b>File->Open</b>.</li>
+
+<li>
+Choose a file and select Open, the file will be parsed automatically.</li>
+
+<li>
+After the file is opened as shown in figure2, use<b> Previous item, First
+item, Next item</b> to navigate between message strings. You can also search
+for specific strings by content or location, by selecting items under the
+<b>Edit</b>
+menu:</li>
+
+<ul>
+<li>
+<b>Edit->Find</b></li>
+
+<li>
+<b>Edit->Find Next</b></li>
+
+<li>
+<b>Edit->Goto</b></li>
+</ul>
+
+<li>
+Define bundle objects.</li>
+
+<li>
+If a string ought to be protected, select <b>Message-> Freeze</b>.</li>
+
+<li>
+If you want to accept all the entries in the suggestion window, select
+<b>Message->
+Convert All</b>, otherwise select Covert to accept individual suggestions.
+Only the messages in Error status can be converted automatically.</li>
+
+<li>
+Press <b>View->Refresh</b> to reparse the contents of the editor.</li>
+
+<li>
+If you require several different messages use the same value from a resource,
+select <b>Unify</b> from the list menu item(figure5).</li>
+
+<li>
+To save a resource file, select <b>File-> Export Resources</b>. See the
+detail introduction in <b>Export Resources</b>. The created resource bundles
+will be automatically added to the project management window as shown in
+figure13.</li>
+
+<br>&nbsp;
+<p>&nbsp;
+<p><img SRC="image/msg_expresouce.gif" height=356 width=434>
+<h6>
+Figure13: Resource bundles are added automatically</h6>
+
+<li>
+To save the changes in the opened file, select <b>File-> Save </b>or <b>Save
+as</b>.</li>
+</ol>
+<a NAME="Message Tool command line"></a><b>Message Tool Command-line</b>
+<p>The following describes the usage of Message tool command in detail.
+<p>USAGE:
+<p>java com.sun.tdc.toolkit.messagetool.MessageTool [-h|-help] [[-rn resourceName]
+[-rt resourceType][-rd resourceDirectory] [-v] files|directories]
+<p>&nbsp;&nbsp;&nbsp; -h|-help&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+display this information
+<br>&nbsp;&nbsp;&nbsp; -rn resourceName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+the resource class full package name
+<br>&nbsp;&nbsp;&nbsp; -rt resourceType&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+the resource type&nbsp; 0 - list resource, 1 - array resource,
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+2 - property resource
+<br>&nbsp;&nbsp;&nbsp; -rd resourceDirectory&nbsp;&nbsp;&nbsp;&nbsp; the
+resource export directory
+<br>&nbsp;&nbsp;&nbsp; -v&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+display verbose information
+<br>&nbsp;&nbsp;&nbsp; files|directories&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+the java source files or directories
+<p><img SRC="image/rainbow.gif" height=6 width=100%>
+<center>
+<p><b><font size=-1>&nbsp;<a href="#top">Top of file</a> | <a href="mailto:i18n-toolkit-comments@Sun.COM">Comments</a>
+| <a href="mailto:i18n-toolkit-comments@Sun.COM">Submit Bug</a></font></b>
+<br><a href="http://www.sun.com"><img SRC="image/sun-logo.gif" ALT="Sun Home" BORDER=0 height=60 width=84></a>
+<br><font size=-2>Copyright &copy;&nbsp; 1995-1999 Sun Microsystems, Inc.</font>
+<br><font size=-2>China Technical Development Center</font>
+<br><font size=-2>All Rights Reserved.</font></center>
+
+</body>
+</html>

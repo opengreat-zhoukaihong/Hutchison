@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by peter (peter) -->
+<!ELEMENT organisation (organisation_id, organisation_type, organisation_name, organisation_chinese_name?, organisation_address, telephone, mobile_no?, fax_no?, email?, web_site?, business_registration_no, contact_person, contact_person_chinese?, billing_sent_person?, billing_email?, billing_address, billing_fax_no?, billing_telephone?, perfer_channel, perfer_language, credit_amount?, payment_terms, reason_id?, status, message?, remark?, registration_reference_no?, registration_date, registration_channel, UOM, document*)>
+<!ELEMENT organisation_id (#PCDATA)>
+<!ELEMENT organisation_type (#PCDATA)>
+<!ELEMENT organisation_name (#PCDATA)>
+<!ELEMENT organisation_chinese_name (#PCDATA)>
+<!ELEMENT organisation_address (address1, address2?, address3?, address4?)>
+<!ELEMENT telephone (#PCDATA)>
+<!ELEMENT mobile_no (#PCDATA)>
+<!ELEMENT fax_no (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT web_site (#PCDATA)>
+<!ELEMENT business_registration_no (#PCDATA)>
+<!ELEMENT contact_person (#PCDATA)>
+<!ELEMENT contact_person_chinese (#PCDATA)>
+<!ELEMENT billing_sent_person (#PCDATA)>
+<!ELEMENT billing_email (#PCDATA)>
+<!ELEMENT billing_address (address1, address2?, address3?, address4?)>
+<!ELEMENT billing_fax_no (#PCDATA)>
+<!ELEMENT billing_telephone (#PCDATA)>
+<!ELEMENT perfer_channel (#PCDATA)>
+<!ELEMENT perfer_language (#PCDATA)>
+<!ELEMENT credit_amount (#PCDATA)>
+<!ELEMENT payment_terms (#PCDATA)>
+<!ELEMENT reason_id (#PCDATA)>
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT message (#PCDATA)>
+<!ELEMENT remark (#PCDATA)>
+<!ELEMENT registration_reference_no (#PCDATA)>
+<!ELEMENT registration_date (#PCDATA)>
+<!ELEMENT registration_channel (#PCDATA)>
+<!ELEMENT UOM (#PCDATA)>
+<!ELEMENT address1 (#PCDATA)>
+<!ELEMENT address2 (#PCDATA)>
+<!ELEMENT address3 (#PCDATA)>
+<!ELEMENT address4 (#PCDATA)>
+<!ELEMENT document (document_id, document_status)>
+<!ELEMENT document_status (#PCDATA)>
+<!ELEMENT document_id (#PCDATA)>

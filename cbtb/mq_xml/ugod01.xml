@@ -1,0 +1,21 @@
+From:TL
+To:CBTB
+Content-Type:/text/XML-USER_GROUP
+Date:2001.06.05 17:36:02
+<?xml version="1.0"?>
+<!DOCTYPE user_group_relation SYSTEM "http://187.11.1.2:7001/user_group.dtd">
+
+
+<user_group_relation>
+	
+  <domain_id>TL000064</domain_id>
+	
+  <user_id>tl000063</user_id>
+	
+  <group_id>TL000064Gp</group_id>
+	
+  <user_or_group>U</user_or_group>
+	
+  <action value="delete" />
+
+</user_group_relation>

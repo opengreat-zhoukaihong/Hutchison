@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--JBuilder XML Project-->
+<project>
+  <property category="enterprise" name="appserver.fullname" value="WebLogic Application Server 5.1" />
+  <property category="jsp" name="userColors" value="255,200,0:255,255,192:192,192,192:192,192,192:192,192,192:192,192,192:192,192,192:192,192,192:" />
+  <property category="runtime.0" name="RunnableType" value="com.borland.jbuilder.runtime.JspRunner" />
+  <property category="runtime.0" name="application.class" value="test.ShipperTestClient1" />
+  <property category="runtime.0" name="appserver.ejbJarsSaved" value="1" />
+  <property category="runtime.0" name="appserver.parameters" value="" />
+  <property category="runtime.0" name="appserver.servername" value="" />
+  <property category="runtime.0" name="appserver.vmparameters" value="-ms64m -mx64m -Dweblogic.system.home=/weblogic/ -Dweblogic.class.path=/weblogic/lib/weblogic510sp4.jar;/weblogic/classes;/weblogic/license;/weblogic/lib/weblogicaux.jar;/weblogic/myserver/serverclasses; -Djava.security.manager -Djava.security.policy==/weblogic/weblogic.policy" />
+  <property category="runtime.0" name="jsprunner.docbase" value="." />
+  <property category="runtime.0" name="jsprunner.jspfile" value="D:/edward/work/java/jbuilder/cbt/src/test/Jsp1.jsp" />
+  <property category="runtime.0" name="jsprunner.searchport" value="false" />
+  <property category="sys" name="BackupPath" value="bak" />
+  <property category="sys" name="CheckStable" value="1" />
+  <property category="sys" name="Company" value="" />
+  <property category="sys" name="Copyright" value="Copyright (c) 2001" />
+  <property category="sys" name="DefaultPackage" value="test" />
+  <property category="sys" name="Description" value="" />
+  <property category="sys" name="DocPath" value="doc" />
+  <property category="sys" name="ExcludeClassEnabled" value="0" />
+  <property category="sys" name="JDK" value="java 1.3.0-C" />
+  <property category="sys" name="LastTag" value="0" />
+  <property category="sys" name="Libraries" value="WebLogic 5.1;Servlet;Oracle" />
+  <property category="sys" name="MakeStable" value="0" />
+  <property category="sys" name="OutPath" value="classes" />
+  <property category="sys" name="SourcePath" value="src" />
+  <property category="sys" name="Title" value="" />
+  <property category="sys" name="Version" value="1.0" />
+  <property category="sys" name="WorkingDirectory" value="." />
+  <node type="Archive" name="System">
+    <property category="archiving" name="targetPath" value="System.jar" />
+  </node>
+  <node type="Archive" name="SystemWeb">
+    <property category="archiving" name="extraDeployRoots.1" value="F:WEB-INF/web.xml" />
+    <property category="archiving" name="extraDeployRoots.2" value="F:test/ShipperView.jsp" />
+    <property category="archiving" name="outPathState" value="1" />
+    <property category="archiving" name="targetPath" value="SystemWeb.war" />
+  </node>
+  <file path="src/test/Jsp1.jsp" />
+  <file path="src/test/Jsp1Bean.java" />
+  <file path="src/test/ShipperTestClient1.java" />
+  <file path="src/test/ShipperTestClient2.java" />
+  <file path="src/test/ShipperView.jsp" />
+  <file path="System.ejbgrp">
+    <property category="EJBGroup" name="jarpath" value="SystemEjb.jar" />
+    <file path="SystemEjb.jar" />
+  </file>
+  <file path="src/WEB-INF/web.xml" />
+</project>
+

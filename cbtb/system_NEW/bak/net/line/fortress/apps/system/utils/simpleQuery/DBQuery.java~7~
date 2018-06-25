@@ -1,0 +1,31 @@
+package net.line.fortress.apps.system.utils.simpleQuery;
+
+import java.sql.*;
+import net.line.fortress.apps.system.LogManager;
+
+public class DBQuery {
+  private PreparedStatement pStmt = null;
+  private ResultSet rSet = null;
+  public DBQuery(PreparedStatement pStmt, ResultSet rSet) {
+    this.pStmt = pStmt;
+    this.rSet = rSet;
+  }
+  public ResultSet getResultSet() throws SQLException {
+    if (rSet != null) {
+      return rSet;
+    }
+    throw new SQLException("Result set closed.");
+  }
+  public void close() {
+    try {
+      this.rSet.close();
+    } catch (SQLException e) {
+      LogManager.instance.logError("Unable to close the rSet.", e);
+    }
+    try {
+      this.pStmt.close();
+    } catch (SQLException e) {
+      LogManager.instance.logError("Unable to close the pStmt.", e);
+    }
+  }
+}

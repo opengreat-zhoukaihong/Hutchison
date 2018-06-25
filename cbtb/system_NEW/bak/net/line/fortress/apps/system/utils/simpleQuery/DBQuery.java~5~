@@ -1,0 +1,26 @@
+package net.line.fortress.apps.system.utils.simpleQuery;
+
+import java.sql.*;
+
+public class DBQuery {
+  private PreparedStatement pStmt = null;
+  private ResultSet rSet = null;
+  public DBQuery(PreparedStatement pStmt, ResultSet rSet) {
+    this.pStmt = pStmt;
+    this.rSet = rSet;
+  }
+  public ResultSet getResultSet() throws SQLException {
+    if (rSet != null) {
+      return rSet;
+    }
+    throw new SQLException("Result set closed.");
+  }
+  public void close() {
+    try {
+      this.rSet.close();
+    } catch (SQLException e) {}
+    try {
+      this.pStmt.close();
+    } catch (SQLException e) {}
+  }
+}

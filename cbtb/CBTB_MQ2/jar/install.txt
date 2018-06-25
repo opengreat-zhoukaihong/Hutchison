@@ -1,0 +1,2 @@
+weblogic.system.startupClass.cbtMQListener=com.cbtb.mq.CBTMessageSet
+weblogic.system.shutdownClass.cbtMQListener=com.cbtb.mq.CBTMessageSet

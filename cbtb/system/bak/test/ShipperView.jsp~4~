@@ -1,0 +1,61 @@
+<HTML>
+<HEAD>
+<%@ page import="net.line.fortress.apps.cbt.ejb.ShipperBean" %>
+<%@ page import="net.line.fortress.apps.cbt.ejb.ShipperHome" %>
+<%@ page import="net.line.fortress.apps.cbt.ejb.Shipper" %>
+<%@ page import="javax.naming.*" %>
+<%@ page import="java.util.Properties" %>
+<%@ page import="javax.rmi.PortableRemoteObject" %>
+<%@ page import="java.util.Collection" %>
+<%@ page import="java.math.BigDecimal" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="test.*" %>
+<jsp:setProperty name="ShipperBeanId" property="*" />
+<jsp:useBean id="bean0" scope="session" class="net.line.fortress.apps.cbt.ejb.ShipperBean" />
+<jsp:setProperty name="bean0" property="*" />
+<%
+
+   try {
+    ShipperTestClient1 client = new ShipperTestClient1();
+    Shipper shipper = client.findByPrimaryKey("ENSIGN");
+    ShipperBean sbean = shipper.getDetails();
+    bean0 = sbean;
+    System.out.println(bean0.toString());
+    System.out.println(bean0.getCreditLineAmount());
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+
+
+%>
+
+
+
+<TITLE>
+Shipper
+</TITLE>
+</HEAD>
+<BODY>
+<H1>
+JBuilder Generated JSP
+</H1>
+<% out.println(bean0.getCreditLineAmount()); %>
+<FORM method="post">
+<BR>Enter new value   :  <INPUT NAME="sample"><BR>
+<BR><BR>
+<INPUT TYPE="SUBMIT" NAME="Submit" VALUE="Submit">
+<INPUT TYPE="RESET" VALUE="Reset">
+<BR>
+<HR>bean0<BR>
+Enter new value for bean0.creditLineAmount :  <INPUT NAME="creditLineAmount" VALUE="<%=bean0.getCreditLineAmount(); %>"><BR>
+Value of bean0.creditLineAmount is : <jsp:getProperty name="bean0" property="creditLineAmount" /><BR>
+Enter new value for bean0.entityContext :  <INPUT NAME="entityContext" VALUE="<%=bean0.getOrganizationId();%>"><BR>
+Value of bean0.organizationId is : <jsp:getProperty name="bean0" property="organizationId" /><BR>
+Enter new value for bean0.paymentTerms :  <INPUT NAME="paymentTerms" VALUE="<%=bean0.getCreditLineAmount();%>"><BR>
+Value of bean0.paymentTerms is : <jsp:getProperty name="bean0" property="paymentTerms" /><BR>
+Enter new value for bean0.webSite :  <INPUT NAME="webSite" VALUE="<%=bean0.getWebSite();%>"><BR>
+Value of bean0.webSite is : <jsp:getProperty name="bean0" property="webSite" /><BR>
+<HR><BR>
+</FORM>
+</BODY>
+</HTML>

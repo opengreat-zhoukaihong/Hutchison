@@ -1,0 +1,7 @@
+package net.line.fortress.apps.system.security.secOperator;
+
+public interface BinaryOperator {
+  public boolean evaluate(Object actualValue,
+                          String comparedValue,
+			  com.arena.universe.security.PermissionContext context);
+}

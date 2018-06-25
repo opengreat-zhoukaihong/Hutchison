@@ -1,0 +1,45 @@
+net.line.system.indexPage=/common/jsp/index.jsp
+net.line.system.logonPage=/common/jsp/index.jsp
+net.line.system.errorPage=/common/jsp/error.jsp
+net.line.system.changePasswordPage=/common/jsp/changePassword.jsp
+
+net.line.system.dbQueryManager.maxConnections=1
+net.line.system.dbQueryManager.maxCursors=50
+net.line.system.dbQueryManager.timeout=300
+net.line.system.dbQueryManager.interval=60
+
+net.line.system.name=cbt
+net.line.system.log.output=stdout
+net.line.system.log.filename=
+net.line.system.log.directory=.
+net.line.system.log.filename.prefix=wl-
+net.line.system.log.filename.suffix=.log
+net.line.system.log.frequency=daily
+net.line.system.log.level=debug
+net.line.system.log.days.retained=7
+
+#  http session listener will be created and bound to new session,
+#  which can implement HttpSessionBindingListener
+#net.line.system.httpSession.listener.1=
+
+#  server startup class will be instanced when server startup
+#net.line.system.serverStartup.class.1=
+
+#net.line.system.serverStartup.class.1=net.line.fortress.apps.system.init.HttpSessionManagerInit
+
+# http session listener will be created and bound to new session,
+# which can implement HttpSessionBindingListener
+net.line.system.httpSession.listener.1=net.line.fortress.apps.system.nls.MultilingualSystemListener
+
+#  jreport
+net.line.report.max=20
+net.line.report.server.cbt.url=http://192.168.0.235:8888/cbt/cbt.cat
+net.line.report.server.hit.url=http://192.168.0.10:8081/HIT/Hit.cat
+
+# configuration for MQ message
+net.line.system.message.mq.queuehost=192.168.0.134
+net.line.system.message.mq.queuemgr=CARGONET.QM1
+net.line.system.message.mq.inqueuename=OVA.IN.Q
+net.line.system.message.mq.outqueuename=OVA.OUT.Q
+net.line.system.message.mq.ccsid=1208
+net.line.system.message.mq.listenqueue=OVA.IN.Q

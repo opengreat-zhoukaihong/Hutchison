@@ -1,0 +1,61 @@
+﻿<%@ include file="Init.jsp"%>  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<%@ page contentType="text/html;charset=UTF-8"%>
+<html>
+<head>
+<link rel="stylesheet" href="../css/line.css" type="text/css">
+<title>貨運時間數據維護</title>
+</head>
+
+
+<%
+webOperator.clearPermissionContext();  
+webOperator.putPermissionContext("document_type","DELIVERY_TIME"); 
+webOperator.putPermissionContext("action", "create"); 
+if (webOperator.checkPermission())
+  out.print("");
+else
+  response.sendRedirect("ErrorPage.jsp?errorMessage=ER_9000");
+%>
+
+
+<SCRIPT LANGUAGE="JavaScript">
+
+function doPost()
+{
+
+    add.submit();
+}
+</SCRIPT>
+<body bgcolor="#FFFFFF">
+<%@ include file="../include/head.jsp"%>
+
+<p align="right"><a href="javascript:doPost()"><font
+color="#003366"  size="2">確定 </font></a>| <a href="javascript:history.go(-1)"><font
+color="#003366"  size="2">取消</font></a></p>
+
+<p><font face="Arial, Helvetica, sans-serif" size="3">貨運時間數據維護</font></p>
+<form action="DeliveryTimeInsert.jsp" name="add" method="post" >
+
+
+<input type="hidden" name="deliveryTimeId" value="<%=request.getParameter("deliveryTimeId") %>">
+
+<input type="hidden" name="deliveryTimeDesc" value="<%=request.getParameter("deliveryTimeDesc") %>">
+<input type="hidden" name="chineseDesc" value="<%=request.getParameter("chineseDesc")%>">
+  <table width="60%" border="0" cellspacing="2" cellpadding="2">
+    <tr> 
+      <td >編號：</td>
+      <td ><%=request.getParameter("deliveryTimeId") %></td>
+    </tr>
+    <tr> 
+      <td >英文描述：</td>
+      <td ><%=request.getParameter("deliveryTimeDesc") %></td>
+    </tr>
+    <tr> 
+      <td>中文描述：</td>
+      <td ><%=request.getParameter("chineseDesc") %></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

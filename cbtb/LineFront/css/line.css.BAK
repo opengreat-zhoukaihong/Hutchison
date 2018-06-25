@@ -1,0 +1,70 @@
+a { font-family: "宋体"; font-size: 9pt; color: #003366;text-decoration: underline}
+a:hover { font-family: "宋体"; font-size: 9pt; color: #003366; font-style: normal; text-decoration: underline}
+
+
+.link
+{
+font-size: 9pt; color: #FFFFFF; text-decoration: none
+
+
+}
+
+BODY
+{
+    FONT-FAMILY: "宋体";
+    FONT-SIZE: 9pt
+}
+TABLE
+{
+    FONT-FAMILY: "宋体";
+    FONT-SIZE: 9pt
+}
+TD
+{
+    FONT-FAMILY: "宋体";
+    FONT-SIZE: 9pt
+; width: auto
+; font-weight: 28
+}
+INPUT
+{
+    FONT-FAMILY: "Times New Roman", "Times", "serif";
+    FONT-SIZE: 9pt
+; 
+}
+TEXTAREA
+{
+    FONT-FAMILY: "宋体";
+    FONT-SIZE: 9pt
+; width: 120px
+}
+SELECT
+{
+    FONT-FAMILY: "宋体";
+    FONT-SIZE: 9pt
+; width: 120px
+}
+content
+{
+    FONT-FAMILY: "宋体";
+    FONT-SIZE: 9pt
+}
+P
+{
+    FONT-FAMILY: "宋体";
+    FONT-SIZE: 9pt
+}
+CODE
+{
+    FONT-FAMILY: "Courier";
+    FONT-SIZE: 10pt
+}
+
+
+a.r1:link{text-decoration:none;color:#000066; font-weight:bold}
+a.r1:visited{text-decoration:none;color:#000066; font-weight:bold}
+a.r1:hover{color:#FF0000; font-weight:bold}
+a.r2:link{text-decoration:none;color:#ffffff}
+a.r2:visited{text-decoration:none;color:#ffffff}
+a.r2:hover{color:#000000;}
+

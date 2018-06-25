@@ -1,0 +1,13 @@
+package test;
+
+import javax.servlet.http.*;
+import java.util.*;
+
+public class debug {
+  public static void printRequestParameters(HttpServletRequest request) {
+    for (Enumeration e = request.getParameterNames(); e.hasMoreElements();) {
+      String key = (String)e.nextElement();
+      System.out.println("HttpServletRequest: " + key + " = " + request.getParameter(key));
+    }
+  }
+}

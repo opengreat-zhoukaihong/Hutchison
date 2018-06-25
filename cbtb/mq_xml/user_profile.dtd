@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 NT (http://www.xmlspy.com) by Jenny (LINE.net) -->
+<!ELEMENT user_profile (domain_id, user_id, password, description, action)>
+<!ELEMENT domain_id (#PCDATA)>
+<!ELEMENT user_id (#PCDATA)>
+<!ELEMENT password (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT action (#PCDATA)>
+<!ATTLIST action
+	value (create | change | delete | suspend | active) #REQUIRED
+>

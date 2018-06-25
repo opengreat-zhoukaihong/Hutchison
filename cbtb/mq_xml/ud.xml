@@ -1,0 +1,22 @@
+From:TL
+To:CBTB
+Content-Type:/text/XML-USER_PROFILE
+Date:2001.06.05 17:36:03
+<?xml version="1.0"?>
+<!DOCTYPE user_profile SYSTEM "http://187.11.1.2:7001/user_profile.dtd">
+
+
+<user_profile>
+	
+  <domain_id>TL000064</domain_id>
+	
+  <user_id>tl000064</user_id>
+	
+  <password>20ecf2f6dd98d939053d8602194d8169b9a643ffcb2b62efce9175cf9e9adfcde5a9a0abd74e0c31623ea2cc963ebdad2e684e4a642ee5b75d04e286468134f3</password>
+
+  <description>it has change</description>
+	
+	
+  <action value="delete" />
+
+</user_profile>

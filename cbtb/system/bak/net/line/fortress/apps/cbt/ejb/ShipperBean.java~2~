@@ -1,0 +1,83 @@
+package net.line.fortress.apps.cbt.ejb;
+
+import java.rmi.*;
+import javax.ejb.*;
+import java.math.*;
+
+public class ShipperBean implements EntityBean {
+  EntityContext entityContext;
+  public String organizationId;
+  public String webSite;
+  public String paymentTerms;
+  public BigDecimal creditLineAmount;
+  public String ejbCreate(ShipperBean shipperBean) throws CreateException {
+    setDetails(shipperBean);
+    return null;
+  }
+  public String ejbCreate(String organizationId) throws CreateException {
+    this.organizationId = organizationId;
+    return null;
+  }
+  public void ejbPostCreate(ShipperBean shipperBean) throws CreateException {
+  }
+  public void ejbPostCreate(String organizationId) throws CreateException {
+  }
+  public void ejbRemove() throws RemoveException {
+  }
+  public void ejbActivate() {
+  }
+  public void ejbPassivate() {
+  }
+  public void ejbLoad() {
+  }
+  public void ejbStore() {
+  }
+  public void setEntityContext(EntityContext entityContext) {
+    this.entityContext = entityContext;
+  }
+  public void unsetEntityContext() {
+    entityContext = null;
+  }
+  public String getOrganizationId() {
+    return organizationId;
+  }
+  public String getWebSite() {
+    return webSite;
+  }
+  public void setWebSite(String webSite) {
+    this.webSite = webSite;
+  }
+  public String getPaymentTerms() {
+    return paymentTerms;
+  }
+  public void setPaymentTerms(String paymentTerms) {
+    this.paymentTerms = paymentTerms;
+  }
+  public BigDecimal getCreditLineAmount() {
+    return creditLineAmount;
+  }
+  public void setCreditLineAmount(BigDecimal creditLineAmount) {
+    this.creditLineAmount = creditLineAmount;
+  }
+public ShipperBean getDetails() {
+	ShipperBean details = new ShipperBean();
+	details.organizationId=this.organizationId;
+	details.webSite=this.webSite;
+	details.paymentTerms=this.paymentTerms;
+	details.creditLineAmount=this.creditLineAmount;
+	return details;
+}
+
+public void setDetails(ShipperBean details) {
+	this.organizationId=details.organizationId;
+	this.webSite=details.webSite;
+	this.paymentTerms=details.paymentTerms;
+	this.creditLineAmount=details.creditLineAmount;
+}
+public String toString() {
+	this.organizationId=details.organizationId;
+	this.webSite=details.webSite;
+	this.paymentTerms=details.paymentTerms;
+	this.creditLineAmount=details.creditLineAmount;
+}
+}

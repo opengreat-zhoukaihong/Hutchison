@@ -1,0 +1,39 @@
+//the object's value must be "YYYY-MM-DD" if not't this funcation can't work
+//before than start return -1   start is eg:"-1","-5";
+//later  than end   return -2
+//else return 1
+function between(object,start,end)
+{
+	now = new Date()
+	startDate = new Date()
+	endDate = new Date()
+	s = object.value
+	msPerDay = 24*60*60*1000;//a day's second
+	var year = s.substring(0,4)
+	var Hmonth = s.substring(5,6)
+	var Lmonth = s.substring(6,7)
+	var Hdate = s.substring(8,9)
+	var Ldate = s.substring(9,10)
+	y = parseInt(year)
+	m = parseInt(Hmonth)*10 + parseInt(Lmonth)-1
+	d = parseInt(Hdate)*10 + parseInt(Ldate)
+	inputDate = new Date(y,m,d)
+	startDate.setTime(now.getTime() + msPerDay*(start-1))
+	endDate.setTime(now.getTime() + msPerDay*end)
+
+	if(inputDate.getTime() >= startDate.getTime())
+	{
+		if(inputDate.getTime() > endDate.getTime())
+		{
+			return -2
+		}
+		else
+		{
+			return 0
+		}
+	}
+	else
+	{
+		return -1
+	}
+}

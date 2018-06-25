@@ -1,0 +1,74 @@
+package net.line.fortress.apps.system.utils.simpleQuery;
+
+import java.rmi.*;
+import java.sql.*;
+import java.util.*;
+import javax.ejb.*;
+import javax.naming.*;
+import net.line.fortress.apps.system.ejb.*;
+
+public class SimpleQuery implements Iterator {
+
+  private List bufferList = null;
+  private int index = 0;
+
+  private net.line.fortress.apps.system.ejb.SimpleQuery query = null;
+
+  public SimpleQuery(String sql) throws RemoteException, NamingException, CreateException, Exception {
+    InitialContext ctx = null;
+    try {
+      ctx = new InitialContext();
+//      Hashtable ht = new Hashtable();
+//      ht.put(Context.INITIAL_CONTEXT_FACTORY, "weblogic.jndi.WLInitialContextFactory");
+//      ht.put(Context.PROVIDER_URL, "t3://localhost:7001");
+//      ctx = new InitialContext(ht);
+      SimpleQueryHome beanHome = (SimpleQueryHome)javax.rmi.PortableRemoteObject.narrow(
+        ctx.lookup("ejb.SimpleQuery"), SimpleQueryHome.class);
+      query = beanHome.create(sql);
+      bufferList = query.nextList();
+    } finally {
+      try {
+        ctx.close();
+      } catch (Exception e) {}
+    }
+  }
+  public boolean hasNext() {
+    if (index < bufferList.size()) {
+      return true;
+    } else {
+      try {
+        return query.hasNextList();
+      } catch (Exception e) {
+        e.printStackTrace();
+        this.close();
+        return false;
+      }
+    }
+  }
+  public Object next() {
+    if (index >= bufferList.size()) {
+      try {
+        bufferList = query.nextList();
+        index = 0;
+      } catch (Exception e) {
+        e.printStackTrace();
+        this.close();
+        throw new NoSuchElementException();
+      }
+    }
+    return bufferList.get(index++);
+  }
+  public void remove() {
+    throw new UnsupportedOperationException("remove not implemented in SimpleQuery.");
+  }
+  public void close() {
+    try {
+      query.closeList();
+      query.remove();
+    } catch (Exception e) {}
+  }
+  protected void finalize() {
+    this.close();
+  }
+
+}

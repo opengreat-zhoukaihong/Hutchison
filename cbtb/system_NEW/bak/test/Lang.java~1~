@@ -1,0 +1,27 @@
+package test;
+
+/**
+ * Title:
+ * Description:
+ * Copyright:    Copyright (c) 2001
+ * Company:
+ * @author
+ * @version 1.0
+ */
+
+public class Lang {
+  Properties p = new Properties();
+
+  public Lang() {
+
+
+      InputStream in = getClass().getResourceAsStream("/test.props");
+      try {
+        p.load(in);
+      } catch (Exception e) {
+        System.out.println("Cannot load /system.props");
+        e.printStackTrace();
+      }
+
+  }
+}

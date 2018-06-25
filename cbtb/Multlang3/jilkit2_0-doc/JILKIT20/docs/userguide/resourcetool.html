@@ -1,0 +1,234 @@
+<HTML>
+<HEAD>
+   <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+   <META NAME="GENERATOR" CONTENT="Mozilla/4.02 [en] (X11; U; SunOS 5.7 sun4u) [Netscape]">
+   <META NAME="Author" CONTENT="Scarlett Hao">
+   <TITLE> Resource Tool</TITLE>
+</HEAD>
+<BODY BGCOLOR="#FFFFFF">
+
+<CENTER><PRE CLASS="ChapTitle"><IMG SRC="image/titleduket.gif" HEIGHT=116 WIDTH=661><IMG SRC="image/coffee.gif" HEIGHT=88 WIDTH=57></PRE></CENTER>
+
+<CENTER><B><FONT SIZE=+2>Resource Tool</B></FONT></CENTER>
+
+<CENTER><B></B>&nbsp;</CENTER>
+
+<CENTER><B></B></CENTER>
+
+<CENTER><IMG SRC="image/rainbow.gif" HEIGHT=1 WIDTH=100%></CENTER>
+
+
+<P><B><FONT SIZE=-1><A HREF="userguide.html">[contents]</A></FONT></B>
+
+<P><B><A HREF="#Introducing the Resource Tool">Introducing the Resource
+Tool</A></B>
+<BR><B><A HREF="#Using the Resource Tool">Using the Resource Tool</A></B>
+<UL><B><I><A HREF="#Getting Started with the Resource Tool">Getting Started
+with the Resource Tool</A></I></B>
+<BR><B><I><A HREF="#Menus and Buttons">Menus and Buttons</A></I></B>
+<BR><B><I><A HREF="#Merging Files and Reporting Differences">Merging Files
+and Reporting Differences</A></I></B>
+<BR><B><I><A HREF="#Exporting Resource">Exporting Resource</A></I></B>
+<BR>&nbsp;</UL>
+<A NAME="Introducing the Resource Tool"></A><B><FONT SIZE=+1>Introducing
+the Resource Tool</FONT></B>
+
+<P>Handling Java resource bundles, particularly the frequent revisions
+of those bundles, is a difficult part of the internationalization/localization
+process. The Resource tool helps you to handle message files in several
+ways:
+<UL>
+<LI>
+Drawing messages from an existing resource rundle class file, when the
+Java source code of that resource bundle is not available.</LI>
+
+<LI>
+Exporting messages as either a Java resource bundle or a property file
+or an array resource bundle.</LI>
+
+<LI>
+Merging two resource bundles (either source code or class byte code).</LI>
+
+<LI>
+Comparing two resource bundles and find the differences between them.</LI>
+
+<LI>
+Creating log files of the differences between two resource bundles (either
+Java source code or class byte code).</LI>
+
+<LI>
+Creating source code files from byte code ( class file ) to be reused in
+new localization iteration.</LI>
+</UL>
+
+<DIV CLASS="Paragraph"><A NAME="Using the Resource Tool"></A><B><FONT SIZE=+1>Using
+the Resource Tool</FONT></B>
+
+<P><A NAME="Getting Started with the Resource Tool"></A><B><I>Getting Started
+with the Resource Tool</I></B>
+
+<P>With GUI method, in the main window of <B>I18n/L10n Toolkit 2.0</B>,
+select <B>Resource Tool</B>, then you can get <B>Resource Tool</B> main
+window.
+
+<P><A NAME="Menus and Buttons"></A><B><I>Menus and Buttons</I></B>
+
+<P>The <B>Resource Tool</B> UI includes several buttons and menus. Only
+those unique to this tool are described here.
+<UL>
+<LI>
+<B>File-Open</B></LI>
+
+<BR>There are two choices for this menu item: As Master and As Slave. To
+merge two resource file, Resource Tool must firstly open two files. One
+is opened as Master and the other is opened as Slave. The master file should
+be opened at first. When saving or exporting the merged result, the file
+name to save or the selections to export is from the Master file by default.
+<BR>&nbsp;
+<LI>
+<B>File-Differentiate</B></LI>
+
+<BR>After opening two resource files, press this menu item, then a Resource
+Differences window appears in the lower area of the <B>Resource Tool</B>
+main window (figure1).
+<BR>&nbsp;
+<LI>
+<B>File-Merge</B></LI>
+
+<BR>Merging the two resource bundles into one. After you merge two files,
+you will find the window popup (figure2). You can view the merged file
+there.
+<BR>&nbsp;
+<LI>
+<B>File-Export</B></LI>
+
+<BR>Exporting the merged resource into a resource bundle you designate.
+<BR>&nbsp;
+<LI>
+<B>View-Differences Report</B></LI>
+
+<BR>Creating a difference report of the two resource bundles (figure3).
+
+<P><IMG SRC="image/res_main.gif" HEIGHT=600 WIDTH=674>
+<H6>
+Figure1: Resource Tool main window: Differenciate</H6>
+<IMG SRC="image/res_main_merg.gif" HEIGHT=600 WIDTH=674>
+<H6>
+Figure2: Resource Tool main window: Merge</H6>
+</UL>
+
+<UL>
+<LI>
+<B>File-Save</B></LI>
+
+<BR>You can save each of the three to a file, the master resource, the
+merged resource and the resource differences.
+<BR>&nbsp;
+<LI>
+<B>Edit-Options</B></LI>
+
+<BR>In the miscellaneous panel, check <B>View Value As Unicode</B>, will
+show the resource value in ASCII unicode format. Check <B>Merge Comments
+</B>will keep comments in source code when merging resource.</UL>
+<A NAME="Merging Files and Reporting Differences"></A><B><I><FONT SIZE=+1>Merging
+Files and Reporting Differences</FONT></I></B>
+<OL>
+<LI>
+Open a resource bundle file by choosing <B>File-Open-As Master </B>and
+select the file you want from the file and directory list.</LI>
+
+<LI>
+Open a resource bundle file by choosing<B> File-Open-As Slave</B> and select
+the file you want from the file and directory list.</LI>
+
+<LI>
+At this time, you can either select to merge the files or generate a difference
+report.</LI>
+
+<BR>&nbsp;
+<UL>
+<LI>
+Merging Files</LI>
+
+<BR>Select<B> File-Merge</B>, then the result of combination of the two
+resource bundles is displayed in the window as shown in figure2. Click<B>
+Save</B> or <B>File-Save-Merged Resources</B> to save the result.
+<BR>&nbsp;
+<LI>
+Creating a Difference Report</LI>
+
+<BR>Select<B> File-Differenciate</B>, a report of the differences between
+the two resource bundles is displayed in the lower window as shown in figure1.
+Select <B>File-Save Resource Differences</B> to save the report to a file.
+Select <B>View-Differences Report </B>to open a report viewer to view the
+report.
+
+<P><IMG SRC="image/res_diffrept.gif" HEIGHT=351 WIDTH=539>
+<H6>
+Figure3: Resources Difference Report Viewer</H6>
+</UL>
+</OL>
+<A NAME="Exporting Resource"></A><B><I><FONT SIZE=+1>Exporting Resource</FONT></I></B>
+
+<P>This function allows a resource bundle to be exported and saved as another
+Java source file or property resource file with optional different bundle
+type and/or bundle name.
+<UL>
+<OL>
+<LI>
+Select <B>File-Export </B>to pop up the exporting resource dialog (figure4).</LI>
+
+<LI>
+If there is no resource merged, you can see only the <B>Master Resource</B>
+is in the list. If there is resource merged, then you will see the <B>Merged
+Resource</B> as well as the Master Resource is in the list with the former
+selected.</LI>
+
+<LI>
+There are three types of resource bundles the exported resource can be
+stored as: <I><B>List Resource Bundle</B>,</I> <B><I>Property Resource
+Bundle</I></B> and <B><I>Array Resource Bundle</I></B>. The former two
+are defined in JDK, while the later one is defined in APIs of this Internationalization
+tool.</LI>
+
+<LI>
+Then you can accept the default resource bundle name (same as the parameter
+in <I>getBundle</I> method), locale name, and the output directory, or
+you can type in or select these values.</LI>
+
+<LI>
+After your selection, press <B>OK</B> to export the selected resource to
+the resource bundle file according to the above choices and save it relative
+to the output directory.</LI>
+
+<H6>
+<IMG SRC="image/res_exp.gif" HEIGHT=310 WIDTH=480></H6>
+
+<H6>
+Figure4: Resources Difference Report Viewer</H6>
+</OL>
+</UL>
+</DIV>
+<IMG SRC="image/rainbow.gif" HEIGHT=6 WIDTH=100%>
+<BR>&nbsp;
+<CENTER><B><FONT SIZE=-1>&nbsp;<A HREF="#top">Top of file</A> | <A HREF="mailto:i18n-toolkit-comments@Sun.COM">Comments</A>
+| <A HREF="mailto:i18n-toolkit-comments@Sun.COM">Submit Bug</A></FONT></B></CENTER>
+
+<CENTER><A HREF="http://www.sun.com"><IMG SRC="image/sun-logo.gif" ALT="Sun Home" BORDER=0 HEIGHT=60 WIDTH=84></A></CENTER>
+
+<CENTER><FONT SIZE=-2>Copyright &copy;&nbsp; 1995-1999 Sun Microsystems,
+Inc.</FONT></CENTER>
+
+<CENTER><FONT SIZE=-2>China Technical Development Center</FONT></CENTER>
+
+<CENTER><FONT SIZE=-2>All Rights Reserved.</FONT></CENTER>
+
+
+<P>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+<BR>&nbsp;
+</BODY>
+</HTML>

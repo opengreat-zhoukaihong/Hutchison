@@ -1,0 +1,71 @@
+﻿<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page errorPage="ErrorPage.jsp"%>
+<%@ page import="net.line.fortress.apps.system.*"%>
+<%@ page import="com.cbtb.web.WebOperator"%>
+<jsp:useBean id="companyProfileModel" scope="session" class="com.cbtb.model.CompanyProfileModel" />
+<jsp:useBean id="cbtbConstant" scope="page" class="com.cbtb.util.CbtbConstant" />
+<%
+  session.removeAttribute("webOperator");
+
+//New Add for decryption start
+AgiDatabase database = request.getDatabase();
+CipherManager cipherManager = CipherSystem.getCipherManager(database);
+String value = request.getParameter("RequestData");
+Vector values = new Vector();
+PrivateKey cbtbPrik = cipherManager.getPrivateKey("CBTB");
+PublicKey cbtbPubk = cipherManager.getPublicKey("ARENA");
+String decryptedValue = cipherManager.decrypt(value, cbtbPubk);
+decryptedValue = cipherManager.decrypt(decryptedValue, cbtbPrik);
+StringTokenizer st = new StringTokenizer(decryptedValue, ",");
+while (st.hasMoreTokens()){
+	values.addElement(st.nextToken());
+}
+if (values.size()<4){
+//error!!
+}
+String organizationId = ((String)values.elementAt(0)).substring(values.elementAt(0).indexOf("=")+1);
+String userId = ((String)values.elementAt(1)).substring(values.elementAt(1).indexOf("=")+1);
+String password = ((String)values.elementAt(2)).substring(values.elementAt(2).indexOf("=")+1);
+String TimeStamp = ((String)values.elementAt(3)).substring(values.elementAt(3).indexOf("=")+1);
+
+//New Add for decryption end
+
+
+//  String organizationId = request.getParameter("organizationId");
+//  String userId   = request.getParameter("userId");
+//  String password = request.getParameter("password");
+  WebOperator webOperator = new WebOperator();
+  out.println(organizationId+userId+password);
+
+          String goPage = "";
+        try{ 
+	  if(webOperator.frontLogin(organizationId,userId,password))
+	  {
+	  companyProfileModel = webOperator.getCompanyProfileModel();
+	  session.setAttribute("companyProfileModel",companyProfileModel);
+	  String companyType = companyProfileModel.getCompanyType();
+	  //out.println(companyName);
+   
+	    if (companyType.equalsIgnoreCase(cbtbConstant.COMPANY_TYPE_SHIPPER))
+                 	goPage = "indexShipping.jsp";
+ 	   else if (companyType.equalsIgnoreCase(cbtbConstant.COMPANY_TYPE_TRUCKER))
+         		goPage = "indexTrucking.jsp";
+    	   else
+                goPage = "index.jsp";
+  	   }
+          else
+           {
+                 goPage = "index.jsp";
+    	   }
+          }
+        catch(Exception e)
+	{
+ 	 goPage = "index.jsp";
+ 	}  
+// 	out.println(goPage);
+	session.setAttribute("webOperator",webOperator); 
+	response.sendRedirect(goPage);
+
+ 	
+%>

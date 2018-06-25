@@ -1,0 +1,206 @@
+
+(object Petal
+    version    	44
+    _written   	"Rose 7.1.9642.27"
+    charSet    	134)
+
+(object Class_Category "cbtb"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"3AEB82B70105"
+    exportControl 	"Public"
+    logical_models 	(list unit_reference_list
+	(object Class_Category "web"
+	    is_unit    	TRUE
+	    is_loaded  	FALSE
+	    quid       	"3AEB82C603E2")
+	(object Class_Category "ejb"
+	    is_unit    	TRUE
+	    is_loaded  	FALSE
+	    quid       	"3AEBAA9100A1")
+	(object Class_Category "util"
+	    is_unit    	TRUE
+	    is_loaded  	FALSE
+	    quid       	"3AEBAB3D0012"))
+    logical_presentations 	(list unit_reference_list
+	(object ClassDiagram "Main"
+	    quid       	"3AEBA3630365"
+	    title      	"Main"
+	    zoom       	100
+	    max_height 	28350
+	    max_width  	21600
+	    origin_x   	0
+	    origin_y   	0
+	    items      	(list diagram_item_list
+		(object ClassView "Class" "Logical View::com::cbtb::web::SysOperatorWeb" @1
+		    ShowCompartmentStereotypes 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    location   	(462, 511)
+		    font       	(object Font
+			size       	10
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@1
+			location   	(231, 99)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	462
+			justify    	0
+			label      	"SysOperatorWeb")
+		    stereotype 	(object ItemLabel
+			Parent_View 	@1
+			location   	(231, 49)
+			fill_color 	13434879
+			anchor     	10
+			nlines     	1
+			max_width  	462
+			justify    	0
+			label      	"<<Web Session>>")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3AEC074602F9"
+		    compartment 	(object Compartment
+			Parent_View 	@1
+			location   	(231, 214)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			icon_style 	"Icon"
+			fill_color 	16777215
+			anchor     	2
+			nlines     	15
+			max_width  	0)
+		    width      	480
+		    height     	948
+		    annotation 	8
+		    autoResize 	TRUE)
+		(object ClassView "Class" "Logical View::com::cbtb::web::CompanyWeb" @2
+		    ShowCompartmentStereotypes 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    location   	(461, 1459)
+		    font       	(object Font
+			size       	10
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@2
+			location   	(230, 1097)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	462
+			justify    	0
+			label      	"CompanyWeb")
+		    stereotype 	(object ItemLabel
+			Parent_View 	@2
+			location   	(230, 1047)
+			fill_color 	13434879
+			anchor     	10
+			nlines     	1
+			max_width  	462
+			justify    	0
+			label      	"<<Web Session>>")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3AEC077700E7"
+		    width      	480
+		    height     	848
+		    annotation 	8
+		    autoResize 	TRUE)
+		(object ClassView "Class" "Logical View::com::cbtb::web::WebEJBUtil" @3
+		    ShowCompartmentStereotypes 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    location   	(1234, 1253)
+		    font       	(object Font
+			size       	10
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@3
+			location   	(842, 747)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	784
+			justify    	0
+			label      	"WebEJBUtil")
+		    icon_style 	"Icon"
+		    line_color 	255
+		    fill_color 	13434879
+		    quidu      	"3AEC09B803B7"
+		    width      	802
+		    height     	1036
+		    annotation 	8
+		    autoResize 	TRUE)
+		(object ClassView "Class" "Logical View::com::cbtb::util::JNDINames" @4
+		    ShowCompartmentStereotypes 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    location   	(1151, 491)
+		    font       	(object Font
+			size       	10
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@4
+			location   	(852, 361)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	598
+			justify    	0
+			label      	"JNDINames")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3AEBAD4801D7"
+		    compartment 	(object Compartment
+			Parent_View 	@4
+			location   	(852, 583)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			icon_style 	"Icon"
+			fill_color 	16777215
+			anchor     	2
+			nlines     	26
+			max_width  	0)
+		    width      	616
+		    height     	284
+		    annotation 	8
+		    autoResize 	TRUE)))))

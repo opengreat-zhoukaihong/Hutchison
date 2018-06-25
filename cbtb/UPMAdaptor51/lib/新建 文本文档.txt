@@ -1,0 +1,1 @@
+D:\CBTB_SYSTEM\UPMAdaptor51\lib\arena-singleLogon.jar;D:\CBTB_SYSTEM\UPMAdaptor51\lib\jce.jar;D:\CBTB_SYSTEM\UPMAdaptor51\lib\ldapfilt.jar;D:\CBTB_SYSTEM\UPMAdaptor51\lib\ldapjdk.jar;D:\CBTB_SYSTEM\UPMAdaptor51\lib\ldapsp.jar;D:\CBTB_SYSTEM\UPMAdaptor51\lib\upm.jar

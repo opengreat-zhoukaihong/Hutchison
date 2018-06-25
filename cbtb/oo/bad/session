@@ -1,0 +1,3361 @@
+
+(object Petal
+    version    	44
+    _written   	"Rose 7.1.9642.27"
+    charSet    	134)
+
+(object Class_Category "session"
+    is_unit    	TRUE
+    is_loaded  	TRUE
+    quid       	"3AEBA8E30084"
+    exportControl 	"Public"
+    logical_models 	(list unit_reference_list
+	(object Class "CompanyBean"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBTransactionType"
+		    value      	("EJBTransactionType_Set" 211))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBSessionType"
+		    value      	("EJBSessionType_Set" 202))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBPersistenceType"
+		    value      	("EJBPersistenceType_Set" 222))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"BMP_Extend_CMP"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"home"
+		    value      	"CompanyHome")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"remote"
+		    value      	"Company")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"ejb-class"
+		    value      	"CompanyBean")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	TRUE))
+	    quid       	"3AEBBE7700C4"
+	    stereotype 	"EJBSession"
+	    used_nodes 	(list uses_relationship_list
+		(object Uses_Relationship
+		    quid       	"3AEBFF66039A"
+		    supplier   	"Logical View::com::cbtb::ejb::session::MatchManagerBean"
+		    quidu      	"3AEBD8D90209")
+		(object Uses_Relationship
+		    quid       	"3AEC00520123"
+		    supplier   	"Logical View::com::cbtb::ejb::session::CompanyManagerBean"
+		    quidu      	"3AEBE8DF03C0")
+		(object Uses_Relationship
+		    quid       	"3AEC00DC01FD"
+		    supplier   	"Logical View::com::cbtb::util::UtilTool"
+		    quidu      	"3AEBB32800FD"))
+	    operations 	(list Operations
+		(object Operation "ejbCreate"
+		    quid       	"3AEBBE77011E"
+		    stereotype 	"EJBCreateMethod"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbRemove"
+		    quid       	"3AEBBE77013C"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbActivate"
+		    quid       	"3AEBBE770146"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbPassivate"
+		    quid       	"3AEBBE77015A"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "setSessionContext"
+		    quid       	"3AEBBE77016E"
+		    parameters 	(list Parameters
+			(object Parameter "sc"
+			    quid       	"3AEBBE770182"
+			    type       	"SessionContext"))
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getCompanyProfile"
+		    quid       	"3AEBC04901A0"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getMatchManager"
+		    quid       	"3AEBC83A00B3"
+		    stereotype 	"Match"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getCompanyManager"
+		    quid       	"3AEBECA601B7"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "isLogin"
+		    quid       	"3AEBC4620036"
+		    stereotype 	"System"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getFunctions"
+		    quid       	"3AEBC4F00301"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "checkFunction"
+		    quid       	"3AEBC4FC00C4"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "login"
+		    quid       	"3AEBC50F03D8"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "logout"
+		    quid       	"3AEBC52501B3"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "isLogin"
+		    quid       	"3AEBFC04039F"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0))
+	    class_attributes 	(list class_attribute_list
+		(object ClassAttribute "context"
+		    quid       	"3AEBBE7700F0"
+		    type       	"javax.ejb.SessionContext"
+		    initv      	"null"
+		    exportControl 	"Public")
+		(object ClassAttribute "companyProfile"
+		    quid       	"3AEBD34A014E"
+		    type       	"CompanyProfile"
+		    quidu      	"3AEB87D2008D")))
+	(object Class "CompanyHome"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE))
+	    quid       	"3AEBBE7700E2"
+	    stereotype 	"EJBHomeInterface"
+	    superclasses 	(list inheritance_relationship_list
+		(object Inheritance_Relationship
+		    quid       	"3AEBBE7700EC"
+		    supplier   	"EJBHome"))
+	    used_nodes 	(list uses_relationship_list
+		(object Uses_Relationship
+		    quid       	"3AEBBE770218"
+		    supplier   	"Logical View::com::cbtb::ejb::session::CompanyBean"
+		    quidu      	"3AEBBE7700C4"))
+	    operations 	(list Operations
+		(object Operation "create"
+		    quid       	"3AEBBE7701A0"
+		    stereotype 	"EJBCreateMethod"
+		    result     	"Company"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0
+		    quidu      	"3AEBBE7700E3")))
+	(object Class "Company"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE))
+	    quid       	"3AEBBE7700E3"
+	    stereotype 	"EJBRemoteInterface"
+	    superclasses 	(list inheritance_relationship_list
+		(object Inheritance_Relationship
+		    quid       	"3AEBBE7700ED"
+		    supplier   	"EJBObject"))
+	    used_nodes 	(list uses_relationship_list
+		(object Uses_Relationship
+		    quid       	"3AEBBE77022C"
+		    supplier   	"Logical View::com::cbtb::ejb::session::CompanyBean"
+		    quidu      	"3AEBBE7700C4")))
+	(object Class "MasterManagerHome"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE))
+	    quid       	"3AEBD4E100F9"
+	    stereotype 	"EJBHomeInterface"
+	    superclasses 	(list inheritance_relationship_list
+		(object Inheritance_Relationship
+		    quid       	"3AEBD4E10103"
+		    supplier   	"EJBHome"))
+	    operations 	(list Operations
+		(object Operation "create"
+		    quid       	"3AEBD4E10168"
+		    stereotype 	"EJBCreateMethod"
+		    result     	"MasterManager"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0
+		    quidu      	"3AEBD4E100FA")))
+	(object Class "MasterManager"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE))
+	    quid       	"3AEBD4E100FA"
+	    stereotype 	"EJBRemoteInterface"
+	    superclasses 	(list inheritance_relationship_list
+		(object Inheritance_Relationship
+		    quid       	"3AEBD4E10104"
+		    supplier   	"EJBObject")))
+	(object Class "MatchManagerBean"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBTransactionType"
+		    value      	("EJBTransactionType_Set" 211))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBSessionType"
+		    value      	("EJBSessionType_Set" 201))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBPersistenceType"
+		    value      	("EJBPersistenceType_Set" 222))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"BMP_Extend_CMP"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"home"
+		    value      	"MatchManagerHome")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"remote"
+		    value      	"MatchManager")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"ejb-class"
+		    value      	"MatchManagerBean")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	TRUE))
+	    quid       	"3AEBD8D90209"
+	    stereotype 	"EJBSession"
+	    used_nodes 	(list uses_relationship_list
+		(object Uses_Relationship
+		    quid       	"3AED36E902FC"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::DeliveryRequestBean"
+		    quidu      	"3AEB89E80225")
+		(object Uses_Relationship
+		    quid       	"3AED36EE0281"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::TruckCapacityBean"
+		    quidu      	"3AEB898F01EB")
+		(object Uses_Relationship
+		    quid       	"3AED36F10127"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::MatchRequestBean"
+		    quidu      	"3AEB8A560179")
+		(object Uses_Relationship
+		    quid       	"390D371202E0"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::MatchFeeDetailBean"
+		    quidu      	"390D2B2302AB")
+		(object Uses_Relationship
+		    quid       	"390D37D003B5"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::TruckCapacityBean"
+		    quidu      	"3AEB898F01EB")
+		(object Uses_Relationship
+		    quid       	"390D37D501DC"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::DeliveryRequestBean"
+		    quidu      	"3AEB89E80225")
+		(object Uses_Relationship
+		    quid       	"390D382E0180"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::MatchRequestBean"
+		    quidu      	"3AEB8A560179")
+		(object Uses_Relationship
+		    quid       	"390D3843028E"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::InventoryDailyBean"
+		    quidu      	"3AEB90F402F6")
+		(object Uses_Relationship
+		    quid       	"390D3E8B0377"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::DeliveryPriceFeeBean"
+		    quidu      	"3AEB90F4040E"))
+	    operations 	(list Operations
+		(object Operation "ejbCreate"
+		    quid       	"3AEBD8D90223"
+		    stereotype 	"EJBCreateMethod"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbRemove"
+		    quid       	"3AEBD8D90231"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbActivate"
+		    quid       	"3AEBD8D9023B"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbPassivate"
+		    quid       	"3AEBD8D90245"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "setSessionContext"
+		    quid       	"3AEBD8D90259"
+		    parameters 	(list Parameters
+			(object Parameter "sc"
+			    quid       	"3AEBD8D90263"
+			    type       	"SessionContext"))
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "addMatch"
+		    quid       	"3B2EBDB502BA"
+		    parameters 	(list Parameters
+			(object Parameter "matchModel"
+			    quid       	"3B2EBDCE0298"
+			    type       	"MatchModel"))
+		    result     	"MatchCapacityRequest"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "addMatchFee"
+		    quid       	"3B2EBDEA03BB"
+		    parameters 	(list Parameters
+			(object Parameter "mfdm"
+			    quid       	"3B2EBE07014F"
+			    type       	"MatchFeeDetailModel"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "findMatchCapacityRequest"
+		    quid       	"3B2EBE30037F"
+		    parameters 	(list Parameters
+			(object Parameter "matchNumber"
+			    quid       	"3B2EBE3D0374"
+			    type       	"String"))
+		    result     	"MatchModel"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getMatchFee"
+		    quid       	"3B2EBE4700C5"
+		    parameters 	(list Parameters
+			(object Parameter "matchNumber"
+			    quid       	"3B2EBE55036E"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getNewMatchNum"
+		    quid       	"3B2EBE5F012E"
+		    result     	"String"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "match"
+		    quid       	"3B2EBE7E025F"
+		    parameters 	(list Parameters
+			(object Parameter "deliveryRequestNum"
+			    quid       	"3B2EBE9C019A"
+			    type       	"String")
+			(object Parameter "truckCapacityNum"
+			    quid       	"3B2EBE9C0276"
+			    type       	"String"))
+		    result     	"MatchModel"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "removeMatchFee"
+		    quid       	"3B2EBEAB0155"
+		    parameters 	(list Parameters
+			(object Parameter "matchFeeList"
+			    quid       	"3B2EBEB802C6"
+			    type       	"boolean"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchDeliveryRequest"
+		    quid       	"3B2EBF7F01C8"
+		    parameters 	(list Parameters
+			(object Parameter "deliveryRequestNum"
+			    quid       	"3B2EBFE80287"
+			    type       	"String")
+			(object Parameter "companyName"
+			    quid       	"3B2EBFDB0293"
+			    type       	"String")
+			(object Parameter "originCityId"
+			    quid       	"3B2EBFDB030B"
+			    type       	"String")
+			(object Parameter "destinationCityId"
+			    quid       	"3B2EBFDB0383"
+			    type       	"String")
+			(object Parameter "deliveryDate"
+			    quid       	"3B2EBFB80288"
+			    type       	"String")
+			(object Parameter "deliveryTimeId"
+			    quid       	"3B2EBFB8030B"
+			    type       	"String")
+			(object Parameter "containerTypeId"
+			    quid       	"3B2EBFB80379"
+			    type       	"String")
+			(object Parameter "orderByName"
+			    quid       	"3B2EBFB803DD"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchMatchInfo"
+		    quid       	"3B2EC00B0242"
+		    parameters 	(list Parameters
+			(object Parameter "companyID"
+			    quid       	"3B2EC06D029D"
+			    type       	"String")
+			(object Parameter "companyName"
+			    quid       	"3B2EC06D031F"
+			    type       	"String")
+			(object Parameter "matchNumber"
+			    quid       	"3B2EC05800F8"
+			    type       	"String")
+			(object Parameter "truckerName"
+			    quid       	"3B2EC058017A"
+			    type       	"String")
+			(object Parameter "deliveryDate"
+			    quid       	"3B2EC05801FC"
+			    type       	"String")
+			(object Parameter "deliveryTimeID"
+			    quid       	"3B2EC035004D"
+			    type       	"String")
+			(object Parameter "hkPlateNo"
+			    quid       	"3B2EC03500D0"
+			    type       	"String")
+			(object Parameter "orderByField"
+			    quid       	"3B2EC0350148"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchMatchInfo"
+		    quid       	"3B2EC0A40007"
+		    parameters 	(list Parameters
+			(object Parameter "companyID"
+			    quid       	"3B2EC11B022F"
+			    type       	"String")
+			(object Parameter "companyName"
+			    quid       	"3B2EC11B02BB"
+			    type       	"String")
+			(object Parameter "matchNumber"
+			    quid       	"3B2EC11B0347"
+			    type       	"String")
+			(object Parameter "truckerName"
+			    quid       	"3B2EC0F60362"
+			    type       	"String")
+			(object Parameter "deliveryDate"
+			    quid       	"3B2EC0F70006"
+			    type       	"String")
+			(object Parameter "deliveryTimeID"
+			    quid       	"3B2EC0F70092"
+			    type       	"String")
+			(object Parameter "originCityID"
+			    quid       	"3B2EC0F70133"
+			    type       	"String")
+			(object Parameter "destinationCityID"
+			    quid       	"3B2EC0CE033C"
+			    type       	"String")
+			(object Parameter "matchStatus"
+			    quid       	"3B2EC0CE03C9"
+			    type       	"String")
+			(object Parameter "orderByField"
+			    quid       	"3B2EC0CF006D"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchTruckCapacity"
+		    quid       	"3B2EC1370329"
+		    parameters 	(list Parameters
+			(object Parameter "truckCapacityNum"
+			    quid       	"3B2EC1B100D6"
+			    type       	"String")
+			(object Parameter "companyName"
+			    quid       	"3B2EC1A2026F"
+			    type       	"String")
+			(object Parameter "originCityId"
+			    quid       	"3B2EC1A20305"
+			    type       	"String")
+			(object Parameter "destinationCityId"
+			    quid       	"3B2EC1A20391"
+			    type       	"String")
+			(object Parameter "deliveryDate"
+			    quid       	"3B2EC1860215"
+			    type       	"String")
+			(object Parameter "deliveryTimeId"
+			    quid       	"3B2EC18602AB"
+			    type       	"String")
+			(object Parameter "trailerId"
+			    quid       	"3B2EC1860341"
+			    type       	"String")
+			(object Parameter "orderByName"
+			    quid       	"3B2EC18603CD"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchUnMatchInfo"
+		    quid       	"3B2EC1D00351"
+		    parameters 	(list Parameters
+			(object Parameter "companyId"
+			    quid       	"3B2EC25D026E"
+			    type       	"String")
+			(object Parameter "matchNumber"
+			    quid       	"3B2EC25D0318"
+			    type       	"String")
+			(object Parameter "deliveryRequestNum"
+			    quid       	"3B2EC25D03B8"
+			    type       	"String")
+			(object Parameter "truckCapacityNum"
+			    quid       	"3B2EC25E0071"
+			    type       	"String")
+			(object Parameter "deliveryDate"
+			    quid       	"3B2EC23301AF"
+			    type       	"String")
+			(object Parameter "deliveryTimeId"
+			    quid       	"3B2EC233024F"
+			    type       	"String")
+			(object Parameter "originCityId"
+			    quid       	"3B2EC23302F0"
+			    type       	"String")
+			(object Parameter "destinationCityId"
+			    quid       	"3B2EC2330390"
+			    type       	"String")
+			(object Parameter "trailerTypeId"
+			    quid       	"3B2EC2060223"
+			    type       	"String")
+			(object Parameter "containerTypeId"
+			    quid       	"3B2EC20602C3"
+			    type       	"String")
+			(object Parameter "orderByName"
+			    quid       	"3B2EC2060359"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "unmatch"
+		    quid       	"3B2EC2750377"
+		    parameters 	(list Parameters
+			(object Parameter "String[] matchNumber"
+			    quid       	"3B2EC28102C0"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "unmatch"
+		    quid       	"3B2EC295021E"
+		    parameters 	(list Parameters
+			(object Parameter "String matchNum"
+			    quid       	"3B2EC29E01BD"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateGuanLan"
+		    quid       	"3B2EC2A6020F"
+		    parameters 	(list Parameters
+			(object Parameter "Collection matchList"
+			    quid       	"3B2EC2B90284"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateMatchCapacityRequest"
+		    quid       	"3B2EC2C20363"
+		    parameters 	(list Parameters
+			(object Parameter "MatchModel mm"
+			    quid       	"3B2EC2CC02B4"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateMatchStatus"
+		    quid       	"3B2EC2E20098"
+		    parameters 	(list Parameters
+			(object Parameter "matchNum"
+			    quid       	"3B2EC30E0345"
+			    type       	"String")
+			(object Parameter "deliveryRequestNum"
+			    quid       	"3B2EC30F0011"
+			    type       	"String")
+			(object Parameter "truckCapacityNum"
+			    quid       	"3B2EC30F00BB"
+			    type       	"String")
+			(object Parameter "status"
+			    quid       	"3B2EC30F016F"
+			    type       	"String"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateMatchStatus"
+		    quid       	"3B2EC32202FD"
+		    parameters 	(list Parameters
+			(object Parameter "matchNum"
+			    quid       	"3B2EC33200C6"
+			    type       	"String")
+			(object Parameter "status"
+			    quid       	"3B2EC332017A"
+			    type       	"String"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0))
+	    statemachine 	(object State_Machine "State/Activity Model"
+		quid       	"390D27080228"
+		states     	(list States)
+		partitions 	(list Partitions)
+		objects    	(list Objects)
+		statediagrams 	(list StateDiagrams
+		    (object ActivityDiagram "NewDiagram"
+			quid       	"390D2708025A"
+			title      	"NewDiagram"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	0
+			origin_y   	0
+			items      	(list diagram_item_list
+			    (object Swimlane "" @1
+				line_color 	3342489
+				width      	450)))
+		    (object ActivityDiagram "NewDiagram2"
+			quid       	"390D2728022E"
+			title      	"NewDiagram2"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	0
+			origin_y   	0
+			items      	(list diagram_item_list
+			    (object Swimlane "" @2
+				line_color 	3342489
+				width      	450)))
+		    (object State_Diagram "NewDiagram3"
+			quid       	"390D272F0197"
+			title      	"NewDiagram3"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	0
+			origin_y   	0
+			items      	(list diagram_item_list)))))
+	(object Class "MatchManagerHome"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE))
+	    quid       	"3AEBD8D9021D"
+	    stereotype 	"EJBHomeInterface"
+	    superclasses 	(list inheritance_relationship_list
+		(object Inheritance_Relationship
+		    quid       	"3AEBD8D9021F"
+		    supplier   	"EJBHome"))
+	    used_nodes 	(list uses_relationship_list
+		(object Uses_Relationship
+		    quid       	"3AEBD8D902F9"
+		    supplier   	"Logical View::com::cbtb::ejb::session::MatchManagerBean"
+		    quidu      	"3AEBD8D90209"))
+	    operations 	(list Operations
+		(object Operation "create"
+		    quid       	"3AEBD8D90281"
+		    stereotype 	"EJBCreateMethod"
+		    result     	"MatchManager"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0
+		    quidu      	"3AEBD8D9021E")))
+	(object Class "MatchManager"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE))
+	    quid       	"3AEBD8D9021E"
+	    stereotype 	"EJBRemoteInterface"
+	    superclasses 	(list inheritance_relationship_list
+		(object Inheritance_Relationship
+		    quid       	"3AEBD8D90220"
+		    supplier   	"EJBObject"))
+	    used_nodes 	(list uses_relationship_list
+		(object Uses_Relationship
+		    quid       	"3AEBD8D902FA"
+		    supplier   	"Logical View::com::cbtb::ejb::session::MatchManagerBean"
+		    quidu      	"3AEBD8D90209")))
+	(object Class "BillingManagerHome"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE))
+	    quid       	"3AEBDF34003C"
+	    stereotype 	"EJBHomeInterface"
+	    superclasses 	(list inheritance_relationship_list
+		(object Inheritance_Relationship
+		    quid       	"3AEBDF34003E"
+		    supplier   	"EJBHome"))
+	    operations 	(list Operations
+		(object Operation "create"
+		    quid       	"3AEBDF340096"
+		    stereotype 	"EJBCreateMethod"
+		    result     	"BillingManager"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0
+		    quidu      	"3AEBDF34003D")))
+	(object Class "BillingManager"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE))
+	    quid       	"3AEBDF34003D"
+	    stereotype 	"EJBRemoteInterface"
+	    superclasses 	(list inheritance_relationship_list
+		(object Inheritance_Relationship
+		    quid       	"3AEBDF34003F"
+		    supplier   	"EJBObject")))
+	(object Class "ReportManagerBean"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBTransactionType"
+		    value      	("EJBTransactionType_Set" 211))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBSessionType"
+		    value      	("EJBSessionType_Set" 201))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBPersistenceType"
+		    value      	("EJBPersistenceType_Set" 222))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"BMP_Extend_CMP"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"home"
+		    value      	"ReportManagerHome")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"remote"
+		    value      	"ReportManager")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"ejb-class"
+		    value      	"ReportManagerBean")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	TRUE))
+	    quid       	"3AEBDF82007A"
+	    stereotype 	"EJBSession"
+	    used_nodes 	(list uses_relationship_list
+		(object Uses_Relationship
+		    quid       	"390D38E60076"
+		    supplier   	"Logical View::com::cbtb::ejb::session::CompanyManagerBean"
+		    quidu      	"3AEBE8DF03C0")
+		(object Uses_Relationship
+		    quid       	"390D38F60015"
+		    supplier   	"Logical View::com::cbtb::ejb::session::MatchManagerBean"
+		    quidu      	"3AEBD8D90209"))
+	    operations 	(list Operations
+		(object Operation "ejbCreate"
+		    quid       	"3AEBDF82009E"
+		    stereotype 	"EJBCreateMethod"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbRemove"
+		    quid       	"3AEBDF8200AC"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbActivate"
+		    quid       	"3AEBDF8200B6"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbPassivate"
+		    quid       	"3AEBDF8200C0"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "setSessionContext"
+		    quid       	"3AEBDF8200CA"
+		    parameters 	(list Parameters
+			(object Parameter "sc"
+			    quid       	"3AEBDF8200DE"
+			    type       	"SessionContext"))
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getOrganizationRegistrationReport"
+		    quid       	"3AEC1E5B0061"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getUnmatchedDeliveryReport"
+		    quid       	"3AEC1E6500DD"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getMatchAndConfirmedDeliveryReport"
+		    quid       	"3AEC1E700089"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getUndelivedContainerOfPickedup"
+		    quid       	"3AEC1E8302B7"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getOutstandingInvoiceReport"
+		    quid       	"3AEC1E900067"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getStatementSummaryReport"
+		    quid       	"3AEC1E99039F"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getUnconfirmedOrderOfMatched"
+		    quid       	"3AEC1EA7004C"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)))
+	(object Class "ReportManagerHome"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE))
+	    quid       	"3AEBDF820098"
+	    stereotype 	"EJBHomeInterface"
+	    superclasses 	(list inheritance_relationship_list
+		(object Inheritance_Relationship
+		    quid       	"3AEBDF82009A"
+		    supplier   	"EJBHome"))
+	    used_nodes 	(list uses_relationship_list
+		(object Uses_Relationship
+		    quid       	"3AEBDF82016A"
+		    supplier   	"Logical View::com::cbtb::ejb::session::ReportManagerBean"
+		    quidu      	"3AEBDF82007A"))
+	    operations 	(list Operations
+		(object Operation "create"
+		    quid       	"3AEBDF8200F2"
+		    stereotype 	"EJBCreateMethod"
+		    result     	"ReportManager"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0
+		    quidu      	"3AEBDF820099")))
+	(object Class "ReportManager"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE))
+	    quid       	"3AEBDF820099"
+	    stereotype 	"EJBRemoteInterface"
+	    superclasses 	(list inheritance_relationship_list
+		(object Inheritance_Relationship
+		    quid       	"3AEBDF82009B"
+		    supplier   	"EJBObject"))
+	    used_nodes 	(list uses_relationship_list
+		(object Uses_Relationship
+		    quid       	"3AEBDF820174"
+		    supplier   	"Logical View::com::cbtb::ejb::session::ReportManagerBean"
+		    quidu      	"3AEBDF82007A")))
+	(object Class "CompanyManagerBean"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBTransactionType"
+		    value      	("EJBTransactionType_Set" 211))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBSessionType"
+		    value      	("EJBSessionType_Set" 201))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBPersistenceType"
+		    value      	("EJBPersistenceType_Set" 222))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"BMP_Extend_CMP"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"home"
+		    value      	"CompanyManagerHome")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"remote"
+		    value      	"CompanyManager")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"ejb-class"
+		    value      	"CompanyManagerBean")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	TRUE))
+	    quid       	"3AEBE8DF03C0"
+	    stereotype 	"EJBSession"
+	    used_nodes 	(list uses_relationship_list
+		(object Uses_Relationship
+		    quid       	"3AED37430229"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::TruckerBean"
+		    quidu      	"3AEB8AB4001F")
+		(object Uses_Relationship
+		    quid       	"3AED374901D8"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::TruckCapacityBean"
+		    quidu      	"3AEB898F01EB")
+		(object Uses_Relationship
+		    quid       	"3AED374E0261"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::CompanyProfileBean"
+		    quidu      	"3AEB87D20078")
+		(object Uses_Relationship
+		    quid       	"3AED3755009E"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::TradingPartnerBean"
+		    quidu      	"3AEB8A7F00EB")
+		(object Uses_Relationship
+		    quid       	"3AED37570282"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::DeliveryRequestBean"
+		    quidu      	"3AEB89E80225")
+		(object Uses_Relationship
+		    quid       	"390D355D01FB"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::TruckerBean"
+		    quidu      	"3AEB8AB4001F")
+		(object Uses_Relationship
+		    quid       	"390D35C80079"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::DeliveryRequestBean"
+		    quidu      	"3AEB89E80225")
+		(object Uses_Relationship
+		    quid       	"390D360E01B0"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::TradingPartnerBean"
+		    quidu      	"3AEB8A7F00EB")
+		(object Uses_Relationship
+		    quid       	"390D36E60387"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::DocumentReceivingStatusBean"
+		    quidu      	"3AEB8BAC008A")
+		(object Uses_Relationship
+		    quid       	"390D36EB024E"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::TruckCapacityBean"
+		    quidu      	"3AEB898F01EB"))
+	    operations 	(list Operations
+		(object Operation "ejbCreate"
+		    quid       	"3AEBE8E00064"
+		    stereotype 	"EJBCreateMethod"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbRemove"
+		    quid       	"3AEBE8E0006E"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbActivate"
+		    quid       	"3AEBE8E00078"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbPassivate"
+		    quid       	"3AEBE8E0008C"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "setSessionContext"
+		    quid       	"3AEBE8E00096"
+		    parameters 	(list Parameters
+			(object Parameter "sc"
+			    quid       	"3AEBE8E000A0"
+			    type       	"SessionContext"))
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "addCompanyProfile"
+		    quid       	"3B2DD1BE025A"
+		    parameters 	(list Parameters
+			(object Parameter "cpm"
+			    quid       	"3B2DD306026F"
+			    type       	"CompanyProfileModel"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "addDeliveryRequest"
+		    quid       	"3B2DD3CE026D"
+		    parameters 	(list Parameters
+			(object Parameter "drm"
+			    quid       	"3B2DD3FC038B"
+			    type       	"DeliveryRequestModel"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "addTruckCapacity"
+		    quid       	"3AEBEC0A0069"
+		    parameters 	(list Parameters
+			(object Parameter "truckCapacitys"
+			    quid       	"3B2DD46E03DF"
+			    type       	"Collection"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "addTruckCapacity"
+		    quid       	"3B2DD46E03AD"
+		    parameters 	(list Parameters
+			(object Parameter "tcm"
+			    quid       	"3B2DD4920215"
+			    type       	"TruckCapacityModel"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "addTruckData"
+		    quid       	"3B2DD49901BA"
+		    parameters 	(list Parameters
+			(object Parameter "tdm"
+			    quid       	"3B2DD4C20354"
+			    type       	"TruckerDataModel"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "calculateDeliveryFee"
+		    quid       	"3B2DD4D2004A"
+		    parameters 	(list Parameters
+			(object Parameter "containerTypeId"
+			    quid       	"3B2DD60D03B4"
+			    type       	"String")
+			(object Parameter "originCityId"
+			    quid       	"3B2DD51602DD"
+			    type       	"String")
+			(object Parameter "destinationCityId"
+			    quid       	"3B2DD53700B3"
+			    type       	"String"))
+		    result     	"BigDecimal"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "calculateFee"
+		    quid       	"3B2DD56B00D6"
+		    parameters 	(list Parameters
+			(object Parameter "containerTypeId"
+			    quid       	"3B2DD59C00A5"
+			    type       	"String")
+			(object Parameter "cityId"
+			    quid       	"3B2DD5B40009"
+			    type       	"String")
+			(object Parameter "isIB"
+			    quid       	"3B2DD5B4008B"
+			    type       	"boolean")
+			(object Parameter "isShipper"
+			    quid       	"3B2DD5C102B0"
+			    type       	"boolean"))
+		    result     	"BigDecimal"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "calculateTruckFee"
+		    quid       	"3B2DD5D502F5"
+		    parameters 	(list Parameters
+			(object Parameter "trailerId"
+			    quid       	"3B2DD638001D"
+			    type       	"String")
+			(object Parameter "originCityId"
+			    quid       	"3B2DD61B0206"
+			    type       	"String")
+			(object Parameter "destinationCityId"
+			    quid       	"3B2DD61B0292"
+			    type       	"String"))
+		    result     	"BigDecimal"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "checkCompany"
+		    quid       	"3B2DD652013C"
+		    parameters 	(list Parameters
+			(object Parameter "companyId"
+			    quid       	"3B2DD6670024"
+			    type       	"String"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "deleteDocRecStatus"
+		    quid       	"3B2DD6A101AE"
+		    parameters 	(list Parameters
+			(object Parameter "drsm"
+			    quid       	"3B2DD6BB0147"
+			    type       	"DocRecStatusModel"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "findCompanyProfile"
+		    quid       	"3B2DD6CA0370"
+		    parameters 	(list Parameters
+			(object Parameter "companyId"
+			    quid       	"3B2DD6E800B6"
+			    type       	"String"))
+		    result     	"CompanyProfileModel"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "findDeliveryRequest"
+		    quid       	"3B2DD6F70003"
+		    parameters 	(list Parameters
+			(object Parameter "deliveryRequestNum"
+			    quid       	"3B2DD70B0337"
+			    type       	"String"))
+		    result     	"DeliveryRequestModel"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "findTruckCapacity"
+		    quid       	"3B2DD71D038D"
+		    parameters 	(list Parameters
+			(object Parameter "truckCapacityNum"
+			    quid       	"3B2DD732027F"
+			    type       	"String"))
+		    result     	"TruckCapacityModel"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "findTruckerData"
+		    quid       	"3B2DD73B037C"
+		    parameters 	(list Parameters
+			(object Parameter "truckerId"
+			    quid       	"3B2DD74E0301"
+			    type       	"String"))
+		    result     	"TruckerData"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getNewCompanyProfileNum"
+		    quid       	"3B2DD770024C"
+		    result     	"String"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getNewDeliveryRequestNum"
+		    quid       	"3B2DD78200C1"
+		    result     	"String"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getNewRegistrationRefNum"
+		    quid       	"3B2DD7A30029"
+		    result     	"String"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getNewTruckCapacityNum"
+		    quid       	"3B2DD7DC01ED"
+		    result     	"String"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getNewTruckerDataNum"
+		    quid       	"3B2DD7EA003F"
+		    result     	"String"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getUserInfoByCondition"
+		    quid       	"3B2DD80C020A"
+		    parameters 	(list Parameters
+			(object Parameter "companyId"
+			    quid       	"3B2DD84E02EC"
+			    type       	"String")
+			(object Parameter "companyName"
+			    quid       	"3B2DD84E0396"
+			    type       	"String")
+			(object Parameter "contactPerson"
+			    quid       	"3B2DD84F0058"
+			    type       	"String")
+			(object Parameter "telephoneNo"
+			    quid       	"3B2DD8760271"
+			    type       	"String")
+			(object Parameter "faxNo"
+			    quid       	"3B2DD8760339"
+			    type       	"String")
+			(object Parameter "HKMobileNo"
+			    quid       	"3B2DD8770005"
+			    type       	"String")
+			(object Parameter "truckerName"
+			    quid       	"3B2DD89E01BA"
+			    type       	"String")
+			(object Parameter "HKPlateNo"
+			    quid       	"3B2DD89E026E"
+			    type       	"String")
+			(object Parameter "selectType"
+			    quid       	"3B2DD89E032D"
+			    type       	"String")
+			(object Parameter "refNum"
+			    quid       	"3B2DD89E03E1"
+			    type       	"String")
+			(object Parameter "HKLicenseNo"
+			    quid       	"3B2DD89F00B7"
+			    type       	"String")
+			(object Parameter "orderBy"
+			    quid       	"3B2DD8C6030C"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "removeCompanyProfile"
+		    quid       	"3B2DD9040030"
+		    parameters 	(list Parameters
+			(object Parameter "companyId"
+			    quid       	"3B2DD915017F"
+			    type       	"String"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "removeDeliveryRequest"
+		    quid       	"3B2DD91F0165"
+		    parameters 	(list Parameters
+			(object Parameter "deliveryRequestNum"
+			    quid       	"3B2DD930020A"
+			    type       	"String"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "removeTruckCapacity"
+		    quid       	"3B2DD93D02DB"
+		    parameters 	(list Parameters
+			(object Parameter "truckCapacityNum"
+			    quid       	"3B2DD952021D"
+			    type       	"String"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "removeTruckerData"
+		    quid       	"3B2DD96602EE"
+		    parameters 	(list Parameters
+			(object Parameter "truckerId"
+			    quid       	"3B2DD9780254"
+			    type       	"String"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchDeliveryRequest"
+		    quid       	"3AEBEC0A0127"
+		    parameters 	(list Parameters
+			(object Parameter "companyId"
+			    quid       	"3B2DD9F60223"
+			    type       	"String")
+			(object Parameter "matchNumber"
+			    quid       	"3B2DD9F60287"
+			    type       	"String")
+			(object Parameter "originZoneId"
+			    quid       	"3B2DD9F602F5"
+			    type       	"String")
+			(object Parameter "originCityId"
+			    quid       	"3B2DDA080016"
+			    type       	"String")
+			(object Parameter "destinationZoneId"
+			    quid       	"3B2DDA16032D"
+			    type       	"String")
+			(object Parameter "destinationCityId"
+			    quid       	"3B2DDA16039B"
+			    type       	"String")
+			(object Parameter "requestStatus"
+			    quid       	"3B2DDA270273"
+			    type       	"String")
+			(object Parameter "containerTypeId"
+			    quid       	"3B2DDA270332"
+			    type       	"String")
+			(object Parameter "deliveryDate"
+			    quid       	"3B2DDA430328"
+			    type       	"String")
+			(object Parameter "deliveryRequestNum"
+			    quid       	"3B2DDA4303E6"
+			    type       	"String")
+			(object Parameter "deliveryTime"
+			    quid       	"3B2DDA4400C7"
+			    type       	"String")
+			(object Parameter "timeSlotId"
+			    quid       	"3B2DDA44017B"
+			    type       	"String")
+			(object Parameter "shippingOrderNo"
+			    quid       	"3B2DDA440243"
+			    type       	"String")
+			(object Parameter "orderByName"
+			    quid       	"3B2DDA65002E"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchDeliveryRequest"
+		    quid       	"3B2DDA9E0170"
+		    parameters 	(list Parameters
+			(object Parameter "companyId"
+			    quid       	"3B2DDAAB035A"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchTruckCapacity"
+		    quid       	"3B2DDABA0008"
+		    parameters 	(list Parameters
+			(object Parameter "companyId"
+			    quid       	"3B2DDAC401CF"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchTruckCapacity"
+		    quid       	"3B2DDAD801F6"
+		    parameters 	(list Parameters
+			(object Parameter "truckCapacityNum"
+			    quid       	"3B2DDB2D013A"
+			    type       	"String")
+			(object Parameter "originZoneId"
+			    quid       	"3B2DDB2D01F8"
+			    type       	"String")
+			(object Parameter "companyId"
+			    quid       	"3B2DDB2D02D4"
+			    type       	"String")
+			(object Parameter "originCityId"
+			    quid       	"3B2DDB2D03B1"
+			    type       	"String")
+			(object Parameter "destinationCityId"
+			    quid       	"3B2DDB5600AD"
+			    type       	"String")
+			(object Parameter "deliveryDate"
+			    quid       	"3B2DDB560189"
+			    type       	"String")
+			(object Parameter "deliveryTimeId"
+			    quid       	"3B2DDB56025B"
+			    type       	"String")
+			(object Parameter "deliveryTimeSlot"
+			    quid       	"3B2DDB560337"
+			    type       	"String")
+			(object Parameter "trailerId"
+			    quid       	"3B2DDB57002C"
+			    type       	"String")
+			(object Parameter "matchNumber"
+			    quid       	"3B2DDB570108"
+			    type       	"String")
+			(object Parameter "destinationZoneId"
+			    quid       	"3B2DDB5701DA"
+			    type       	"String")
+			(object Parameter "truckCapacityStatus"
+			    quid       	"3B2DDB76024D"
+			    type       	"String")
+			(object Parameter "orderByName"
+			    quid       	"3B2DDB76031F"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchTruckCapacity"
+		    quid       	"3B2DDBC70113"
+		    parameters 	(list Parameters
+			(object Parameter "truckerId"
+			    quid       	"3B2DDBE4006B"
+			    type       	"String")
+			(object Parameter "companyId"
+			    quid       	"3B2DDBE401B5"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchTruckCapacityByContainer"
+		    quid       	"3B2DDBFF039F"
+		    parameters 	(list Parameters
+			(object Parameter "truckCapacityNum"
+			    quid       	"3B2DDC060037"
+			    type       	"String")
+			(object Parameter "originZoneId"
+			    quid       	"3B2DDC060196"
+			    type       	"String")
+			(object Parameter "companyId"
+			    quid       	"3B2DDC060286"
+			    type       	"String")
+			(object Parameter "originCityId"
+			    quid       	"3B2DDC06038B"
+			    type       	"String")
+			(object Parameter "destinationCityId"
+			    quid       	"3B2DDC070089"
+			    type       	"String")
+			(object Parameter "deliveryDate"
+			    quid       	"3B2DDC0701C9"
+			    type       	"String")
+			(object Parameter "deliveryTimeId"
+			    quid       	"3B2DDC0702CE"
+			    type       	"String")
+			(object Parameter "deliveryTimeSlot"
+			    quid       	"3B2DDC080008"
+			    type       	"String")
+			(object Parameter "containerTypeId"
+			    quid       	"3B2DDC3700D8"
+			    type       	"String")
+			(object Parameter "matchNumber"
+			    quid       	"3B2DDC08021B"
+			    type       	"String")
+			(object Parameter "destinationZoneId"
+			    quid       	"3B2DDC08033D"
+			    type       	"String")
+			(object Parameter "truckCapacityStatus"
+			    quid       	"3B2DDC09005A"
+			    type       	"String")
+			(object Parameter "orderByName"
+			    quid       	"3B2DDC09015E"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateCompanyProfile"
+		    quid       	"3B2DDC5402D9"
+		    parameters 	(list Parameters
+			(object Parameter "cpm"
+			    quid       	"3B2DDC6E01AA"
+			    type       	"CompanyProfileModel"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateCompanyProfileStatus"
+		    quid       	"3B2DDC7C0236"
+		    parameters 	(list Parameters
+			(object Parameter "companyId"
+			    quid       	"3B2DDC920115"
+			    type       	"String")
+			(object Parameter "status"
+			    quid       	"3B2DDC920256"
+			    type       	"String"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateDeliveryRequest"
+		    quid       	"3B2DDCA40085"
+		    parameters 	(list Parameters
+			(object Parameter "drm"
+			    quid       	"3B2DDD110302"
+			    type       	"DeliveryRequestModel"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateDeliveryRequestStatus"
+		    quid       	"3B2DDDDF031D"
+		    parameters 	(list Parameters
+			(object Parameter "deliveryRequestNum"
+			    quid       	"3B2DDDFD032A"
+			    type       	"String")
+			(object Parameter "status"
+			    quid       	"3B2DDDFE00A0"
+			    type       	"String"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateDocReceivingStatus"
+		    quid       	"3B2DDE0A02CE"
+		    parameters 	(list Parameters
+			(object Parameter "drsm"
+			    quid       	"3B2DDE210386"
+			    type       	"DocRecStatusModel"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateTruckCapacity"
+		    quid       	"3B2DDE2A02CA"
+		    parameters 	(list Parameters
+			(object Parameter "tcm"
+			    quid       	"3B2DDE420207"
+			    type       	"TruckCapacityModel"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateTruckCapacityStatus"
+		    quid       	"3B2DDE4F038C"
+		    parameters 	(list Parameters
+			(object Parameter "truckCapacityNum"
+			    quid       	"3B2DDE6D014A"
+			    type       	"String")
+			(object Parameter "status"
+			    quid       	"3B2DDE6D024F"
+			    type       	"String"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateTruckerData"
+		    quid       	"3B2DDE820000"
+		    parameters 	(list Parameters
+			(object Parameter "tdm"
+			    quid       	"3B2DDE96009F"
+			    type       	"TruckerDataModel"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateTruckerDataStatus"
+		    quid       	"3B2DDE9E00DC"
+		    parameters 	(list Parameters
+			(object Parameter "truckerId"
+			    quid       	"3B2DDEBC0067"
+			    type       	"String")
+			(object Parameter "status"
+			    quid       	"3B2DDEBC0180"
+			    type       	"String"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)))
+	(object Class "CompanyManagerHome"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE))
+	    quid       	"3AEBE8E00050"
+	    stereotype 	"EJBHomeInterface"
+	    superclasses 	(list inheritance_relationship_list
+		(object Inheritance_Relationship
+		    quid       	"3AEBE8E00052"
+		    supplier   	"EJBHome"))
+	    used_nodes 	(list uses_relationship_list
+		(object Uses_Relationship
+		    quid       	"3AEBE8E00154"
+		    supplier   	"Logical View::com::cbtb::ejb::session::CompanyManagerBean"
+		    quidu      	"3AEBE8DF03C0"))
+	    operations 	(list Operations
+		(object Operation "create"
+		    quid       	"3AEBE8E000BE"
+		    stereotype 	"EJBCreateMethod"
+		    result     	"CompanyManager"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0
+		    quidu      	"3AEBE8E00051")))
+	(object Class "CompanyManager"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE))
+	    quid       	"3AEBE8E00051"
+	    stereotype 	"EJBRemoteInterface"
+	    superclasses 	(list inheritance_relationship_list
+		(object Inheritance_Relationship
+		    quid       	"3AEBE8E00053"
+		    supplier   	"EJBObject"))
+	    used_nodes 	(list uses_relationship_list
+		(object Uses_Relationship
+		    quid       	"3AEBE8E00172"
+		    supplier   	"Logical View::com::cbtb::ejb::session::CompanyManagerBean"
+		    quidu      	"3AEBE8DF03C0")))
+	(object Class "BillingManagerBean"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBTransactionType"
+		    value      	("EJBTransactionType_Set" 211))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBSessionType"
+		    value      	("EJBSessionType_Set" 201))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBPersistenceType"
+		    value      	("EJBPersistenceType_Set" 222))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"BMP_Extend_CMP"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"home"
+		    value      	"BillingManagerHome")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"remote"
+		    value      	"BillingManager")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"ejb-class"
+		    value      	"BillingManagerBean")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	TRUE))
+	    quid       	"3AEC1ED30168"
+	    stereotype 	"EJBSession"
+	    used_nodes 	(list uses_relationship_list
+		(object Uses_Relationship
+		    quid       	"3AED35C602E0"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::MatchRequestBean"
+		    quidu      	"3AEB8A560179")
+		(object Uses_Relationship
+		    quid       	"3AED35CA01E1"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::AdditionalFeeBean"
+		    quidu      	"3AEB90F40319")
+		(object Uses_Relationship
+		    quid       	"3AED35CE015B"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::InvoiceBean"
+		    quidu      	"3AEB8B0702FA")
+		(object Uses_Relationship
+		    quid       	"3AED35D70226"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::InventoryDailyBean"
+		    quidu      	"3AEB90F402F6")
+		(object Uses_Relationship
+		    quid       	"3AED37D702FE"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::InventoryDailyBean"
+		    quidu      	"3AEB90F402F6")
+		(object Uses_Relationship
+		    quid       	"3AED37DD013A"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::InvoiceBean"
+		    quidu      	"3AEB8B0702FA")
+		(object Uses_Relationship
+		    quid       	"3AED37E000A8"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::AdditionalFeeBean"
+		    quidu      	"3AEB90F40319")
+		(object Uses_Relationship
+		    quid       	"3AED37E203AE"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::MatchRequestBean"
+		    quidu      	"3AEB8A560179")
+		(object Uses_Relationship
+		    quid       	"390D3494013E"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::StatementDataBean"
+		    quidu      	"390D2BC3014D")
+		(object Uses_Relationship
+		    quid       	"390D34BC0376"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::InvoicePaymentHistoryBean"
+		    quidu      	"390D2ACF01E2")
+		(object Uses_Relationship
+		    quid       	"390D35F6024B"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::DeliveryPriceFeeBean"
+		    quidu      	"3AEB90F4040E"))
+	    operations 	(list Operations
+		(object Operation "ejbCreate"
+		    quid       	"3AEC1ED30169"
+		    stereotype 	"EJBCreateMethod"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbRemove"
+		    quid       	"3AEC1ED3016A"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbActivate"
+		    quid       	"3AEC1ED3016B"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbPassivate"
+		    quid       	"3AEC1ED3016C"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "setSessionContext"
+		    quid       	"3AEC1ED3016D"
+		    parameters 	(list Parameters
+			(object Parameter "sc"
+			    quid       	"3AEC1ED3016E"
+			    type       	"SessionContext"))
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "addInvoicePaymentHistory"
+		    quid       	"3B2EA98402C1"
+		    parameters 	(list Parameters
+			(object Parameter "invoiceNo"
+			    quid       	"3B2EA9F30311"
+			    type       	"String")
+			(object Parameter "paymentDate"
+			    quid       	"3B2EA9F30357"
+			    type       	"String")
+			(object Parameter "paidBy"
+			    quid       	"3B2EA9F3039D"
+			    type       	"String")
+			(object Parameter "ref"
+			    quid       	"3B2EA9F303E3"
+			    type       	"String")
+			(object Parameter "payAmount"
+			    quid       	"3B2EA9F4004B"
+			    type       	"String"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "addInvoicePaymentHistory"
+		    quid       	"3B2EAA03027E"
+		    parameters 	(list Parameters
+			(object Parameter "invoiceNo"
+			    quid       	"3B2EAA4B03AE"
+			    type       	"String")
+			(object Parameter "paymentDate"
+			    quid       	"3B2EAA4C000C"
+			    type       	"Timestamp")
+			(object Parameter "paidBy"
+			    quid       	"3B2EAA4C0052"
+			    type       	"String")
+			(object Parameter "ref"
+			    quid       	"3B2EAA4C00A2"
+			    type       	"String")
+			(object Parameter "payAmount"
+			    quid       	"3B2EAA6001B9"
+			    type       	"BigDecimal"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "addStatementData"
+		    quid       	"3B2EAA600105"
+		    parameters 	(list Parameters
+			(object Parameter "sdm"
+			    quid       	"3B2EAA85016C"
+			    type       	"StatementDataModel"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "addStatementDetailData"
+		    quid       	"3B2EAA95006B"
+		    parameters 	(list Parameters
+			(object Parameter "sddm"
+			    quid       	"3B2EAAAA01D4"
+			    type       	"StatementDetailDataModel"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "calculateDeliveryPrice"
+		    quid       	"3B2EAAC103CC"
+		    parameters 	(list Parameters
+			(object Parameter "String matchNumber"
+			    quid       	"3B2EAADC02DA"))
+		    result     	"BigDecimal"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "calculateTotalPrice"
+		    quid       	"3B2EAAE70195"
+		    parameters 	(list Parameters
+			(object Parameter "String statementNo"
+			    quid       	"3B2EAB030380"))
+		    result     	"BigDecimal"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "createInvoice"
+		    quid       	"3B2EAB1801AA"
+		    parameters 	(list Parameters
+			(object Parameter "companyId"
+			    quid       	"3B2EAB33002C"
+			    type       	"String")
+			(object Parameter "matchNum"
+			    quid       	"3B2EAB3300AE"
+			    type       	"String")
+			(object Parameter "beginDate"
+			    quid       	"3B2EAB54011A"
+			    type       	"String")
+			(object Parameter "endDate"
+			    quid       	"3B2EAB540174"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "createInvoiceByColMatchModel"
+		    quid       	"3B2EAB660365"
+		    parameters 	(list Parameters
+			(object Parameter "colMatchModel"
+			    quid       	"3B2EABA302F4"
+			    type       	"Collection")
+			(object Parameter "fromDate"
+			    quid       	"3B2EABA303C7"
+			    type       	"String")
+			(object Parameter "toDate"
+			    quid       	"3B2EABA40061"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "createInvoiceByMatchNum"
+		    quid       	"3B2EABB6012F"
+		    parameters 	(list Parameters
+			(object Parameter "colMatchNum"
+			    quid       	"3B2EABCB008F"
+			    type       	"Collection")
+			(object Parameter "fromDate"
+			    quid       	"3B2EABBA02A7"
+			    type       	"String")
+			(object Parameter "toDate"
+			    quid       	"3B2EABBA0329"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "createStatementData"
+		    quid       	"3B2EABE4022F"
+		    parameters 	(list Parameters
+			(object Parameter "companyId"
+			    quid       	"3B2EAC1A03B4"
+			    type       	"String")
+			(object Parameter "matchNum"
+			    quid       	"3B2EAC1B00A8"
+			    type       	"String")
+			(object Parameter "beginDate"
+			    quid       	"3B2EAC1B0134"
+			    type       	"String")
+			(object Parameter "endDate"
+			    quid       	"3B2EAC1B01B6"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "deleteInvoiceDetailDataByPK"
+		    quid       	"3B2EAC2E00AF"
+		    parameters 	(list Parameters
+			(object Parameter "pk"
+			    quid       	"3B2EAC44035A"
+			    type       	"InvoiceDetailDataPK"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "findInvoiceDataModel"
+		    quid       	"3B2EAC60030A"
+		    parameters 	(list Parameters
+			(object Parameter "invoiceNo"
+			    quid       	"3B2EAC700353"
+			    type       	"String"))
+		    result     	"InvoiceDataModel"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "findStatementDataModel"
+		    quid       	"3B2EAC7C03A0"
+		    parameters 	(list Parameters
+			(object Parameter "statementNo"
+			    quid       	"3B2EAC9D0330"
+			    type       	"String"))
+		    result     	"StatementDataModel"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getNewInvoicePaymentNum"
+		    quid       	"3B2EACA602E3"
+		    result     	"String"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getNewMatchCapacityRequestNum"
+		    quid       	"3B2EACB702A1"
+		    result     	"String"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getNewStatementNum"
+		    quid       	"3B2EACC703BC"
+		    result     	"String"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchInvoiceData"
+		    quid       	"3B2EACEF0265"
+		    parameters 	(list Parameters
+			(object Parameter "shipperNo"
+			    quid       	"3B2EAD3103C9"
+			    type       	"String")
+			(object Parameter "invoiceNo"
+			    quid       	"3B2EAD3200E5"
+			    type       	"String")
+			(object Parameter "creationDate"
+			    quid       	"3B2EAD0F001D"
+			    type       	"String")
+			(object Parameter "invoiceStatus"
+			    quid       	"3B2EAD0F009F"
+			    type       	"String")
+			(object Parameter "orderByName"
+			    quid       	"3B2EAD0F012B"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchInvoiceDetail"
+		    quid       	"3B2EAD4102C7"
+		    parameters 	(list Parameters
+			(object Parameter "shipperNo"
+			    quid       	"3B2EAD9A018F"
+			    type       	"String")
+			(object Parameter "invoiceNo"
+			    quid       	"3B2EAD830222"
+			    type       	"String")
+			(object Parameter "beginInvoiceCreateDate"
+			    quid       	"3B2EAD8302AE"
+			    type       	"String")
+			(object Parameter "endInvoiceCreateDate"
+			    quid       	"3B2EAD830345"
+			    type       	"String")
+			(object Parameter "invoiceStatus"
+			    quid       	"3B2EAD8303DB"
+			    type       	"Vector"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchInvoicePaymentHistory"
+		    quid       	"3B2EADB202C0"
+		    parameters 	(list Parameters
+			(object Parameter "invoiceNo"
+			    quid       	"3B2EADC1000E"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchInvoiceSimple"
+		    quid       	"3B2EADD7029B"
+		    parameters 	(list Parameters
+			(object Parameter "shipperNo"
+			    quid       	"3B2EAE170351"
+			    type       	"String")
+			(object Parameter "invoiceNo"
+			    quid       	"3B2EAE0A0154"
+			    type       	"String")
+			(object Parameter "beginInvoiceCreateDate"
+			    quid       	"3B2EAE0A01F4"
+			    type       	"String")
+			(object Parameter "endInvoiceCreateDate"
+			    quid       	"3B2EAE0A028A"
+			    type       	"String")
+			(object Parameter "invoiceStatus"
+			    quid       	"3B2EAE0A0321"
+			    type       	"Vector"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchMatchFeeDetail"
+		    quid       	"3B2EAE2E0138"
+		    parameters 	(list Parameters
+			(object Parameter "matchNumber"
+			    quid       	"3B2EAE3F00BA"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchMatchForInvoice"
+		    quid       	"3B2EB8BE0082"
+		    parameters 	(list Parameters
+			(object Parameter "companyId"
+			    quid       	"3B2EB9090093"
+			    type       	"String")
+			(object Parameter "matchNum"
+			    quid       	"3B2EB909013E"
+			    type       	"Vector")
+			(object Parameter "beginDate"
+			    quid       	"3B2EB90901F2"
+			    type       	"String")
+			(object Parameter "endDate"
+			    quid       	"3B2EB90902A6"
+			    type       	"String")
+			(object Parameter "matchStatus"
+			    quid       	"3B2EB909035A"
+			    type       	"Vector")
+			(object Parameter "orderByName"
+			    quid       	"3B2EB91D0331"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchMatchForStatement"
+		    quid       	"3B2EBA5B0356"
+		    parameters 	(list Parameters
+			(object Parameter "companyId"
+			    quid       	"3B2EBA8A0079"
+			    type       	"String")
+			(object Parameter "matchNum"
+			    quid       	"3B2EBA8A01A5"
+			    type       	"String")
+			(object Parameter "beginDate"
+			    quid       	"3B2EBACB0235"
+			    type       	"String")
+			(object Parameter "endDate"
+			    quid       	"3B2EBACB02E9"
+			    type       	"String")
+			(object Parameter "status"
+			    quid       	"3B2EBACB03B2"
+			    type       	"String")
+			(object Parameter "orderByName"
+			    quid       	"3B2EBACC0088"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchStatementData"
+		    quid       	"3B2EBAE50391"
+		    parameters 	(list Parameters
+			(object Parameter "companyId"
+			    quid       	"3B2EBB8302BC"
+			    type       	"String")
+			(object Parameter "statementNo"
+			    quid       	"3B2EBB84000A"
+			    type       	"String")
+			(object Parameter "beginDate"
+			    quid       	"3B2EBB8400E7"
+			    type       	"String")
+			(object Parameter "endDate"
+			    quid       	"3B2EBB8401CD"
+			    type       	"String")
+			(object Parameter "status"
+			    quid       	"3B2EBB8402A9"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchStatementDetailData"
+		    quid       	"3B2EBB910077"
+		    parameters 	(list Parameters
+			(object Parameter "statementNo"
+			    quid       	"3B2EBBA30312"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateInvoiceData"
+		    quid       	"3B2EBBAB0382"
+		    parameters 	(list Parameters
+			(object Parameter "idm"
+			    quid       	"3B2EBBC202DA"
+			    type       	"InvoiceDataModel"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateInvoiceDataStatus"
+		    quid       	"3B2EBBCC0194"
+		    parameters 	(list Parameters
+			(object Parameter "invoiceNo"
+			    quid       	"3B2EBBEA0198"
+			    type       	"String")
+			(object Parameter "status"
+			    quid       	"3B2EBBEA02CE"
+			    type       	"String"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateMatchCapacityRequestStatus"
+		    quid       	"3B2EBBF501C5"
+		    parameters 	(list Parameters
+			(object Parameter "matchNum"
+			    quid       	"3B2EBC0A0342"
+			    type       	"String")
+			(object Parameter "status"
+			    quid       	"3B2EBC0B00AF"
+			    type       	"String"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateStatementDataPrice"
+		    quid       	"3B2EBC1801BC"
+		    parameters 	(list Parameters
+			(object Parameter "statementNo"
+			    quid       	"3B2EBC3303E1"
+			    type       	"String")
+			(object Parameter "totalPrice BigDecimal"
+			    quid       	"3B2EBC340144"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateStatementDataStatus"
+		    quid       	"3B2EBC4700D3"
+		    parameters 	(list Parameters
+			(object Parameter "statementNo"
+			    quid       	"3B2EBC5D0374"
+			    type       	"String")
+			(object Parameter "status"
+			    quid       	"3B2EBC5E00F4"
+			    type       	"String"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "viewInvoice"
+		    quid       	"3B2EBC6502AD"
+		    parameters 	(list Parameters
+			(object Parameter "vctInvoiceNo"
+			    quid       	"3B2EBC8503CB"
+			    type       	"Vector"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "viewOneInvoice"
+		    quid       	"3B2EBC90018C"
+		    parameters 	(list Parameters
+			(object Parameter "invoiceNo"
+			    quid       	"3B2EBCA002C6"
+			    type       	"String"))
+		    result     	"InvoiceDataModel"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)))
+	(object Class "MasterManagerBean"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBTransactionType"
+		    value      	("EJBTransactionType_Set" 211))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBSessionType"
+		    value      	("EJBSessionType_Set" 201))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBPersistenceType"
+		    value      	("EJBPersistenceType_Set" 222))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"BMP_Extend_CMP"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"home"
+		    value      	"SystemManagerHome")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"remote"
+		    value      	"SystemManager")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"ejb-class"
+		    value      	"SystemManagerBean")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	TRUE))
+	    quid       	"3AEC1F0F0019"
+	    stereotype 	"EJBSession"
+	    used_nodes 	(list uses_relationship_list
+		(object Uses_Relationship
+		    quid       	"390D352B0217"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::PackageUomBean"
+		    quidu      	"3AEB90F4033C")
+		(object Uses_Relationship
+		    quid       	"390D353001B0"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::CityBean"
+		    quidu      	"3AEB90F40454")
+		(object Uses_Relationship
+		    quid       	"390D353303D1"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::ContainerTypeBean"
+		    quidu      	"3AEB90F40431")
+		(object Uses_Relationship
+		    quid       	"390D3537002A"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::TrailerTypeBean"
+		    quidu      	"3AEB90F402D3")
+		(object Uses_Relationship
+		    quid       	"390D3545016A"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::DeliveryTimeSlotBean"
+		    quidu      	"3AEB90F402B0")
+		(object Uses_Relationship
+		    quid       	"390D357F00EC"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::TransactionCodeBean"
+		    quidu      	"3AEB8BF70381")
+		(object Uses_Relationship
+		    quid       	"390D3582024F"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::DocumentNeedBean"
+		    quidu      	"3AEB90F403A5")
+		(object Uses_Relationship
+		    quid       	"390D358E00E3"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::AdditionalFeeBean"
+		    quidu      	"3AEB90F40319")
+		(object Uses_Relationship
+		    quid       	"390D35960243"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::CargoCategoryBean"
+		    quidu      	"3AEB90F403EB")
+		(object Uses_Relationship
+		    quid       	"390D361F03BD"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::ReasonCodeBean"
+		    quidu      	"3AEB90F40382")
+		(object Uses_Relationship
+		    quid       	"390D39250302"
+		    supplier   	"Logical View::com::cbtb::ejb::entity::SystemProcessParameterBean"
+		    quidu      	"3AEB90F4028D"))
+	    operations 	(list Operations
+		(object Operation "ejbCreate"
+		    quid       	"3AEC1F0F001A"
+		    stereotype 	"EJBCreateMethod"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbRemove"
+		    quid       	"3AEC1F0F001B"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbActivate"
+		    quid       	"3AEC1F0F001C"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbPassivate"
+		    quid       	"3AEC1F0F001D"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "setSessionContext"
+		    quid       	"3AEC1F0F001E"
+		    parameters 	(list Parameters
+			(object Parameter "sc"
+			    quid       	"3AEC1F0F001F"
+			    type       	"SessionContext"))
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "getTradingPartnerNum"
+		    quid       	"3B2EC5E80100"
+		    result     	"String"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "queryAdditionalFee"
+		    quid       	"3B2EC6C002E1"
+		    parameters 	(list Parameters
+			(object Parameter "sqlString"
+			    quid       	"3B2EC6CD0163"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "queryCargoCategory"
+		    quid       	"3B2EC72600C1"
+		    parameters 	(list Parameters
+			(object Parameter "sqlString"
+			    quid       	"3B2EC73100A9"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "queryCity"
+		    quid       	"3B2EC73B021F"
+		    parameters 	(list Parameters
+			(object Parameter "sqlString"
+			    quid       	"3B2EC7470263"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "queryContainerType"
+		    quid       	"3B2EC7500099"
+		    parameters 	(list Parameters
+			(object Parameter "sqlString"
+			    quid       	"3B2EC75A01C0"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "queryDeliveryPriceFee"
+		    quid       	"3B2EC7630399"
+		    parameters 	(list Parameters
+			(object Parameter "sqlString"
+			    quid       	"3B2EC76E03E5"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "queryDeliveryTime"
+		    quid       	"3B2EC776017A"
+		    parameters 	(list Parameters
+			(object Parameter "sqlString"
+			    quid       	"3B2EC7830313"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "queryDeliveryTimeSolt"
+		    quid       	"3B2EC78A036E"
+		    parameters 	(list Parameters
+			(object Parameter "sqlString"
+			    quid       	"3B2EC79501E3"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "queryDepot"
+		    quid       	"3B2EC79C0319"
+		    parameters 	(list Parameters
+			(object Parameter "sqlString"
+			    quid       	"3B2EC7AA0157"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "queryDocumentNeed"
+		    quid       	"3B2EC7BA03C7"
+		    parameters 	(list Parameters
+			(object Parameter "sqlString"
+			    quid       	"3B2EC7C701E5"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "queryPackageUom"
+		    quid       	"3B2EC7D00292"
+		    parameters 	(list Parameters
+			(object Parameter "sqlString"
+			    quid       	"3B2EC7DC0113"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "queryReasonCode"
+		    quid       	"3B2EC7E301E5"
+		    parameters 	(list Parameters
+			(object Parameter "sqlString"
+			    quid       	"3B2EC7EF0048"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "queryShippingLine"
+		    quid       	"3B2EC7F800A5"
+		    parameters 	(list Parameters
+			(object Parameter "sqlString"
+			    quid       	"3B2EC8020171"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "queryTradingPartner"
+		    quid       	"3B2EC808024C"
+		    parameters 	(list Parameters
+			(object Parameter "sqlString"
+			    quid       	"3B2EC81401F9"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "queryTrailerType"
+		    quid       	"3B2EC81F01B9"
+		    parameters 	(list Parameters
+			(object Parameter "sqlString"
+			    quid       	"3B2EC82A02C3"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "queryTransactionCode"
+		    quid       	"3B2EC83400D3"
+		    parameters 	(list Parameters
+			(object Parameter "sqlString"
+			    quid       	"3B2EC83F02E2"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "queryZone"
+		    quid       	"3B2EC847017B"
+		    parameters 	(list Parameters
+			(object Parameter "sqlString"
+			    quid       	"3B2EC8540075"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchDeliveryPriceFee"
+		    quid       	"3B2EC8700057"
+		    parameters 	(list Parameters
+			(object Parameter "containerTypeId"
+			    quid       	"3B2EC8980195"
+			    type       	"String")
+			(object Parameter "cityId"
+			    quid       	"3B2EC8980285"
+			    type       	"String")
+			(object Parameter "zoneId"
+			    quid       	"3B2EC898031C"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "searchInventoryDaily"
+		    quid       	"3B2EC8A80224"
+		    parameters 	(list Parameters
+			(object Parameter "depotId"
+			    quid       	"3B2EC8DF033C"
+			    type       	"String")
+			(object Parameter "shippingLineId"
+			    quid       	"3B2EC8CD0296"
+			    type       	"String")
+			(object Parameter "containerTypeId"
+			    quid       	"3B2EC8CD0318"
+			    type       	"String")
+			(object Parameter "captureDate"
+			    quid       	"3B2EC8CD039A"
+			    type       	"String"))
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectAdditionalFee"
+		    quid       	"3B2EC8FD0263"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectCargoCategory"
+		    quid       	"3B2EC91903CB"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectCity"
+		    quid       	"3B2EC9290284"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectCompany"
+		    quid       	"3B2EC93C00D3"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectContainerType"
+		    quid       	"3B2EC9490153"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectDeliveryPriceFee"
+		    quid       	"3B2EC956036F"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectDeliveryTime"
+		    quid       	"3B2EC964035B"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectDeliveryTimeSolt"
+		    quid       	"3B2EC9750098"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectDepot"
+		    quid       	"3B2EC9AA0334"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectDocumentNeed"
+		    quid       	"3B2EC9C900DF"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectErrorCode"
+		    quid       	"3B2EC9DA0238"
+		    result     	"Collection"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectPackageUom"
+		    quid       	"3B2EC9E80242"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectParameter"
+		    quid       	"3B2EC9FB02A4"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectReasonCode"
+		    quid       	"3B2ECA0F0393"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectShippingLine"
+		    quid       	"3B2ECA2002B1"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectTradingPartner"
+		    quid       	"3B2ECA2E0076"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectTrailerType"
+		    quid       	"3B2ECA3C0008"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectTrucker"
+		    quid       	"3B2ECA540003"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "selectZone"
+		    quid       	"3B2ECA60005A"
+		    result     	"ArrayList"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "updateInventoryDaily"
+		    quid       	"3B2ECA76037D"
+		    parameters 	(list Parameters
+			(object Parameter "inventoryDailyList"
+			    quid       	"3B2ECA890190"
+			    type       	"Collection"))
+		    result     	"boolean"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)))
+	(object Class "SecurityManagerBean"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBTransactionType"
+		    value      	("EJBTransactionType_Set" 211))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBSessionType"
+		    value      	("EJBSessionType_Set" 201))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"EJBPersistenceType"
+		    value      	("EJBPersistenceType_Set" 222))
+		(object Attribute
+		    tool       	"Java"
+		    name       	"BMP_Extend_CMP"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"home"
+		    value      	"SecurityManagerHome")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"remote"
+		    value      	"SecurityManager")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"ejb-class"
+		    value      	"SecurityManagerBean")
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	TRUE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"cg_style"
+		    value      	"Default_EJB"))
+	    quid       	"3B2EFF560377"
+	    stereotype 	"EJBSession"
+	    operations 	(list Operations
+		(object Operation "ejbRemove"
+		    quid       	"3B2EFF5603AA"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbActivate"
+		    quid       	"3B2EFF5603B3"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbPassivate"
+		    quid       	"3B2EFF5603B4"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "setSessionContext"
+		    quid       	"3B2EFF5603BD"
+		    parameters 	(list Parameters
+			(object Parameter "sc"
+			    quid       	"3B2EFF5603BE"
+			    type       	"SessionContext"))
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "ejbCreate"
+		    quid       	"3B2F010901F6"
+		    stereotype 	"EJBCreateMethod"
+		    result     	"void"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "activeUser"
+		    quid       	"3B2F0173036B"
+		    parameters 	(list Parameters
+			(object Parameter "domainID"
+			    quid       	"3B2F01C00159"
+			    type       	"String")
+			(object Parameter "userID"
+			    quid       	"3B2F01C00267"
+			    type       	"String"))
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "addExternalGroupMembership"
+		    quid       	"3B2F034602CC"
+		    parameters 	(list Parameters
+			(object Parameter "domainID"
+			    quid       	"3B2F03670143"
+			    type       	"String")
+			(object Parameter "userID"
+			    quid       	"3B2F0367017F"
+			    type       	"String")
+			(object Parameter "userType"
+			    quid       	"3B2F036701BB"
+			    type       	"String"))
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "changePassword"
+		    quid       	"3B2F03AC032D"
+		    parameters 	(list Parameters
+			(object Parameter "domainID"
+			    quid       	"3B2F03CC0152"
+			    type       	"String")
+			(object Parameter "userID"
+			    quid       	"3B2F03CC01C0"
+			    type       	"String")
+			(object Parameter "newEncriptPassword"
+			    quid       	"3B2F03CC02BB"
+			    type       	"String"))
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "changePassword"
+		    quid       	"3B2F03D9029B"
+		    parameters 	(list Parameters
+			(object Parameter "domainID"
+			    quid       	"3B2F03FC0364"
+			    type       	"String")
+			(object Parameter "userID"
+			    quid       	"3B2F03FC03A0"
+			    type       	"String")
+			(object Parameter "password"
+			    quid       	"3B2F03FC03DC"
+			    type       	"String")
+			(object Parameter "isEncrypt"
+			    quid       	"3B2F03FD0026"
+			    type       	"boolean"))
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "createDomain"
+		    quid       	"3B2F04D20299"
+		    parameters 	(list Parameters
+			(object Parameter "domainID"
+			    quid       	"3B2F04F901AF"
+			    type       	"String")
+			(object Parameter "domainName"
+			    quid       	"3B2F04F901F5"
+			    type       	"String")
+			(object Parameter "domainDesc"
+			    quid       	"3B2F04F90231"
+			    type       	"String")
+			(object Parameter "domainType"
+			    quid       	"3B2F04F90277"
+			    type       	"String"))
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "createUser"
+		    quid       	"3B2F05A70169"
+		    parameters 	(list Parameters
+			(object Parameter "domainID"
+			    quid       	"3B2F05DD0211"
+			    type       	"String")
+			(object Parameter "domainType"
+			    quid       	"3B2F05DD0257"
+			    type       	"String")
+			(object Parameter "userID"
+			    quid       	"3B2F05DD029D"
+			    type       	"String")
+			(object Parameter "unEncryptPassword"
+			    quid       	"3B2F05DD02ED"
+			    type       	"String")
+			(object Parameter "userType"
+			    quid       	"3B2F05DD0334"
+			    type       	"String")
+			(object Parameter "description"
+			    quid       	"3B2F05DD038E"
+			    type       	"String"))
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "createUser"
+		    quid       	"3B2F05F60285"
+		    parameters 	(list Parameters
+			(object Parameter "domainID"
+			    quid       	"3B2F061B01FC"
+			    type       	"String")
+			(object Parameter "userID"
+			    quid       	"3B2F061B0260"
+			    type       	"String")
+			(object Parameter "encryptPassword"
+			    quid       	"3B2F061B02BB"
+			    type       	"String")
+			(object Parameter "description"
+			    quid       	"3B2F061B030B"
+			    type       	"String"))
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "deleteDemain"
+		    quid       	"3B2F069B00CA"
+		    parameters 	(list Parameters
+			(object Parameter "domainId"
+			    quid       	"3B2F06A801AF"
+			    type       	"String"))
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "deleteUser"
+		    quid       	"3B2F06B002C9"
+		    parameters 	(list Parameters
+			(object Parameter "domainId"
+			    quid       	"3B2F06C002E0"
+			    type       	"String")
+			(object Parameter "userId"
+			    quid       	"3B2F06C00330"
+			    type       	"String"))
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "removeExternalGroupMembership"
+		    quid       	"3B2F06D90155"
+		    parameters 	(list Parameters
+			(object Parameter "domainID"
+			    quid       	"3B2F06FE0130"
+			    type       	"String")
+			(object Parameter "userID"
+			    quid       	"3B2F06FE0195"
+			    type       	"String")
+			(object Parameter "userType"
+			    quid       	"3B2F06FE0267"
+			    type       	"String"))
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0)
+		(object Operation "removeExternalGroupMembership"
+		    quid       	"3B2F07110246"
+		    parameters 	(list Parameters
+			(object Parameter "principalDomainID"
+			    quid       	"3B2F073E0287"
+			    type       	"String")
+			(object Parameter "principal"
+			    quid       	"3B2F073E02E1"
+			    type       	"String")
+			(object Parameter "userOrGroup"
+			    quid       	"3B2F073E0345"
+			    type       	"String")
+			(object Parameter "groupID"
+			    quid       	"3B2F073E039F"
+			    type       	"String"))
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0))
+	    language   	"Java")
+	(object Class "SecurityManagerHome"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE))
+	    quid       	"3B2EFF560395"
+	    stereotype 	"EJBHomeInterface"
+	    superclasses 	(list inheritance_relationship_list
+		(object Inheritance_Relationship
+		    quid       	"3B2EFF5603A0"
+		    supplier   	"EJBHome"))
+	    used_nodes 	(list uses_relationship_list
+		(object Uses_Relationship
+		    quid       	"3B2EFF570007"
+		    supplier   	"Logical View::com::cbtb::ejb::session::SecurityManagerBean"
+		    quidu      	"3B2EFF560377"))
+	    operations 	(list Operations
+		(object Operation "create"
+		    quid       	"3B2F00FF0396"
+		    stereotype 	"EJBCreateMethod"
+		    result     	"SecurityManager"
+		    concurrency 	"Sequential"
+		    opExportControl 	"Public"
+		    uid        	0
+		    quidu      	"3B2EFF56039F"))
+	    language   	"Java")
+	(object Class "SecurityManager"
+	    attributes 	(list Attribute_Set
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateDefaultConstructor"
+		    value      	FALSE)
+		(object Attribute
+		    tool       	"Java"
+		    name       	"GenerateCode"
+		    value      	TRUE))
+	    quid       	"3B2EFF56039F"
+	    stereotype 	"EJBRemoteInterface"
+	    superclasses 	(list inheritance_relationship_list
+		(object Inheritance_Relationship
+		    quid       	"3B2EFF5603A1"
+		    supplier   	"EJBObject"))
+	    used_nodes 	(list uses_relationship_list
+		(object Uses_Relationship
+		    quid       	"3B2EFF570011"
+		    supplier   	"Logical View::com::cbtb::ejb::session::SecurityManagerBean"
+		    quidu      	"3B2EFF560377"))
+	    language   	"Java"))
+    logical_presentations 	(list unit_reference_list
+	(object ClassDiagram "Main"
+	    quid       	"3AEBA94E00A6"
+	    title      	"Main"
+	    zoom       	100
+	    max_height 	28350
+	    max_width  	21600
+	    origin_x   	6326
+	    origin_y   	87
+	    items      	(list diagram_item_list
+		(object ClassView "Class" "Logical View::com::cbtb::ejb::session::MatchManagerBean" @3
+		    ShowCompartmentStereotypes 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    location   	(2602, 1281)
+		    font       	(object Font
+			size       	10
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@3
+			location   	(2257, 672)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	690
+			justify    	0
+			label      	"MatchManagerBean")
+		    stereotype 	(object ItemLabel
+			Parent_View 	@3
+			location   	(2257, 622)
+			fill_color 	13434879
+			anchor     	10
+			nlines     	1
+			max_width  	690
+			justify    	0
+			label      	"<<EJBSession>>")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3AEBD8D90209"
+		    compartment 	(object Compartment
+			Parent_View 	@3
+			location   	(2257, 733)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			icon_style 	"Icon"
+			fill_color 	16777215
+			anchor     	2
+			nlines     	24
+			max_width  	724)
+		    width      	708
+		    height     	1342
+		    annotation 	8
+		    autoResize 	TRUE)
+		(object ClassView "Class" "Logical View::com::cbtb::ejb::session::ReportManagerBean" @4
+		    ShowCompartmentStereotypes 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    location   	(3951, 2482)
+		    font       	(object Font
+			size       	10
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@4
+			location   	(3572, 2133)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	758
+			justify    	0
+			label      	"ReportManagerBean")
+		    stereotype 	(object ItemLabel
+			Parent_View 	@4
+			location   	(3572, 2095)
+			fill_color 	13434879
+			anchor     	10
+			nlines     	1
+			max_width  	758
+			justify    	0
+			label      	"<<EJBSession>>")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3AEBDF82007A"
+		    compartment 	(object Compartment
+			Parent_View 	@4
+			location   	(3572, 2182)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			icon_style 	"Icon"
+			fill_color 	16777215
+			anchor     	2
+			nlines     	13
+			max_width  	793)
+		    width      	776
+		    height     	792
+		    annotation 	8
+		    autoResize 	TRUE)
+		(object ClassView "Class" "Logical View::com::cbtb::ejb::session::CompanyManagerBean" @5
+		    ShowCompartmentStereotypes 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    location   	(503, 1415)
+		    font       	(object Font
+			size       	10
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@5
+			location   	(158, 281)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	690
+			justify    	0
+			label      	"CompanyManagerBean")
+		    stereotype 	(object ItemLabel
+			Parent_View 	@5
+			location   	(158, 231)
+			fill_color 	13434879
+			anchor     	10
+			nlines     	1
+			max_width  	690
+			justify    	0
+			label      	"<<EJBSession>>")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3AEBE8DF03C0"
+		    compartment 	(object Compartment
+			Parent_View 	@5
+			location   	(158, 342)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			icon_style 	"Icon"
+			fill_color 	16777215
+			anchor     	2
+			nlines     	45
+			max_width  	696)
+		    width      	708
+		    height     	2392
+		    annotation 	8
+		    autoResize 	TRUE)
+		(object ClassView "Class" "Logical View::com::cbtb::ejb::session::BillingManagerBean" @6
+		    ShowCompartmentStereotypes 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    location   	(880, 3924)
+		    font       	(object Font
+			size       	10
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@6
+			location   	(510, 2965)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	740
+			justify    	0
+			label      	"BillingManagerBean")
+		    stereotype 	(object ItemLabel
+			Parent_View 	@6
+			location   	(510, 2915)
+			fill_color 	13434879
+			anchor     	10
+			nlines     	1
+			max_width  	740
+			justify    	0
+			label      	"<<EJBSession>>")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3AEC1ED30168"
+		    compartment 	(object Compartment
+			Parent_View 	@6
+			location   	(510, 3026)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			icon_style 	"Icon"
+			fill_color 	16777215
+			anchor     	2
+			nlines     	38
+			max_width  	750)
+		    width      	758
+		    height     	2042
+		    annotation 	8
+		    autoResize 	TRUE)
+		(object ClassView "Class" "Logical View::com::cbtb::ejb::session::MasterManagerBean" @7
+		    ShowCompartmentStereotypes 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    location   	(2653, 3496)
+		    font       	(object Font
+			size       	10
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@7
+			location   	(2308, 2362)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	690
+			justify    	0
+			label      	"MasterManagerBean")
+		    stereotype 	(object ItemLabel
+			Parent_View 	@7
+			location   	(2308, 2312)
+			fill_color 	13434879
+			anchor     	10
+			nlines     	1
+			max_width  	690
+			justify    	0
+			label      	"<<EJBSession>>")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3AEC1F0F0019"
+		    compartment 	(object Compartment
+			Parent_View 	@7
+			location   	(2308, 2423)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			icon_style 	"Icon"
+			fill_color 	16777215
+			anchor     	2
+			nlines     	45
+			max_width  	724)
+		    width      	708
+		    height     	2392
+		    annotation 	8
+		    autoResize 	TRUE)
+		(object ClassView "Class" "Logical View::com::cbtb::ejb::session::SecurityManagerBean" @8
+		    ShowCompartmentStereotypes 	TRUE
+		    IncludeAttribute 	TRUE
+		    IncludeOperation 	TRUE
+		    ShowOperationSignature 	TRUE
+		    location   	(4829, 515)
+		    font       	(object Font
+			size       	10
+			face       	"Arial"
+			bold       	FALSE
+			italics    	FALSE
+			underline  	FALSE
+			strike     	FALSE
+			color      	0
+			default_color 	TRUE)
+		    label      	(object ItemLabel
+			Parent_View 	@8
+			location   	(3584, 81)
+			fill_color 	13434879
+			nlines     	1
+			max_width  	2490
+			justify    	0
+			label      	"SecurityManagerBean")
+		    stereotype 	(object ItemLabel
+			Parent_View 	@8
+			location   	(3584, 31)
+			fill_color 	13434879
+			anchor     	10
+			nlines     	1
+			max_width  	2490
+			justify    	0
+			label      	"<<EJBSession>>")
+		    icon_style 	"Icon"
+		    line_color 	3342489
+		    fill_color 	13434879
+		    quidu      	"3B2EFF560377"
+		    compartment 	(object Compartment
+			Parent_View 	@8
+			location   	(3584, 142)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			icon_style 	"Icon"
+			fill_color 	13434879
+			anchor     	2
+			nlines     	17
+			max_width  	2488)
+		    width      	2508
+		    height     	992
+		    annotation 	8
+		    autoResize 	TRUE)))))

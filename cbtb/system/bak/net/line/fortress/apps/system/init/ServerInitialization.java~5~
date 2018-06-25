@@ -1,0 +1,22 @@
+package net.line.fortress.apps.system.init;
+
+import weblogic.common.*;
+import java.util.*;
+
+public class ServerInitialization implements T3StartupDef {
+  private T3ServicesDef services;
+
+  public ServerInitialization() {
+  }
+
+  public void setServices(T3ServicesDef services) {
+    this.services = services;
+  }
+
+  public String startup(String name, Hashtable args) throws Exception {
+    // Write your startup code here...
+    LogManager.initialize();
+    LogManager.instance.logInfo("LogManager Initialization Finished");
+    return "ok";
+  }
+}

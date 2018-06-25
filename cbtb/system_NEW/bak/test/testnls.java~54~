@@ -1,0 +1,99 @@
+package test;
+
+
+import javax.servlet.http.*;
+import net.line.fortress.apps.system.LogManager;
+import net.line.fortress.apps.system.nls.*;
+import java.util.*;
+import java.sql.*;
+import net.line.fortress.apps.system.utils.*;
+import java.io.*;
+
+
+/**
+ * Title:
+ * Description:
+ * Copyright:    Copyright (c) 2001
+ * Company:
+ * @author
+ * @version 1.0
+ */
+
+public class testnls {
+
+  public testnls() {
+
+
+      /*MultilingualSystem.getInstance().setBaseName("Translation");
+
+      FilePool.getInstance();
+
+      //session.setAttribute("line.current.language", "zh_TW");
+      //session.setAttribute("line.current.encoding", "UTF-8");
+
+      MultilingualSystem system = MultilingualSystem.getInstance();
+
+      LanguageBundleSystem localLabels = system.getLabels("zh_TW","COT");
+      //System.out.println(localLabels.getProperty("Shipper ID"));
+      System.out.print(localLabels.getProperty("Billing"));
+      //System.out.print(localLabels.getProperty("Billingdsfdsfdsfdsf"));
+
+      System.out.print(localLabels.getProperty("Billing"));
+      System.out.print(localLabels.getProperty("Registration"));*/
+
+  }
+
+    public static void main(String[] args) {
+      //testnls t = new testnls();
+      //t.test();
+      String test = "ÐÂÀË\u7DB2";
+      String bs = "\u65b0\u6d6a\u7db2";
+
+      System.out.print(bs);
+      byte[] b;
+      try
+      {
+        b = test.getBytes("UTF8");
+        b.toString();
+        //b = bs.getBytes();
+        //String strOut = new String(b,"UTF-8");
+        System.out.print(b.toString());
+      }
+      catch (Exception e)
+      {
+      }
+
+      }
+
+    public void test() {
+      Properties p = new Properties();
+
+      InputStream in = getClass().getResourceAsStream("/test.props");
+      try {
+        p.load(in);
+      } catch (Exception e) {
+        System.out.println("Cannot load /system.props");
+        e.printStackTrace();
+      }
+      System.out.print("test================" + p.getProperty("test"));
+      System.out.print("=====\uFFFD\uFFFD\u60AC\uFFFD");
+
+    }
+
+    public static  String BIGTOUTF(String strIn){
+String strOut;
+byte[] b;
+strOut = null;
+if(strIn == null || (strIn.trim()).equals(""))
+   return strIn;
+   try{
+     b = strIn.getBytes("UTF8");
+     System.out.print(b);
+     strOut = new String(b);
+     }
+      catch(Exception e){}
+      return strOut;
+  }
+
+
+}

@@ -1,0 +1,22 @@
+﻿<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ page import="java.util.*" %>
+<%@ page import="com.cbtb.model.*" %>
+<%@ page import="com.cbtb.ejb.session.*" %>
+<%@ page import="com.cbtb.util.*" %>
+<%@ page import="com.cbtb.web.*" %>
+<jsp:useBean id="web" scope="page" class="com.cbtb.web.WebOperator" />
+<jsp:useBean id="tdm" scope="session" class="com.cbtb.model.TruckerDataModel" />
+<%
+    tdm=(TruckerDataModel)session.getAttribute("truckerDataModel"); 
+    String backPageName = "";
+    CompanyManager cm=web.getCompanyManager();
+  if (cm.addTruckerData(tdm))
+    {
+    backPageName = "SuccessPage.jsp?backPage=Trucker_index.htm&mode=Insert";}
+  else{
+    backPageName = "ErrorPage.jsp?backPage=Trucker_index.htm&mode=Insert";
+      }
+%>
+
+<jsp:forward page="<%=backPageName%>" />

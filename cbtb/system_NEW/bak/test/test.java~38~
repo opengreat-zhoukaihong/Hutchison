@@ -1,0 +1,42 @@
+package test;
+
+/**
+ * Title:
+ * Description:
+ * Copyright:    Copyright (c) 2001
+ * Company:
+ * @author
+ * @version 1.0
+ */
+import net.line.fortress.apps.system.security.*;
+import net.line.fortress.apps.system.ejb.*;
+import java.util.*;
+import net.line.fortress.apps.system.*;
+import java.sql.Timestamp;
+
+
+public class test {
+
+  public test() {
+  }
+
+  public static void main(String[] args) {
+    String domainID = "HITSD";
+    String userID = "sdrequestor1";
+    String password = "password";
+    Date d = new Date();
+    Timestamp ts = new Timestamp(d.getTime());
+    net.line.fortress.apps.system.security.SecurityManager secMgr = SecuritySystem.getSecurityManager();
+    //Domain domain = new Domain("PUBLIC","PUBLIC","sdf","T",10,10,300000,90,90,90);
+    User user = new User("Hutch3434","Lisg","lisg","ALAN",null,false,false,false,0,0,ts,ts,ts,"SYSTEM",ts);
+    try{
+      //secMgr.createDomain(domain);
+      secMgr.createUser(user,"PersonID");
+      //secMgr.addExternalGroupMembership(user,"admin");
+    }catch(Exception e)
+    {
+      e.printStackTrace();
+    }
+
+  }
+}

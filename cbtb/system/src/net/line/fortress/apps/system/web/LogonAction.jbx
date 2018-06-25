@@ -1,0 +1,9 @@
+[PropertyInfo]
+domainId,String,false,false,domainId,domainId,true,<default>
+password,String,false,false,password,password,true,<default>
+userId,String,false,false,userId,userId,true,<default>
+[IconNames]
+
+
+
+

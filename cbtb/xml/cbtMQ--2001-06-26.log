@@ -1,0 +1,417 @@
+# 2001.06.26 16:26:34 [cbt] <I> LogManager: started with output to cbtMQ--2001-06-26.log
+# 2001.06.26 16:26:34 [cbt] <I> ----------------------------------------------------------------------------
+# 2001.06.26 16:26:34 [cbt] <I> MQListener: Hostname = 172.25.52.176
+# 2001.06.26 16:26:34 [cbt] <I> MQListener: Queue Manager = CARGONET.QM1
+# 2001.06.26 16:26:34 [cbt] <I> MQListener: Listening queue = CBT.IN.Q
+# 2001.06.26 16:26:34 [cbt] <I> MQListener: CCSID = 1208
+# 2001.06.26 16:26:35 [cbt] <I> - com.cbtb.mq.CBTMQListener start service OK -
+# 2001.06.26 16:26:36 [cbt] <D> #######################################################################
+# 2001.06.26 16:26:36 [cbt] <D> ---------- Text Message ----------
+# 2001.06.26 16:26:36 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 16:26:36 [cbt] <D> Received Message from MQ Listener: 
+From:TL
+To:CBTB
+Content-Type:/text/XML-USER_PROFILE
+Date:2001.06.26 15:09:20
+
+<?xml version="1.0"?>
+<!DOCTYPE user_profile SYSTEM "http://172.25.49.211:7001/user_profile.dtd">
+
+
+<user_profile>
+	
+  <domain_id>TL000396</domain_id>
+	
+  <user_id>tl000396</user_id>
+	
+  <password>5f4dcc3b5aa765d61d8327deb882cf99</password>
+	
+	
+  <action value="change" />
+
+</user_profile>
+# 2001.06.26 16:26:36 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 16:26:36 [cbt] <D> java.io.FileNotFoundException: Response: '404' for url: 'http://172.25.49.211:7001/user_profile.dtd'
+# 2001.06.26 16:26:36 [cbt] <D> #######################################################################
+# 2001.06.26 16:26:36 [cbt] <D> ---------- Text Message ----------
+# 2001.06.26 16:26:36 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 16:26:36 [cbt] <D> Received Message from MQ Listener: 
+From:TL
+To:CBTB
+Content-Type:/text/XML-USER_PROFILE
+Date:2001.06.26 15:17:48
+
+<?xml version="1.0"?>
+<!DOCTYPE user_profile SYSTEM "http://172.25.49.211:7001/user_profile.dtd">
+
+
+<user_profile>
+	
+  <domain_id>TL000396</domain_id>
+	
+  <user_id>tl000396</user_id>
+	
+  <password>5f4dcc3b5aa765d61d8327deb882cf99</password>
+	
+	
+  <action value="change" />
+
+</user_profile>
+# 2001.06.26 16:26:36 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 16:26:36 [cbt] <D> java.io.FileNotFoundException: Response: '404' for url: 'http://172.25.49.211:7001/user_profile.dtd'
+# 2001.06.26 16:50:54 [cbt] <D> #######################################################################
+# 2001.06.26 16:50:54 [cbt] <D> ---------- Text Message ----------
+# 2001.06.26 16:50:54 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 16:50:54 [cbt] <D> Received Message from MQ Listener: 
+From:TL
+To:CBTB
+Content-Type:/text/XML-USER_GROUP
+Date:2001.06.26 16:53:16
+
+<?xml version="1.0"?>
+<!DOCTYPE user_group_relation SYSTEM "http://172.25.49.211:7001/opt/weblogic/myserver/user_group.dtd">
+
+
+<user_group_relation>
+	
+  <domain_id>TL000397</domain_id>
+	
+  <user_id>tl000397</user_id>
+	
+  <group_id>OrgAdminGp</group_id>
+	
+  <user_or_group>U</user_or_group>
+	
+  <action value="create" />
+
+</user_group_relation>
+# 2001.06.26 16:50:54 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 16:50:54 [cbt] <D> java.io.FileNotFoundException: Response: '404' for url: 'http://172.25.49.211:7001/opt/weblogic/myserver/user_group.dtd'
+# 2001.06.26 16:50:55 [cbt] <D> #######################################################################
+# 2001.06.26 16:50:55 [cbt] <D> ---------- Text Message ----------
+# 2001.06.26 16:50:55 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 16:50:55 [cbt] <D> Received Message from MQ Listener: 
+From:TL
+To:CBTB
+Content-Type:/text/XML-USER_GROUP
+Date:2001.06.26 16:53:20
+
+<?xml version="1.0"?>
+<!DOCTYPE user_group_relation SYSTEM "http://172.25.49.211:7001/opt/weblogic/myserver/user_group.dtd">
+
+
+<user_group_relation>
+	
+  <domain_id>TL000397</domain_id>
+	
+  <user_id>tl000397</user_id>
+	
+  <group_id>TL000397Gp</group_id>
+	
+  <user_or_group>U</user_or_group>
+	
+  <action value="create" />
+
+</user_group_relation>
+# 2001.06.26 16:50:55 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 16:50:55 [cbt] <D> java.io.FileNotFoundException: Response: '404' for url: 'http://172.25.49.211:7001/opt/weblogic/myserver/user_group.dtd'
+# 2001.06.26 16:50:56 [cbt] <D> #######################################################################
+# 2001.06.26 16:50:56 [cbt] <D> ---------- Text Message ----------
+# 2001.06.26 16:50:56 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 16:50:56 [cbt] <D> Received Message from MQ Listener: 
+From:TL
+To:CBTB
+Content-Type:/text/XML-USER_PROFILE
+Date:2001.06.26 16:53:22
+
+<?xml version="1.0"?>
+<!DOCTYPE user_profile SYSTEM "http://172.25.49.211:7001/opt/weblogic/myserver/user_profile.dtd">
+
+
+<user_profile>
+	
+  <domain_id>TL000397</domain_id>
+	
+  <user_id>tl000397</user_id>
+	
+  <password>9c703a36f39915a1e15dc6e5310f5bbb</password>
+	
+	
+  <action value="create" />
+
+</user_profile>
+# 2001.06.26 16:50:56 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 16:50:56 [cbt] <D> java.io.FileNotFoundException: Response: '404' for url: 'http://172.25.49.211:7001/opt/weblogic/myserver/user_profile.dtd'
+# 2001.06.26 16:50:57 [cbt] <D> #######################################################################
+# 2001.06.26 16:50:57 [cbt] <D> ---------- Text Message ----------
+# 2001.06.26 16:50:57 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 16:50:57 [cbt] <D> Received Message from MQ Listener: 
+From:TL
+To:CBTB
+Content-Type:/text/XML-ORG
+Date:2001.06.26 16:53:23
+
+<?xml version="1.0"?>
+<!DOCTYPE organisation SYSTEM "http://172.25.49.211:7001/opt/weblogic/myserver/organisation.dtd">
+
+
+<organisation>
+	
+  <organisation_id>TL000397</organisation_id>
+	
+  <organisation_type>Shipper</organisation_type>
+	
+  <organisation_name>3</organisation_name>
+	
+	
+  <organisation_address>
+		
+    <address1>3</address1>
+		
+		
+		
+	
+  </organisation_address>
+	
+  <telephone>3</telephone>
+	
+	
+	
+  <email>andrew.chan@line.net</email>
+	
+	
+  <business_registration_no>3</business_registration_no>
+	
+  <contact_person>3</contact_person>
+	
+	
+	
+	
+  <billing_address>
+		
+		
+		
+		
+	</billing_address>
+	
+	
+	
+  <perfer_channel>EMAIL</perfer_channel>
+	
+  <perfer_language>EN</perfer_language>
+	
+	
+	
+	
+  <status>ACTIVATE</status>
+	
+	
+	
+  <registration_reference_no>TL000397</registration_reference_no>
+	
+  <registration_date>2001-06-26</registration_date>
+	
+  <registration_channel>INTERNET</registration_channel>
+	
+  <document>
+		
+		
+	</document>
+
+</organisation>
+# 2001.06.26 16:50:57 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 16:50:57 [cbt] <D> java.io.FileNotFoundException: Response: '404' for url: 'http://172.25.49.211:7001/opt/weblogic/myserver/organisation.dtd'
+# 2001.06.26 17:29:53 [cbt] <D> #######################################################################
+# 2001.06.26 17:29:53 [cbt] <D> ---------- Text Message ----------
+# 2001.06.26 17:29:53 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 17:29:53 [cbt] <D> Received Message from MQ Listener: 
+From:TL
+To:CBTB
+Content-Type:/text/XML-USER_GROUP
+Date:2001.06.26 17:32:17
+
+<?xml version="1.0"?>
+<!DOCTYPE user_group_relation SYSTEM "http://172.25.49.211:7001/line/cbtb/user_group.dtd">
+
+
+<user_group_relation>
+	
+  <domain_id>TL000398</domain_id>
+	
+  <user_id>tl000398</user_id>
+	
+  <group_id>OrgAdminGp</group_id>
+	
+  <user_or_group>U</user_or_group>
+	
+  <action value="create" />
+
+</user_group_relation>
+# 2001.06.26 17:29:53 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 17:29:54 [cbt] <D> :::::Remote method error.Pls check
+# 2001.06.26 17:29:54 [cbt] <D> ----------change data fail----------
+# 2001.06.26 17:29:55 [cbt] <D> #######################################################################
+# 2001.06.26 17:29:55 [cbt] <D> ---------- Text Message ----------
+# 2001.06.26 17:29:55 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 17:29:55 [cbt] <D> Received Message from MQ Listener: 
+From:TL
+To:CBTB
+Content-Type:/text/XML-USER_GROUP
+Date:2001.06.26 17:32:21
+
+<?xml version="1.0"?>
+<!DOCTYPE user_group_relation SYSTEM "http://172.25.49.211:7001/line/cbtb/user_group.dtd">
+
+
+<user_group_relation>
+	
+  <domain_id>TL000398</domain_id>
+	
+  <user_id>tl000398</user_id>
+	
+  <group_id>TL000398Gp</group_id>
+	
+  <user_or_group>U</user_or_group>
+	
+  <action value="create" />
+
+</user_group_relation>
+# 2001.06.26 17:29:55 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 17:29:55 [cbt] <D> :::::Remote method error.Pls check
+# 2001.06.26 17:29:55 [cbt] <D> ----------change data fail----------
+# 2001.06.26 17:29:56 [cbt] <D> #######################################################################
+# 2001.06.26 17:29:56 [cbt] <D> ---------- Text Message ----------
+# 2001.06.26 17:29:56 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 17:29:56 [cbt] <D> Received Message from MQ Listener: 
+From:TL
+To:CBTB
+Content-Type:/text/XML-USER_PROFILE
+Date:2001.06.26 17:32:22
+
+<?xml version="1.0"?>
+<!DOCTYPE user_profile SYSTEM "http://172.25.49.211:7001/line/cbtb/user_profile.dtd">
+
+
+<user_profile>
+	
+  <domain_id>TL000398</domain_id>
+	
+  <user_id>tl000398</user_id>
+	
+  <password>9e45fed5ce31dd0314a9bd08934811e7</password>
+	
+	
+  <action value="create" />
+
+</user_profile>
+# 2001.06.26 17:29:56 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 17:29:56 [cbt] <D> ----------change data fail----------
+# 2001.06.26 17:29:57 [cbt] <D> #######################################################################
+# 2001.06.26 17:29:57 [cbt] <D> ---------- Text Message ----------
+# 2001.06.26 17:29:57 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 17:29:57 [cbt] <D> Received Message from MQ Listener: 
+From:TL
+To:CBTB
+Content-Type:/text/XML-ORG
+Date:2001.06.26 17:32:24
+
+<?xml version="1.0"?>
+<!DOCTYPE organisation SYSTEM "http://172.25.49.211:7001/line/cbtb/organisation.dtd">
+
+
+<organisation>
+	
+  <organisation_id>TL000398</organisation_id>
+	
+  <organisation_type>Shipper</organisation_type>
+	
+  <organisation_name>achan</organisation_name>
+	
+	
+  <organisation_address>
+		
+    <address1>a</address1>
+		
+		
+		
+	
+  </organisation_address>
+	
+  <telephone>3</telephone>
+	
+	
+	
+  <email>andrew.chan@line.net</email>
+	
+	
+  <business_registration_no>3</business_registration_no>
+	
+  <contact_person>3</contact_person>
+	
+	
+	
+	
+  <billing_address>
+		
+		
+		
+		
+	</billing_address>
+	
+	
+	
+  <perfer_channel>EMAIL</perfer_channel>
+	
+  <perfer_language>EN</perfer_language>
+	
+	
+	
+	
+  <status>ACTIVATE</status>
+	
+	
+	
+  <registration_reference_no>TL000398</registration_reference_no>
+	
+  <registration_date>2001-06-26</registration_date>
+	
+  <registration_channel>INTERNET</registration_channel>
+	
+  <document>
+		
+		
+	</document>
+
+</organisation>
+# 2001.06.26 17:29:57 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 17:29:57 [cbt] <D> :::::Have no record in DB,I will do insert opreation---
+# 2001.06.26 17:29:57 [cbt] <D> :::::orgXML company info parse and add into DB success:::::
+# 2001.06.26 17:29:57 [cbt] <D> :::::This Org XML no document info
+# 2001.06.26 17:29:57 [cbt] <D> ----------receive and change data success----------
+# 2001.06.26 17:32:21 [cbt] <D> #######################################################################
+# 2001.06.26 17:32:21 [cbt] <D> ---------- Text Message ----------
+# 2001.06.26 17:32:21 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 17:32:21 [cbt] <D> Received Message from MQ Listener: 
+From:TL
+To:CBTB
+Content-Type:/text/XML-USER_PROFILE
+Date:2001.06.26 17:34:48
+
+<?xml version="1.0"?>
+<!DOCTYPE user_profile SYSTEM "http://172.25.49.211:7001/line/cbtb/user_profile.dtd">
+
+
+<user_profile>
+	
+  <domain_id>TL000398</domain_id>
+	
+  <user_id>tl000398</user_id>
+	
+  <password>5f4dcc3b5aa765d61d8327deb882cf99</password>
+	
+	
+  <action value="change" />
+
+</user_profile>
+# 2001.06.26 17:32:21 [cbt] <D> >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# 2001.06.26 17:32:21 [cbt] <D> ----------change data fail----------

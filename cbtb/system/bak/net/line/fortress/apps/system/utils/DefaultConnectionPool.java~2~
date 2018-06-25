@@ -1,0 +1,47 @@
+package net.line.fortress.apps.system.utils;
+
+import java.rmi.*;
+import java.util.*;
+import javax.naming.*;
+
+
+public class DefaultConnectionPool {
+
+  private final String datasourcename = "CBTDataSource";
+  private static DefaultConnectionPool instance = null;
+  private DefaultConnectionPool() {
+  }
+  public static DefaultConnectionPool getInstance() {
+    if (instance == null) {
+      init();
+    }
+    return instance;
+  }
+  public static synchronized void init() {
+    if (instance == null) {
+      instance = new DefaultConnectionPool();
+    }
+  }
+  public java.sql.Connection getConnection() throws java.sql.SQLException {
+      javax.naming.InitialContext ctx = null;
+      try {
+//        ctx = new InitialContext();
+        Hashtable ht = new Hashtable();
+        ht.put(Context.INITIAL_CONTEXT_FACTORY, "weblogic.jndi.WLInitialContextFactory");
+        ht.put(Context.PROVIDER_URL, "t3://localhost:7001");
+        ctx = new InitialContext(ht);
+        javax.sql.DataSource datasource =
+          (javax.sql.DataSource)javax.rmi.PortableRemoteObject.narrow(
+          ctx.lookup(datasourcename)
+          , javax.sql.DataSource.class);
+        return datasource.getConnection();
+      } catch (javax.naming.NamingException e) {
+        e.printStackTrace();
+        throw new java.sql.SQLException("Cannot get datasource: " + datasourcename);
+      } finally {
+        try {
+          ctx.close();
+        } catch (javax.naming.NamingException e) {}
+      }
+  }
+}

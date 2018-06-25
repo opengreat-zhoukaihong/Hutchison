@@ -1,0 +1,445 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Author" content="Scarlett Hao">
+   <meta name="GENERATOR" content="Mozilla/4.5 [zh.GBK] (X11; I; SunOS 5.7 sun4u) [Netscape]">
+   <title> Translator</title>
+</head>
+<body bgcolor="#FFFFFF">
+
+<center><pre CLASS="ChapTitle"><img SRC="image/titleduket.gif" height=116 width=661><img SRC="image/coffee.gif" height=88 width=57></pre></center>
+
+<center><b><font size=+2>Translator</font></b>
+<p><img SRC="image/rainbow.gif" height=1 width=100%></center>
+
+<p><b><font size=-1><a href="userguide.html">[contents]</a></font></b>
+<p><b><a href="#Introducing the Translator">Introducing the Translator</a></b>
+<br><b><a href="#Using the Translator">Using the Translator</a></b>
+<ul><b><i><a href="#Getting Started with the Translator">Getting Started
+with the Translator</a></i></b>
+<br><b><i><a href="#Menus and Buttons">Menus and Buttons</a></i></b>
+<ul><b><i><a href="#Edit->Options Menu">Edit -> Options Menu</a></i></b>
+<br><b><i><a href="#Translate Menu">Translate Menu</a></i></b>
+<br><b><i><a href="#Dictionary menu">Dictionary Menu</a></i></b></ul>
+<b><i><a href="#Translating A Resource File">Translating A Resource Bundle
+File</a></i></b>
+<br><b><i><a href="#Implementing A User Dictionary">Importing a User Dictionary</a></i></b></ul>
+<b><a href="#Translator command line">Translator Command-line</a></b>
+<br>&nbsp;
+<p><a NAME="Introducing the Translator"></a><b><font size=+1>Introducing
+the Translator</font></b>
+<p>Translator helps in an important part of localization, that is translation.
+It searches for strings that need translation in Java resource bundle files
+(either class file or source file) and translates them into the target
+language, for example, Chinese. You can use the provided dictionary or
+resource bundle files (either class file or source file) as dictionaries
+for the translating work.&nbsp; You can also install and use you own dictionary
+if you provide an implementation of the interface bridging between the
+dictionary and Translator.
+<p>Translator looks for code like the following in ResourceBundle files.
+<p>{"Quit Merge Diff", "Quit Merge Diff"}
+<p>It automatically marks that value string <i>"</i>Quit Merge Diff<i>"
+for translation and suggests a translation if one is available in dictionaries.</i>
+<p>Translator includes an English to Simplified Chinese dictionary. If
+you want to use another dictionary, the&nbsp; interface, ie. Dictionary,
+between that dictionary and the Translator must be implemented.&nbsp; A
+developer must have a good working knowledge of the original and target
+language locale to make a good translation.
+<p><a NAME="Using the Translator"></a><b><font size=+1>Using the Translator</font></b>
+<p><a NAME="Getting Started with the Translator"></a><b><i>Getting Started
+with the Translator</i></b>
+<p>With GUI mode, in the main window of <b>I18n/L10n Toolkit 2.0</b>, select
+<b>Translator</b>,
+then you can get <b>Translator</b> window pop-up (figure1). (The file in
+Translator is selected from toolkit main window.)
+<p><a NAME="Menus and Buttons"></a><b><i>Menus and Buttons</i></b>
+<p>The <b>translator</b> UI includes several buttons and menus. Only ones
+that are unique to this tool are described here.
+<p><img SRC="image/tra_main.gif" height=494 width=656>
+<h6>
+Figure1: Translator main window with a source file loaded</h6>
+In this main window, the resource bundle file is displayed with keys and
+value strings marked. The current value string is also displayed in an
+input window top-left above the document editing window. Right click on
+it, the translation menu will pop up with the translation of the marked
+text in this input window, as shown in figure1.
+<div CLASS="Paragraph">
+<ul>
+<li>
+<a NAME="Edit->Options Menu"></a><b>Edit->Options Menu</b>:</li>
+</ul>
+
+<ul>There are three option items in the window.
+<br>&nbsp;
+<ul>
+<li>
+<b>Dictionary</b></li>
+</ul>
+
+<ul>
+<ul>
+<li>
+<b>Lookup Order</b></li>
+</ul>
+
+<ul>The list are the dictionaries currently being used. You can select
+and move a dictionary to change their order. The Translator will lookup
+keys in each dictionary according to this order.
+<br>&nbsp;
+<li>
+<b>Lookup Method</b></li>
+</ul>
+
+<ul>Checking <b>Use Cache</b> will allow the Translator to enable an internal
+cache (with dictionaries's support) for looking up. This will accelerate
+the speed of query but use more memories. Checking <b>Look Through</b>
+means looking up in all the dictionaries even if a matching has been found
+in one of the them; if it is unchecked, the query stops once a matching
+is found. The query and matching operation can be adjust to case sensitive
+or case insensitive with <b>Case Sensitive</b> checkbox.</ul>
+</ul>
+
+<ul>
+<ul>
+<li>
+<b>Resource Locale</b></li>
+</ul>
+
+<ul>There are options to be used to decide whether the country and/or variant
+of a locale are used (effective) when loading resource bundles into a resource
+dictionary. If using explicit locale, thus using full locale information
+to match when loading a resource bundle file into resource dictionary,
+if the locale name is different from the system dictionary's, the bundle
+file and its content can not be loaded and used in the resource dictionary.</ul>
+
+<ul>&nbsp;
+<br>Checking <b>Ignore Country</b> will ignore the difference of locale
+country if any as well as variant, in resource bundle file names, when
+loading resource bundle files. Checking <b>Ignore Variant</b> will only
+ignore the variant difference if any. <b>Locale Sensitive</b>, if checked,
+when open a resource bundle file, the Translator will try to switch dictionaries'
+target locale to the bundle's locale. "Ignore Country" and "Ignore Variant"
+setting can affect the locale sensitive mode.</ul>
+</ul>
+</ul>
+</div>
+
+<ul>
+<ul>
+<ul><img SRC="image/tra_option.gif" height=310 width=480>
+<h6>
+Figure2: Translator dictionary options</h6>
+</ul>
+</ul>
+</ul>
+
+<ul>
+<ul>
+<li>
+<b>Editor</b></li>
+
+<br>The function of this option is the same as that of <b>Message Tool</b>.
+You can find the detail introduction in <b>Edit->Option</b> in Chapter3:
+Message Tool.</ul>
+
+<ul>
+<li>
+<b>Miscellaneous</b></li>
+
+<br>Select the display method. If <b>View Value As Unicode</b> box is checked,
+the value strings will be displayed in ASCII unicode. You can save the
+document in WYSIWYG (What You See Is What You Get) way.
+<p><img SRC="image/tra_opt_miscell.gif" height=341 width=494>
+<h6>
+Figure3: Translator miscellaneous options</h6>
+</ul>
+
+<li>
+<a NAME="Translate Menu"></a><b>Translate M</b>enu:</li>
+</ul>
+
+<ul>This menu realizes the function of translating the opened resource
+file.
+<br>&nbsp;
+<ul>
+<li>
+<b>Submit</b></li>
+
+<br>Change the current value to the locale language using the string in
+the top-right text field above the editor window, which shows the selected
+translation.</ul>
+
+<ul>
+<li>
+<b>Submit&amp;Next</b></li>
+
+<br>Change the current value to the locale language and highlight the next
+string to be translated and show the translation of it to select.</ul>
+
+<ul>
+<li>
+<b>Revert</b></li>
+
+<br>Change the value string to the same as the key string.</ul>
+
+<ul>
+<li>
+<b>All</b></li>
+
+<ul>
+<li>
+<b>Values</b></li>
+
+<br>The Translator will translate all words in the values using the matching
+it found in its dictionaries.
+<br>&nbsp;
+<li>
+<b>Translatable Values</b></li>
+
+<br>The Translator will translate all words in the values only if the all
+matching of the words can be found in its dictionaries.
+<br>&nbsp;
+<li>
+<b>Fully Translatable Values</b></li>
+
+<br>The Translator will translate values only if it can find a full matching
+for one value as a whole in its dictionaries.
+<br>&nbsp;
+<li>
+<b>Revert</b></li>
+
+<br>Change all the value strings to the same as the key strings.<a NAME="Dictionary menu"></a></ul>
+</ul>
+</ul>
+
+<ul>
+<li>
+<b>Dictionary M</b>enu:</li>
+</ul>
+
+<ul>
+<ul>
+<li>
+<b>Use Resource</b></li>
+
+<ul>
+<li>
+Select this menu item you will get the window (figure4).</li>
+</ul>
+
+<ul><img SRC="image/tra_dic_useres.gif" height=250 width=371>
+<h6>
+Figure4: Use resources as dictionary</h6>
+</ul>
+</ul>
+</ul>
+
+<ul>
+<ul>
+<ul>
+<li>
+Press <b>Add</b> button and get <b>Add Resource File</b> window (figure5).</li>
+</ul>
+
+<ul><img SRC="image/tra_dic_addresfile.gif" height=250 width=400>
+<h6>
+Figure5: Add resource bundle files</h6>
+</ul>
+</ul>
+</ul>
+
+<ul>
+<ul>
+<ul>
+<li>
+Select a resource bundle file and<b> Open</b> it.</li>
+</ul>
+Note: A resource bundle file and its content can be loaded only if its
+locale meets the system dictionary target locale and the ignore country
+and ignore variant criteria. After the resource file is loaded, its content
+can be used as resource dictionary because it is the form of the key value
+pairs.
+<ul>&nbsp;</ul>
+
+<li>
+<b>Customize</b></li>
+
+<br>Select this menu item, you will get <b>Customize User Dictionary </b>dialog
+box (figure6) . Press <b>Load</b>, then get <b>Open User Dictionary</b>
+window (figure7). Here you can select and load a dictionary file or class
+to be used as the user dictionary. If the dictionary file or class meets
+the system dictionary locale and the ignore country and ignore variant
+criteria, this action will be successful.
+<p><img SRC="image/tra_dic_customize.gif" height=250 width=400>
+<h6>
+Figure6: Customize User Dictionary</h6>
+<img SRC="image/tra_dic_loadcustom.gif" height=190 width=400>
+<h6>
+Figure7: Open User Dictionary</h6>
+</ul>
+</ul>
+
+<ul>
+<ul>
+<ul>
+<li>
+Load a user dictionary (figure 7): select a user dictionary file or enter
+a class name (the class must implement the <a href="../api/com/sun/tdc/toolkit/api/Dictionary.html">com.sun.tdc.toolkit.api.Dictionary</a>
+interface , see <a href="#Implementing A User Dictionary">how to import
+a user dictionary</a> for more information. ) on your class-path and press
+<b>OK</b>
+to open it as the user dictionary.</li>
+</ul>
+
+<p><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; If choose to load the
+dictionary as a file, the file name should be:
+<ul>xxx_&lt;source-locale>2&lt;target-locale>.bbtf, and if a non-absolute
+<br>path is given to the file, the dictionary will be put into the lib
+<br>directory of the product installation. If the file does not exists
+<br>on the path, you will be prompted whether to create it or not.</ul>
+
+<ul>
+<li>
+Input a new meaning for a word or sentence: press<b> Add</b> button (figure6)
+and get<b> Input New Meaning</b> dialog box (figure8).</li>
+</ul>
+
+<ul><img SRC="image/tra_dic_newmeaning.gif" height=131 width=283>
+<h6>
+Figure8: Input New Meaning</h6>
+</ul>
+</ul>
+</ul>
+
+<ul>
+<ul>After the customization, the new meaning entered will be valid and
+used in the translation candidate list. This is another method to customize
+the dictionary.
+<br>&nbsp;
+<li>
+<b>Information</b></li>
+
+<br>Press this menu then you will get a process dialog box (figure9) on
+generating the dictionary information. When the processing is finished,
+the <b>Dictionary Information</b> window (figure10) is shown (or Press
+<b>Cancel</b>
+on the dialog box to terminate the action).
+<p><img SRC="image/tra_dic_gen_infomation.gif" height=141 width=170>
+<h6>
+Figure9: Generating dictionary Information</h6>
+<img SRC="image/tra_dic_info.gif" height=250 width=400>
+<h6>
+Figure10: Dictionary information</h6>
+</ul>
+</ul>
+
+<ul>
+<ul>In this window, you can see the detailed information about the dictionaries
+used by<b> Translator</b>.
+<br>&nbsp;
+<li>
+<b>Refresh</b></li>
+
+<br>Refresh will make the keys in the dictionary cache (if enabled) synchronize
+with the matching values in dictionaries.</ul>
+
+<ul>
+<li>
+<b>Pack</b></li>
+
+<br>If the internal implementation of dictionaries need packing to save
+the storage space, select this menu item. You can pack <b>System Dictionary
+</b>making
+it more compact, and save its storage space, or pack <b>User Dictionary</b>
+making it more compact, and save its storage space.</ul>
+</ul>
+<a NAME="Translating A Resource File"></a><b><i><font size=+1>Translating
+A Resource File</font></i></b>
+<ol>
+<li>
+Select <b>File-Open</b> to open a resource bundle file (either source file
+or class file).</li>
+
+<li>
+Once opened<b>, Translator</b> automatically locates the first value string;
+the string is displayed in the top-left text field above the editor window.</li>
+
+<li>
+To view the translation, double click the string in the input window (or
+mark a string and right click). If there are more possible translation
+then can be viewed in a list.</li>
+
+<li>
+When you find the right meaning, select it then it is shown in the right
+side text field. If there are more than one translatables in the string,
+the Translator automatically locates the next one that needs translation.</li>
+
+<li>
+To copy some text without translation, select the&nbsp;<img SRC="image/tra_copymeaning.gif" height=25 width=22>
+to copy the selected portion of the string into the target field (right
+side). Select&nbsp;<img SRC="image/tra_skipmeaning.gif" height=27 width=26>to
+skip a translation.</li>
+
+<li>
+If there is no appropriate translation provided, complete the translation
+by typing directly your own translation text in the target field manually.</li>
+
+<li>
+When the translated strings appears in the target field, select <b>Submit</b>
+from menu bar or popup menu.</li>
+
+<br>The highlighted string in the resource file will be replaced by the
+translated string. To locates the next string in the resource file to be
+translated, select <b>Submit&amp;Next</b> from menu bar or popup menu.
+<li>
+To save your work, use <b>File-Save</b> or<b> Save As</b>.</li>
+</ol>
+<a NAME="Implementing A User Dictionary"></a><b><i><font size=+1>Importing A User Dictionary
+</font></i></b>
+<p>Two kinds of user-defined dictionaries can be loaded in the translator,
+in Bbtf format or a class which implements com.sun.tdc.toolkit.api.Dictionary
+interface.
+<ul>
+<li>
+Dictionary file in Bbtf format is a dictionary file in which the keys and
+values are stored in internal binary balance tree format.</li>
+
+<li>
+Dictionary class is a bridge class to use a dictionary existed already.
+The class should implement <tt><a href="../api/com/sun/tdc/toolkit/api/Dictionary.html">com.sun.tdc.toolkit.api.Dictionary</a></tt>
+interface. It should be able to found in CLASSPATH.</li>
+</ul>
+There is aleady a default blank user dictionary file at "lib/userdict_en2zh_CN.bbtf".&nbsp;
+It can be used directly (such as adding new meaning, customizing the meaning
+of a word or sentence).
+<p>To import a new user dictionary to use, the <tt><a href="../api/com/sun/tdc/toolkit/api/Dictionary.html">com.sun.tdc.toolkit.api.Dictionary</a></tt>
+interface must be implemented first,&nbsp; and the&nbsp; implementation
+must consider other language translation. If there is a need to cache the
+dictionary for looking up usage,&nbsp; the <tt><a href="../api/com/sun/tdc/toolkit/api/DictionaryCachable.html">com.sun.tdc.toolkit.api.DictionaryCachable</a>
+</tt>interface should also be implemented. The implementations can be used
+as a bridge to connect to any existed dictionaries, even the web dictionary.
+That is to say, user can access other dictionaries via implementing the
+above interfaces. See the example: <a href="../../samples/SampleDictionary.java"><tt>SampleDictionary.java</tt></a>
+<br>&nbsp;
+<p><a NAME="Translator command line"></a><b><font size=+1>Translator Command-line</font></b>
+<p>The command of Transltor is simple to use.
+<p>USAGE:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; java com.sun.tdc.toolkit.translator.Translator
+&lt;source file> [&lt;output file>]
+<p><img SRC="image/rainbow.gif" height=6 width=100%>
+<center>
+<p><b><font size=-1>&nbsp;<a href="#top">Top of file</a> | <a href="mailto:i18n-toolkit-comments@Sun.COM">Comments</a>
+| <a href="mailto:i18n-toolkit-comments@Sun.COM">Submit Bug</a></font></b>
+<br><a href="http://www.sun.com"><img SRC="image/sun-logo.gif" ALT="Sun Home" BORDER=0 height=60 width=84></a>
+<br><font size=-2>Copyright &copy;&nbsp; 1995-1999 Sun Microsystems, Inc.</font>
+<br><font size=-2>China Technical Development Center</font>
+<br><font size=-2>All Rights Reserved.</font></center>
+
+<p><br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+<head></head>
+<body>
+
+<form name="index" method="POST" ACTION="srvAuthentication">
+<table>
+<tr>
+<td>User ID:</td>
+<td><INPUT TYPE="TEXT" NAME="userID" SIZE="15"></td>
+</tr>
+
+<tr>
+<td>Password:</td>
+<td><INPUT TYPE="PASSWORD" NAME="password" SIZE="15"></td>
+</tr>
+
+<tr>
+<td>Organization ID:</td>
+<td><INPUT TYPE="TEXT" NAME="domainID" SIZE="15"></td>
+</tr>
+
+<tr>
+<td>
+<INPUT TYPE="HIDDEN" NAME="gotoPage" VALUE="srvSimpleQuery">
+<INPUT TYPE="HIDDEN" NAME="errorPage" VALUE="srvTest1">
+<INPUT TYPE="HIDDEN" NAME="changePasswordPage" VALUE="srvTest1">
+</td>
+<td>
+<INPUT TYPE="SUBMIT" NAME="btnLogin" VALUE="Login">
+<INPUT TYPE="RESET" NAME="btnReset" VALUE="Reset">
+</td>
+</tr>
+
+</table>
+</body>
+</html>

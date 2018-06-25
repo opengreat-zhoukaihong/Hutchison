@@ -1,0 +1,32 @@
+// *** Generated Source File - Do Not Edit - Changes Will Be Lost ***
+
+package com.arena.universe.security.operator;
+
+// IM_Ag_
+import java.util.*;
+import com.arena.universe.security.*;
+import com.arena.universe.utility.*;
+
+public class StrNotIn
+	implements BinaryOperator
+{
+	
+	// ------ Declarations ------
+	
+	// ------ Instance Variables ------
+	// ---- Begin SilverStream User-Written Event Handler Methods ----
+	// ---- 
+	
+	// ------ Public methods ------
+	
+	// UC_Ag_
+	public boolean evaluate(Object actualValue, String comparedValue, PermissionContext context) {
+		Vector list = null;
+		if (comparedValue == null) {
+			return true;
+		} else {
+			list = StringUtil.csvStr2Vector(comparedValue);
+		}
+		return actualValue == null || !list.contains((String)actualValue);
+	}
+}

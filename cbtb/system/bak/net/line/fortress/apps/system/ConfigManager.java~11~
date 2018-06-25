@@ -1,0 +1,57 @@
+package net.line.fortress.apps.system;
+
+import java.io.*;
+import java.util.*;
+
+public class ConfigManager {
+  private static Hashtable instanceTable = new Hashtable();
+  private Properties properties = null;
+
+  public static ConfigManager getInstance(String systemId) {
+    ConfigManager instance = (ConfigManager)instanceTable.get(systemId);
+    if (instance == null) {
+      instance = initInstance(systemId);
+    }
+    return instance;
+  }
+
+  private static synchronized ConfigManager initInstance(String systemId) {
+    ConfigManager instance = (ConfigManager)instanceTable.get(systemId);
+    if (instance != null) {
+      return instance;
+    }
+    instance = new ConfigManager(systemId);
+    instanceTable.put(systemId, instance);
+    return instance;
+  }
+
+  private ConfigManager(String systemId) {
+    Properties p = new Properties();
+    test.ClassLoaderTrace c1 = new test.ClassLoaderTrace();
+    c1.trace(this.getClass());
+    InputStream in = this.getClass().getResourceAsStream("/" + systemId + ".props");
+    try {
+      p.load(in);
+    } catch (Exception e) {
+      System.out.println("Cannot load " + systemId + ".props");
+      e.printStackTrace();
+    } finally {
+      try {
+        if (in != null) in.close();
+      } catch (Exception e) {}
+    }
+    this.properties = p;
+  }
+
+  public String getProperty(String key) {
+    return this.properties.getProperty(key);
+  }
+
+  public String getProperty(String key, String def) {
+    return this.properties.getProperty(key, def);
+  }
+
+  public Enumeration propertyNames() {
+     return this.properties.propertyNames();
+  }
+}

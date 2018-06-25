@@ -1,0 +1,69 @@
+package net.line.fortress.apps.system.ejb;
+
+import java.rmi.*;
+import javax.ejb.*;
+import net.line.fortress.apps.system.security.*;
+
+public interface BasicSecurityManagerImpl extends EJBObject, net.line.fortress.apps.system.security.SecurityManager {
+  public Domain getDomain(String domainID)
+    throws SecurityDomainNotFoundException,
+           SecurityDBAccessException,
+           java.rmi.RemoteException;
+  public User authenticate(String domainID,
+                           String userID,
+                           String encryptedPassword,
+                           boolean checkPassword,
+                           Domain domain)
+    throws SecurityUserNotFoundException,
+           SecurityUserSuspendedException,
+           SecurityInvalidPasswordException,
+           SecurityDBAccessException,
+           java.rmi.RemoteException;
+  public java.util.Vector getGroups(String domainID,
+                                    String userID)
+    throws SecurityDBAccessException,
+           java.rmi.RemoteException;
+  public java.util.Hashtable getAllGroups(String domainID)
+    throws SecurityDBAccessException,
+           java.rmi.RemoteException;
+/*
+  public java.util.Vector getPermissions(String domainID,
+                                         String userID,
+                                         java.util.Vector groupList)
+    throws SecurityDBAccessException,
+           java.rmi.RemoteException;
+*/
+  public java.util.Hashtable getAllPermissions(String domainID)
+    throws SecurityDBAccessException,
+           java.rmi.RemoteException;
+  public boolean implies(java.util.Vector permissions,
+                         PermissionContext context)
+    throws java.rmi.RemoteException;
+  public void deleteUser(String domainID,
+                         String userID)
+    throws SecurityUserNotFoundException,
+           SecurityDBAccessException,
+           java.rmi.RemoteException;
+  public void deleteDomain(String domainID)
+    throws SecurityDomainNotFoundException,
+           SecurityDBAccessException,
+           java.rmi.RemoteException;
+  public boolean checkLogon(javax.servlet.http.HttpSession session)
+    throws java.rmi.RemoteException;
+/*
+  public java.util.Vector getAuthorizationList(java.util.Hashtable allPermissions,
+                                               PermissionContext context)
+    throws java.rmi.RemoteException;
+*/
+  public String getPersonID(String domainID,
+                            String userID)
+    throws SecurityUserNotFoundException,
+           SecurityDBAccessException,
+           java.rmi.RemoteException;
+  public String getQualifiedUserID(String personID)
+    throws SecurityUserNotFoundException,
+           SecurityDBAccessException,
+           java.rmi.RemoteException;
+  public String encrypt(String password)
+    throws java.rmi.RemoteException;
+}
